@@ -1,0 +1,330 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import {
+  ShieldCheck,
+  Droplets,
+  Sparkles,
+  Building2,
+  Clock,
+} from 'lucide-react';
+import { BentoGridShowcase } from './ui/bento-product-features';
+
+export default function ExpertiseSection() {
+  return (
+    <section className="relative bg-white text-neutral-900 py-24 md:py-32 px-5 ">
+      {/* ===== FOND GLOBAL décoratif ===== */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
+        {/* Halo central doux */}
+        <div
+          className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full opacity-[0.18] blur-[140px]"
+          style={{
+            background:
+              'radial-gradient(circle at 50% 50%, rgba(15,23,42,0.18) 0%, rgba(255,255,255,0) 70%)',
+          }}
+        />
+        {/* Vignette blanche */}
+        <div className="absolute inset-0 shadow-[inset_0_0_200px_120px_rgba(255,255,255,0.95)]" />
+
+        {/* Icônes géantes globales (fond de section, très subtiles) */}
+        <ShieldCheck className="absolute top-[5%] left-[8%] w-[480px] h-[480px] text-slate-900 opacity-[0.025]" />
+        <Building2 className="absolute bottom-[-20%] right-[10%] w-[500px] h-[400px] text-slate-900 opacity-[0.02]" />
+      </div>
+
+      {/* ===== CONTENU ===== */}
+      <div className="relative z-10 mx-auto w-full max-w-[1200px]">
+        {/* ===== Heading ===== */}
+        <div className="text-center max-w-xl mx-auto mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-medium tracking-wide bg-neutral-100 text-neutral-600"
+          >
+            Auto & espaces pro • Méthodes carrées
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="mt-4 text-2xl md:text-4xl font-semibold tracking-tight tricolor-underline pb-2"
+          >
+            Un niveau pro, auto & espaces
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+            className="text-sm md:text-base text-neutral-600 leading-relaxed mt-4"
+          >
+            Procédures maîtrisées, produits adaptés, rendu net. Différenciation
+            visuelle immédiate pour votre véhicule ou votre établissement.
+          </motion.p>
+        </div>
+
+        {/* ===== Container arrondi ===== */}
+        <div className="relative rounded-[2.5rem] md:rounded-[3rem] border border-neutral-100 bg-white/60 shadow-[0_40px_120px_-30px_rgba(15,23,42,0.15)] p-4 md:p-6 overflow-hidden backdrop-blur-[2px]">
+          {/* Décor interne : icônes + cadre */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 rounded-[2.5rem] md:rounded-[3rem] z-0"
+          >
+            {/* radial subtil haut */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  'radial-gradient(circle at 50% 0%, rgba(248,250,252,0.9) 0%, rgba(248,250,252,0) 55%)',
+              }}
+            />
+            {/* Icônes décor internes (un peu plus visibles) */}
+            <div className="hidden md:block absolute bottom-1/3 left-1/3 translate-y-1/2 -translate-x-1/2 opacity-[0.045]">
+              <ShieldCheck className="w-56 h-56 text-slate-900" />
+            </div>
+            <div className="hidden md:block absolute bottom-1/2 right-1/3 translate-x-1/2 opacity-[0.04]">
+              <Building2 className="w-64 h-64 text-slate-900" />
+            </div>
+            {/* cadre intérieur */}
+            <div className="absolute inset-[10%] rounded-[2.1rem] md:rounded-[2.6rem] border border-dashed border-neutral-200/70" />
+          </div>
+
+          {/* ===== GRID BENTO ===== */}
+          <BentoGridShowcase
+            className="relative z-10 mx-auto max-w-[1200px]"
+            cardClassName="
+              rounded-[2rem] h-full p-6 md:p-7
+              border border-neutral-200/80
+              shadow-[0_20px_80px_-30px_rgba(15,23,42,0.18)]
+              bg-white/80
+              backdrop-blur-[2px]
+            "
+            integration={
+              <FeatureTall
+                icon={<ShieldCheck className="h-5 w-5" />}
+                title="Préparation & protection"
+                lines={[
+                  'Pré-lavage mousse pH neutre',
+                  'Décontamination ferreuse + goudron',
+                  'Polissage 1–2 passes',
+                  'Protection céramique 12–24 mois',
+                  'Vapeur sèche habitacle',
+                ]}
+                footer="Méthode adaptée à l’état du véhicule. Devis clair avant intervention."
+              />
+            }
+            trackers={
+              <MiniFeature
+                icon={<Sparkles className="h-4 w-4" />}
+                title="Finition intérieure"
+                desc="Textiles, plastiques, cuirs : rendu propre, mat, sans brillances grasses."
+              />
+            }
+            statistic={
+              <MiniFeatureStat
+                icon={<Clock className="h-4 w-4" />}
+                title="Délai d’intervention"
+                big="24–72h"
+                hint="Selon planning, type de prestation et zone d’intervention."
+              />
+            }
+            focus={
+              <MiniFeature
+                icon={<Building2 className="h-4 w-4" />}
+                title="Nettoyage pro"
+                desc="Vitrines, halls, commerces, villas, copropriétés : image nette et régulière."
+              />
+            }
+            productivity={
+              <MiniFeature
+                icon={<Droplets className="h-4 w-4" />}
+                title="Vitres & vitrines"
+                desc="Eau osmosée, microfibres dédiées, angles et joints traités : zéro trace."
+              />
+            }
+            shortcuts={<BottomWide />}
+            /* Couleurs par carte */
+            integrationClassName="bg-red-100/90 border-red-200"
+            trackersClassName="bg-blue-100/90 border-blue-200"
+            statisticClassName="bg-blue-100/90 border-blue-200"
+            focusClassName="bg-red-100/90 border-red-200"
+            productivityClassName="bg-neutral-100 border-neutral-200"
+            shortcutsClassName="bg-neutral-100 border-neutral-200"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* === Cartes === */
+
+function FeatureTall({
+  icon,
+  title,
+  lines,
+  footer,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  lines: string[];
+  footer: string;
+}) {
+  return (
+    <div className="flex flex-col justify-between h-full">
+      {/* header */}
+      <div>
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex items-start gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-red-50 border border-red-200 text-red-700">
+              {icon}
+            </div>
+            <div>
+              <div className="font-medium leading-tight text-base md:text-lg">
+                {title}
+              </div>
+              <p className="mt-1 text-xs text-neutral-600">
+                Préparation esthétique complète avant protection.
+              </p>
+            </div>
+          </div>
+          <span className="rounded-full bg-white/70 px-3 py-1 text-[11px] font-medium text-neutral-600">
+            Auto
+          </span>
+        </div>
+
+        {/* liste */}
+        <ul className="mt-6 flex flex-col gap-2 text-neutral-700 text-sm leading-relaxed">
+          {lines.map((l, i) => (
+            <li key={i} className="flex gap-2">
+              <div
+                className="mt-[7px] h-[6px] w-[6px] rounded-full"
+                style={{ background: 'var(--color-primary)' }}
+              />
+              <span>{l}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* footer principal */}
+        <div className="mt-6 pt-4 border-t border-red-200/50 text-neutral-600 text-xs leading-relaxed">
+          {footer}
+        </div>
+      </div>
+
+      {/* === AJOUT D’UN ENCARt “bonus technique” === */}
+      <div className="mt-5 bg-white/60 border border-red-200/40 rounded-xl p-3 flex items-start gap-3 text-xs text-neutral-700 shadow-[inset_0_1px_6px_rgba(255,255,255,0.8)]">
+        <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-red-50 border border-red-200 text-red-600">
+          <ShieldCheck className="w-3.5 h-3.5" />
+        </div>
+        <div className="leading-snug">
+          <strong className="font-medium">Durée moyenne :</strong> 4–6 h par
+          véhicule selon niveau de correction.
+          <br />
+          <span className="text-[11px] text-neutral-500">
+            Application en local contrôlé, produits premium (Koch Chemie /
+            Gyeon).
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MiniFeature({ icon, title, desc }: any) {
+  const isRed = title === 'Nettoyage pro';
+  const isNeutral = title === 'Vitres & vitrines';
+
+  const badgeClasses = isRed
+    ? 'bg-red-50 border-red-200 text-red-700'
+    : isNeutral
+    ? 'bg-neutral-50 border-neutral-200 text-neutral-700'
+    : 'bg-blue-50 border-blue-200 text-blue-700';
+
+  const chipLabel = isRed ? 'Pro' : isNeutral ? 'Détail' : 'Finition';
+
+  return (
+    <div className="flex flex-col h-full">
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex items-start gap-3">
+          <div
+            className={[
+              'flex h-10 w-10 items-center justify-center rounded-2xl border',
+              badgeClasses,
+            ].join(' ')}
+          >
+            {icon}
+          </div>
+          <div>
+            <div className="font-medium leading-tight text-base">{title}</div>
+            <p className="mt-1 text-[11px] text-neutral-600">
+              Zone ciblée, méthode adaptée.
+            </p>
+          </div>
+        </div>
+        <span className="rounded-full bg-white/80 px-2.5 py-1 text-[11px] text-neutral-600">
+          {chipLabel}
+        </span>
+      </div>
+      <p className="mt-4 text-neutral-650 text-sm leading-relaxed">{desc}</p>
+    </div>
+  );
+}
+
+function MiniFeatureStat({ icon, title, big, hint }: any) {
+  return (
+    <div className="flex flex-col h-full">
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex items-start gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-blue-50 border border-blue-200 text-blue-700">
+            {icon}
+          </div>
+          <div>
+            <div className="font-medium leading-tight text-base">{title}</div>
+            <p className="mt-1 text-[11px] text-neutral-600">
+              Réponse rapide, créneau calé avec vous.
+            </p>
+          </div>
+        </div>
+        <span className="rounded-full bg-white/80 px-2.5 py-1 text-[11px] text-neutral-600">
+          Planning
+        </span>
+      </div>
+      <div
+        className="mt-6 font-semibold text-4xl leading-none tracking-tight"
+        style={{ color: 'var(--color-primary)' }}
+      >
+        {big}
+      </div>
+      <div className="mt-2 text-neutral-600 text-xs leading-relaxed">
+        {hint}
+      </div>
+    </div>
+  );
+}
+
+function BottomWide() {
+  return (
+    <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 h-full">
+      <div className="max-w-md">
+        <p className="font-medium text-base leading-tight">
+          Devis clair, intervention planifiée, RC pro.
+        </p>
+        <p className="text-neutral-600 text-sm leading-relaxed mt-2">
+          Méthodes documentées, produits calibrés par surface et par état. Une
+          seule équipe, un niveau d’exigence constant.
+        </p>
+      </div>
+      <a
+        href="/#reservation"
+        className="btn-primary px-6 py-3 text-sm font-medium"
+      >
+        Réserver un créneau
+      </a>
+    </div>
+  );
+}

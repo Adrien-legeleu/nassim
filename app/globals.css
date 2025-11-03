@@ -1,26 +1,98 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ===== Couleurs drapeau français (saturées et officielles) ===== */
+@theme {
+  --color-fr-blue: #0055a4; /* Bleu */
+  --color-fr-white: #ffffff; /* Blanc */
+  --color-fr-red: #ed2939; /* Rouge plus profond (pas pâle) */
+
+  /* Primary par défaut = bleu ; toggle possible en data-attr */
+  --color-primary: var(--color-fr-blue);
+
+  --color-text: #0b1220; /* texte principal */
+  --color-muted: #6b7280; /* gris neutre */
+  --ring: color-mix(in srgb, var(--color-primary) 45%, transparent);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Toggle simple (au niveau <html>) */
+[data-theme='fr-blue'] {
+  --color-primary: var(--color-fr-blue);
+}
+[data-theme='fr-red'] {
+  --color-primary: var(--color-fr-red);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ===== Base claire / fond blanc ===== */
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-fr-white);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, -apple-system,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* ===== Helpers ===== */
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+
+/* Bouton primaire sans gradient */
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  border-radius: 999px;
+  box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.25);
+  transition: filter 0.2s ease, transform 0.06s ease;
+}
+.btn-primary:hover {
+  filter: brightness(1.03);
+}
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* Ruban tricolore (fin, sans gradient) */
+.ribbon-fr {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 4px;
+  overflow: hidden;
+}
+.ribbon-fr::before,
+.ribbon-fr::after,
+.ribbon-fr span {
+  content: '';
+  display: block;
+}
+.ribbon-fr::before {
+  background: var(--color-fr-blue);
+}
+.ribbon-fr span {
+  background: var(--color-fr-white);
+}
+.ribbon-fr::after {
+  background: var(--color-fr-red);
+}
+
+/* Petites pastilles FR (solides) */
+.badge-fr {
+  border: 1px solid color-mix(in srgb, var(--color-primary) 30%, #e5e7eb);
+  background: color-mix(in srgb, var(--color-primary) 10%, #ffffff);
+  color: var(--color-primary);
+}
+
+/* Utilitaires sobres */
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1.25rem;
+  box-shadow: 0 30px 90px -30px rgba(0, 0, 0, 0.15);
 }
