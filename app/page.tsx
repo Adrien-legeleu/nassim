@@ -5,11 +5,11 @@ import ProjectsSection from '@/components/ProjectsSection';
 
 export default function HomePage() {
   return (
-    <>
+    <div className="overflow-hidden w-full h-full">
       <HeroSplit />
       <ExpertiseSection />
       <ProjectsSection />
       <FinalCTA />
-    </>
+    </div>
   );
 }
