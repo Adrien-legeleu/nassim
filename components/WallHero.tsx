@@ -113,7 +113,7 @@ export default function WallHero({
           {dup.map((src, i) => (
             <div
               key={i}
-              className="relative aspect-[3/4] h-64 md:h-72 flex-shrink-0"
+              className="relative aspect-[3/4] h-48 md:h-72 flex-shrink-0"
               style={{ rotate: `${i % 2 === 0 ? -1.5 : 2.5}deg` }}
             >
               <img
