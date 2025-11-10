@@ -65,8 +65,8 @@ export default function ExpertiseSection() {
         <div className="absolute inset-0 shadow-[inset_0_0_200px_120px_rgba(255,255,255,0.95)]" />
 
         {/* Icônes géantes globales (fond de section, très subtiles) */}
-        <ShieldCheck className="absolute top-[5%] left-[8%] w-[480px] h-[480px] text-slate-900 opacity-[0.025]" />
-        <Building2 className="absolute bottom-[-20%] right-[10%] w-[500px] h-[400px] text-slate-900 opacity-[0.02]" />
+        <ShieldCheck className="absolute max-lg:hidden top-[5%] left-[8%] w-[480px] h-[480px] text-slate-900 opacity-[0.025]" />
+        <Building2 className="absolute max-lg:hidden bottom-[-20%] right-[10%] w-[500px] h-[400px] text-slate-900 opacity-[0.02]" />
       </div>
 
       {/* ===== CONTENU ===== */}

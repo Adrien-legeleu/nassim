@@ -27,7 +27,6 @@ html,
 body {
   background: var(--color-fr-white);
   color: var(--color-text);
-  border: 1px solid red;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-family: var(--font-manrope), ui-sans-serif, system-ui, -apple-system,
