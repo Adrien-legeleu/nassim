@@ -7,7 +7,7 @@ import AutoServicesBento from '@/components/auto/AutoServicebento';
 
 export default function AutoPage() {
   return (
-    <main className="bg-secondary  text-light">
+    <main className="bg-secondary w-full overflow-hidden  text-light">
       <AutoHero />
 
       <section className=" mx-auto w-full ">

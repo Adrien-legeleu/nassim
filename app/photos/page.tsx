@@ -90,7 +90,7 @@ export default function PhotosWallPage() {
   });
 
   return (
-    <main className="bg-white text-neutral-900 min-h-[100dvh]">
+    <main className="bg-white text-neutral-900 min-h-[100dvh]    overflow-hidden w-full h-full">
       <div className="ribbon-fr">
         <span />
       </div>

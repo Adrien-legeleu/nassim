@@ -9,7 +9,7 @@ import ProBeforeAfter from '@/components/pro/proBeforeAfter';
 
 export default function ProPage() {
   return (
-    <main className="min-h-screen bg-secondary text-light">
+    <main className="min-h-screen w-full overflow-hidden bg-secondary text-light">
       <ProHero />
       <ProBeforeAfter />
       <section>
