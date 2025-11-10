@@ -28,6 +28,7 @@ export default function Header() {
 
   return (
     <>
+      {/* === HEADER FIXE === */}
       <motion.header
         role="banner"
         className="fixed top-3 md:top-4 w-full left-1/2 -translate-x-1/2 z-50"
@@ -38,20 +39,20 @@ export default function Header() {
         <motion.div
           layout
           className={[
-            scrolled ? 'h-14 md:h-[60px]' : 'h-12 md:h-[54px]',
+            scrolled ? 'h-16 md:h-[64px]' : 'h-14 md:h-[60px]',
             'rounded-3xl lg:w-4/5 w-[90%] mx-auto max-w-7xl pl-2 pr-3',
             'flex justify-between items-center',
             'transition-[background,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
             scrolled
               ? 'bg-white/70 backdrop-blur shadow-[0_10px_40px_-15px_rgba(0,0,0,0.25)]'
-              : 'bg-white/70 backdrop-blur ',
+              : 'bg-white/70 backdrop-blur',
           ].join(' ')}
         >
-          {/* === Logos à gauche === */}
+          {/* Logos */}
           <div className="flex items-center gap-3">
             <Link
               href="/auto"
-              className="relative w-10 aspect-square rounded-2xl  hover:opacity-90 transition"
+              className="relative w-10 aspect-square rounded-2xl hover:opacity-90 transition"
               aria-label="French Detailing Auto"
             >
               <Image
@@ -64,7 +65,7 @@ export default function Header() {
             </Link>
             <Link
               href="/pro"
-              className="relative w-10 aspect-square rounded-2xl  hover:opacity-90 transition"
+              className="relative w-10 aspect-square rounded-2xl hover:opacity-90 transition"
               aria-label="French Detailing Pro"
             >
               <Image
@@ -76,7 +77,7 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* === Nav (desktop) === */}
+          {/* Desktop nav */}
           <nav
             aria-label="Navigation principale"
             className="hidden md:flex justify-center"
@@ -111,7 +112,7 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* === CTA (desktop) === */}
+          {/* CTA Desktop */}
           <div className="hidden md:flex items-center">
             <Link
               href="/#reservation"
@@ -122,18 +123,18 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* === Burger (mobile) === */}
+          {/* Burger Mobile */}
           <button
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden justify-self-end inline-flex items-center justify-center rounded-full p-2 text-neutral-800 hover:bg-neutral-100 transition"
+            className="md:hidden inline-flex items-center gap-2 rounded-full px-3 py-2 text-neutral-900 bg-white/80 backdrop-blur border border-black/5 shadow-sm active:scale-95 transition"
             aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
           >
-            {open ? <X /> : <Menu />}
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </motion.div>
       </motion.header>
 
-      {/* === Overlay mobile === */}
+      {/* === MENU MOBILE === */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -141,46 +142,85 @@ export default function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 bg-white flex flex-col pt-5 justify-between md:hidden"
           >
-            <ul className="flex flex-col items-center gap-6">
-              {NAV.map((item, i) => (
-                <motion.li
-                  key={item.href}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{
-                    delay: i * 0.05,
-                    duration: 0.3,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                >
-                  <Link
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="text-2xl font-medium text-white"
-                  >
-                    {item.label}
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
-
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              transition={{
-                delay: 0.25,
-                duration: 0.3,
-                ease: [0.16, 1, 0.3, 1],
-              }}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 10, opacity: 0 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col items-center justify-center flex-1 gap-10 px-6"
+            >
+              {/* Accueil */}
+              <Link
+                href="/"
+                onClick={() => setOpen(false)}
+                className="text-2xl pb-2 font-bold text-neutral-900"
+              >
+                Accueil
+              </Link>
+
+              {/* Auto + Pro en GRID */}
+              <div className="grid grid-cols-2 gap-4 w-full mx-auto max-w-lg">
+                <Link
+                  href="/auto"
+                  onClick={() => setOpen(false)}
+                  className=" flex flex-col items-center w-full h-full gap-2"
+                >
+                  <div className="relative aspect-square w-full h-full rounded-3xl overflow-hidden">
+                    <Image
+                      src="/logo-auto.png"
+                      alt="Logo Auto"
+                      fill
+                      className="object-cover rounded-2xl"
+                    />
+                  </div>
+                  <p className="text-xs font-bold text-neutral-900 text-center">
+                    Detailing Auto
+                  </p>
+                </Link>
+
+                <Link
+                  href="/pro"
+                  onClick={() => setOpen(false)}
+                  className="flex flex-col items-center gap-2"
+                >
+                  <div className="relative w-full h-full rounded-3xl overflow-hidden">
+                    <Image
+                      src="/logo-pro.png"
+                      alt="Logo Pro"
+                      fill
+                      className="object-cover rounded-2xl"
+                    />
+                  </div>
+                  <p className="text-xs font-bold text-neutral-900 text-center">
+                    Nettoyage Pro
+                  </p>
+                </Link>
+              </div>
+
+              {/* Photos */}
+              <Link
+                href="/photos"
+                onClick={() => setOpen(false)}
+                className="text-2xl pt-2 font-bold text-neutral-900"
+              >
+                Avant / Après
+              </Link>
+            </motion.div>
+
+            {/* CTA en bas */}
+            <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 15, opacity: 0 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="p-5 border-t border-neutral-100"
             >
               <Link
                 href="/#reservation"
                 onClick={() => setOpen(false)}
-                className="inline-flex items-center gap-2 btn-primary px-6 py-3 text-base font-medium"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary text-sm font-semibold text-white py-4 shadow-[0_20px_45px_rgba(0,0,0,0.15)] active:scale-[0.98] transition"
               >
                 <Calendar size={18} />
                 Réserver un créneau

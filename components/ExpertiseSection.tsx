@@ -10,6 +10,44 @@ import {
 } from 'lucide-react';
 import { BentoGridShowcase } from './ui/bento-product-features';
 
+/* ===== Variants d’animations (pas de changement de design) ===== */
+
+const EASE_OUT: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 24, filter: 'blur(14px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: { duration: 0.55, ease: EASE_OUT },
+  },
+};
+
+const cardsParentVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 18,
+    filter: 'blur(10px)',
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: { duration: 0.45, ease: EASE_OUT },
+  },
+};
+
 export default function ExpertiseSection() {
   return (
     <section className="relative bg-white text-neutral-900 py-24 md:py-32 px-5 ">
@@ -36,30 +74,30 @@ export default function ExpertiseSection() {
         {/* ===== Heading ===== */}
         <div className="text-center max-w-xl mx-auto mb-16">
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 8, filter: 'blur(8px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            transition={{ duration: 0.5, ease: EASE_OUT }}
             className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-medium tracking-wide bg-neutral-100 text-neutral-600"
           >
             Auto & espaces pro • Méthodes carrées
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 8, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            transition={{ duration: 0.6, ease: EASE_OUT }}
             className="mt-4 text-2xl md:text-4xl font-semibold tracking-tight tricolor-underline pb-2"
           >
             Un niveau pro, auto & espaces
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 8, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+            transition={{ duration: 0.6, ease: EASE_OUT, delay: 0.1 }}
             className="text-sm md:text-base text-neutral-600 leading-relaxed mt-4"
           >
             Procédures maîtrisées, produits adaptés, rendu net. Différenciation
@@ -68,7 +106,13 @@ export default function ExpertiseSection() {
         </div>
 
         {/* ===== Container arrondi ===== */}
-        <div className="relative rounded-[2.5rem] md:rounded-[3rem] border border-neutral-100 bg-white/60 shadow-[0_40px_120px_-30px_rgba(15,23,42,0.15)] p-4 md:p-6 overflow-hidden backdrop-blur-[2px]">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="relative rounded-[2.5rem] md:rounded-[3rem] border border-neutral-100 bg-white/60 shadow-[0_40px_120px_-30px_rgba(15,23,42,0.15)] p-4 md:p-6 overflow-hidden backdrop-blur-[2px]"
+        >
           {/* Décor interne : icônes + cadre */}
           <div
             aria-hidden
@@ -82,80 +126,95 @@ export default function ExpertiseSection() {
                   'radial-gradient(circle at 50% 0%, rgba(248,250,252,0.9) 0%, rgba(248,250,252,0) 55%)',
               }}
             />
-            {/* Icônes décor internes (un peu plus visibles) */}
-            <div className="hidden md:block absolute bottom-1/3 left-1/3 translate-y-1/2 -translate-x-1/2 opacity-[0.045]">
-              <ShieldCheck className="w-56 h-56 text-slate-900" />
-            </div>
-            <div className="hidden md:block absolute bottom-1/2 right-1/3 translate-x-1/2 opacity-[0.04]">
-              <Building2 className="w-64 h-64 text-slate-900" />
-            </div>
-            {/* cadre intérieur */}
-            <div className="absolute inset-[10%] rounded-[2.1rem] md:rounded-[2.6rem] border border-dashed border-neutral-200/70" />
+
+            <div className="absolute inset-[10%] rounded-[2.1rem] md:rounded-[2.6rem] border border-dashed border-neutral-200/90" />
           </div>
 
           {/* ===== GRID BENTO ===== */}
-          <BentoGridShowcase
+          <motion.div
             className="relative z-10 mx-auto max-w-[1200px]"
-            cardClassName="
+            variants={cardsParentVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.35 }}
+          >
+            <BentoGridShowcase
+              className="relative z-10 mx-auto max-w-[1200px]"
+              cardClassName="
               rounded-[2rem] h-full p-6 md:p-7
               border border-neutral-200/80
               shadow-[0_20px_80px_-30px_rgba(15,23,42,0.18)]
               bg-white/80
               backdrop-blur-[2px]
             "
-            integration={
-              <FeatureTall
-                icon={<ShieldCheck className="h-5 w-5" />}
-                title="Préparation & protection"
-                lines={[
-                  'Pré-lavage mousse pH neutre',
-                  'Décontamination ferreuse + goudron',
-                  'Polissage 1–2 passes',
-                  'Protection céramique 12–24 mois',
-                  'Vapeur sèche habitacle',
-                ]}
-                footer="Méthode adaptée à l’état du véhicule. Devis clair avant intervention."
-              />
-            }
-            trackers={
-              <MiniFeature
-                icon={<Sparkles className="h-4 w-4" />}
-                title="Finition intérieure"
-                desc="Textiles, plastiques, cuirs : rendu propre, mat, sans brillances grasses."
-              />
-            }
-            statistic={
-              <MiniFeatureStat
-                icon={<Clock className="h-4 w-4" />}
-                title="Délai d’intervention"
-                big="24–72h"
-                hint="Selon planning, type de prestation et zone d’intervention."
-              />
-            }
-            focus={
-              <MiniFeature
-                icon={<Building2 className="h-4 w-4" />}
-                title="Nettoyage pro"
-                desc="Vitrines, halls, commerces, villas, copropriétés : image nette et régulière."
-              />
-            }
-            productivity={
-              <MiniFeature
-                icon={<Droplets className="h-4 w-4" />}
-                title="Vitres & vitrines"
-                desc="Eau osmosée, microfibres dédiées, angles et joints traités : zéro trace."
-              />
-            }
-            shortcuts={<BottomWide />}
-            /* Couleurs par carte */
-            integrationClassName="bg-red-100/90 border-red-200"
-            trackersClassName="bg-blue-100/90 border-blue-200"
-            statisticClassName="bg-blue-100/90 border-blue-200"
-            focusClassName="bg-red-100/90 border-red-200"
-            productivityClassName="bg-neutral-100 border-neutral-200"
-            shortcutsClassName="bg-neutral-100 border-neutral-200"
-          />
-        </div>
+              integration={
+                <motion.div variants={cardVariants} className="h-full">
+                  <FeatureTall
+                    icon={<ShieldCheck className="h-5 w-5" />}
+                    title="Préparation & protection"
+                    lines={[
+                      'Pré-lavage mousse pH neutre',
+                      'Décontamination ferreuse + goudron',
+                      'Polissage 1–2 passes',
+                      'Protection céramique 12–24 mois',
+                      'Vapeur sèche habitacle',
+                    ]}
+                    footer="Méthode adaptée à l’état du véhicule. Devis clair avant intervention."
+                  />
+                </motion.div>
+              }
+              trackers={
+                <motion.div variants={cardVariants}>
+                  <MiniFeature
+                    icon={<Sparkles className="h-4 w-4" />}
+                    title="Finition intérieure"
+                    desc="Textiles, plastiques, cuirs : rendu propre, mat, sans brillances grasses."
+                  />
+                </motion.div>
+              }
+              statistic={
+                <motion.div variants={cardVariants}>
+                  <MiniFeatureStat
+                    icon={<Clock className="h-4 w-4" />}
+                    title="Délai d’intervention"
+                    big="24–72h"
+                    hint="Selon planning, type de prestation et zone d’intervention."
+                  />
+                </motion.div>
+              }
+              focus={
+                <motion.div variants={cardVariants}>
+                  <MiniFeature
+                    icon={<Building2 className="h-4 w-4" />}
+                    title="Nettoyage pro"
+                    desc="Vitrines, halls, commerces, villas, copropriétés : image nette et régulière."
+                  />
+                </motion.div>
+              }
+              productivity={
+                <motion.div variants={cardVariants}>
+                  <MiniFeature
+                    icon={<Droplets className="h-4 w-4" />}
+                    title="Vitres & vitrines"
+                    desc="Eau osmosée, microfibres dédiées, angles et joints traités : zéro trace."
+                  />
+                </motion.div>
+              }
+              shortcuts={
+                <motion.div variants={cardVariants}>
+                  <BottomWide />
+                </motion.div>
+              }
+              /* Couleurs par carte */
+              integrationClassName=" border-[#ed293925]"
+              trackersClassName=" border-blue-100"
+              statisticClassName=" border-blue-100"
+              focusClassName=" border-[#ed293925]"
+              productivityClassName=" border-neutral-100"
+              shortcutsClassName=" border-neutral-100"
+            />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
@@ -180,7 +239,7 @@ function FeatureTall({
       <div>
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-start gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-red-50 border border-red-200 text-red-700">
+            <div className="flex min-h-10 min-w-10 items-center justify-center rounded-2xl bg-red-50 border border-[#ed293915] text-[#ed293990]">
               {icon}
             </div>
             <div>
@@ -211,14 +270,14 @@ function FeatureTall({
         </ul>
 
         {/* footer principal */}
-        <div className="mt-6 pt-4 border-t border-red-200/50 text-neutral-600 text-xs leading-relaxed">
+        <div className="mt-6 pt-4 border-t border-red-100/50 text-neutral-600 text-xs leading-relaxed">
           {footer}
         </div>
       </div>
 
       {/* === AJOUT D’UN ENCARt “bonus technique” === */}
-      <div className="mt-5 bg-white/60 border border-red-200/40 rounded-xl p-3 flex items-start gap-3 text-xs text-neutral-700 shadow-[inset_0_1px_6px_rgba(255,255,255,0.8)]">
-        <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-red-50 border border-red-200 text-red-600">
+      <div className="mt-5 bg-[#ed293910] border border-[#ed293910] rounded-2xl p-3 flex items-start gap-3 text-xs text-neutral-700 shadow-[inset_0_1px_6px_rgba(255,255,255,0.8)]">
+        <div className="flex min-h-6 min-w-6 items-center justify-center rounded-lg bg-[#ed293910] border border-[#ed293910] text-[#ed293980]">
           <ShieldCheck className="w-3.5 h-3.5" />
         </div>
         <div className="leading-snug">
@@ -240,10 +299,10 @@ function MiniFeature({ icon, title, desc }: any) {
   const isNeutral = title === 'Vitres & vitrines';
 
   const badgeClasses = isRed
-    ? 'bg-red-50 border-red-200 text-red-700'
+    ? 'bg-[#ed293910] border-[#ed293310] text-[#ed293995]'
     : isNeutral
-    ? 'bg-neutral-50 border-neutral-200 text-neutral-700'
-    : 'bg-blue-50 border-blue-200 text-blue-700';
+    ? 'bg-neutral-50 border-neutral-100 text-neutral-700'
+    : 'bg-blue-50 border-blue-100 text-blue-700';
 
   const chipLabel = isRed ? 'Pro' : isNeutral ? 'Détail' : 'Finition';
 
@@ -253,7 +312,7 @@ function MiniFeature({ icon, title, desc }: any) {
         <div className="flex items-start gap-3">
           <div
             className={[
-              'flex h-10 w-10 items-center justify-center rounded-2xl border',
+              'flex min-h-10 min-w-10 items-center justify-center rounded-2xl border',
               badgeClasses,
             ].join(' ')}
           >
@@ -280,7 +339,7 @@ function MiniFeatureStat({ icon, title, big, hint }: any) {
     <div className="flex flex-col h-full">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-start gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-blue-50 border border-blue-200 text-blue-700">
+          <div className="flex min-h-10 min-w-10 items-center justify-center rounded-2xl bg-blue-50 border border-blue-100 text-blue-700">
             {icon}
           </div>
           <div>

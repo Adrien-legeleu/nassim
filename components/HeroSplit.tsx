@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { Calendar } from 'lucide-react';
 
 type PanelProps = {
   href: string;
@@ -29,7 +30,7 @@ function Panel({
 
   return (
     <Link
-      className="relative group overflow-hidden"
+      className="relative group rounded-[3rem] overflow-hidden"
       href={href}
       aria-label={logoAlt}
     >
@@ -65,20 +66,13 @@ function Panel({
 
 export default function HeroSplit() {
   return (
-    <section className="relative h-[100svh] w-full overflow-hidden bg-white">
-      <div className="h-full px-4 md:px-6">
-        <div className="relative h-full overflow-hidden rounded-[3rem] border border-neutral-200 bg-white shadow-sm">
-          {/* Séparation centrale très légère */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-y-0 left-1/2 w-px -translate-x-1/2 z-[2]"
-            style={{
-              background:
-                'linear-gradient(to bottom, transparent, rgba(0,0,0,0.18), transparent)',
-            }}
-          />
-
-          <div className="grid h-full grid-rows-2 md:grid-rows-1 md:grid-cols-2">
+    <section className="relative md:h-[100svh] h-full w-full md:overflow-hidden bg-white">
+      <div className="ribbon-fr">
+        <span />
+      </div>
+      <div className="md:h-full p-2 md:p-4 max-md:h-[100svh]">
+        <div className="relative h-full overflow-hidden rounded-[3rem]  bg-white">
+          <div className="grid h-full grid-rows-2 gap-5 md:grid-rows-1 md:grid-cols-2">
             <Panel
               href="/auto"
               src="/voiture-landing_2.jpg"
@@ -102,12 +96,12 @@ export default function HeroSplit() {
       </div>
 
       {/* CTA global (tu peux le retirer si tu veux uniquement les logos) */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+      <div className="md:absolute relative max-md:top-3 max-md:pb-3  md:bottom-8 md:left-1/2 flex items-center justify-center w-full md:-translate-x-1/2">
         <Link
           href="/#reservation"
-          className="inline-flex items-center rounded-full border border-primary bg-primary px-6 py-2.5 text-sm font-medium text-neutral-100 shadow-sm hover:shadow-md transition focus:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
+          className="inline-flex items-center rounded-full border border-primary bg-primary px-6 py-4 text-sm font-medium text-neutral-100 shadow-sm hover:shadow-md transition focus:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
         >
-          Réserver un créneau
+          <Calendar className="mr-2 h-4 w-4" /> Réserver un créneau
         </Link>
       </div>
     </section>

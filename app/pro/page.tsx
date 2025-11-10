@@ -11,10 +11,10 @@ export default function ProPage() {
   return (
     <main className="min-h-screen bg-secondary text-light">
       <ProHero />
+      <ProBeforeAfter />
       <section>
         <div className="mx-auto w-full  space-y-16">
           <ProServicesBento />
-          <ProBeforeAfter />
         </div>
       </section>
       <ProProcess />

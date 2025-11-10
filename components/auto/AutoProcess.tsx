@@ -17,7 +17,7 @@ export default function AutoProcess() {
       title: 'Préparation',
       content:
         'Masquage zones sensibles, aspiration soignée, décontamination (ferreux / goudron) pour une base propre.',
-      image: '/voiture-3.png',
+      image: '/voiture-3.jpg',
     },
     {
       step: 'Étape 3',

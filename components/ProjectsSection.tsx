@@ -31,7 +31,7 @@ export default function ProjectsSection() {
             Des résultats concrets, visibles immédiatement après intervention.
           </p>
         </motion.div>
-        <div className="relative rounded-[3rem] ">
+        <div className="relative rounded-[3rem]  ">
           {/* === Overlay radial noir autour de la grille === */}
           <div
             aria-hidden
@@ -42,7 +42,7 @@ export default function ProjectsSection() {
             }}
           />
           {/* ==== Bento Grid asymétrique corrigée ==== */}
-          <div className="grid grid-cols-1  md:grid-cols-2 grid-rows-5 gap-6 md:gap-8">
+          <div className="grid grid-cols-1  md:grid-cols-2 md:grid-rows-5 gap-6 md:gap-8">
             {/* === Bloc A (col gauche, très grand, 3 rows) === */}
             <motion.div
               initial={{ opacity: 0, y: 25 }}
@@ -55,9 +55,9 @@ export default function ProjectsSection() {
               border border-black/[0.04]
               overflow-hidden
               shadow-[0_40px_120px_-20px_rgba(248,250,255,0.9)]
-              p-1.5
+              p-0.5
               flex
-              min-h-[320px] md:min-h-[420px]
+              min-h-[320px] max-md:aspect-11/10 md:min-h-[420px]
             "
             >
               <Compare
@@ -78,13 +78,13 @@ export default function ProjectsSection() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
               className="
               md:row-span-2 md:col-span-1
-              rounded-[3.2rem] bg-red-200
+              rounded-[3.2rem] bg-[#ed293940]
               border border-black/[0.04]
               overflow-hidden
            shadow-[0_40px_120px_-20px_rgba(248,250,255,0.9)]
-              p-1.5
+              p-0.5
               flex
-              min-h-[200px] md:min-h-[250px]
+              min-h-[200px]  max-md:aspect-11/7 md:min-h-[250px]
             "
             >
               <Compare
@@ -105,13 +105,13 @@ export default function ProjectsSection() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
               className="
               md:row-span-3 md:col-span-1
-              rounded-[3.2rem] bg-red-200
+              rounded-[3.2rem] bg-[#ed293930]
               border border-black/[0.04]
               overflow-hidden
            shadow-[0_40px_120px_-20px_rgba(248,250,255,0.9)]
-              p-1.5
+              p-0.5
               flex
-              min-h-[220px] md:min-h-[280px]
+              min-h-[220px] max-md:aspect-11/12 md:min-h-[280px]
             "
             >
               <Compare
@@ -136,9 +136,9 @@ export default function ProjectsSection() {
               border border-black/[0.04]
               overflow-hidden
            shadow-[0_40px_120px_-20px_rgba(248,250,255,0.9)]
-              p-1.5
+              p-0.5
               flex
-              min-h-[320px] md:min-h-[420px]
+              min-h-[320px] max-md:aspect-11/10 md:min-h-[420px]
             "
             >
               <Compare

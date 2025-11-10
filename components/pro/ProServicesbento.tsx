@@ -78,7 +78,7 @@ export default function ProServicesBento() {
             cardClassName="
               rounded-[2rem] h-full p-6 md:p-7
               border border-neutral-200/60
-              shadow-[0_25px_80px_-30px_rgba(15,23,42,0.1)]
+              shadow-[0_25px_80px_-30px_rgba(15,23,42,0.3)]
               bg-white/85
               backdrop-blur-[3px]
               transition-transform duration-300 hover:scale-[1.015]
@@ -135,10 +135,10 @@ export default function ProServicesBento() {
                 color="red"
               />
             }
-            integrationClassName="bg-blue-100/90 border-blue-200/50"
-            trackersClassName="bg-neutral-100/90 border-neutral-200/50"
-            statisticClassName="bg-neutral-100/90 border-neutral-200/50"
-            shortcutsClassName="bg-red-100/90 border-red-200/50"
+            integrationClassName="bg-blue-50/40 border-blue-100/50"
+            trackersClassName="bg-neutral-50/40 border-neutral-100/50"
+            statisticClassName="bg-neutral-50/40 border-neutral-100/50"
+            shortcutsClassName="bg-red-50/40 border-red-100/50"
           />
         </div>
       </div>
@@ -162,15 +162,15 @@ function FeatureCard({
 }) {
   const colorMap = {
     blue: {
-      badge: 'bg-blue-50 border-blue-200 text-blue-700',
+      badge: 'bg-blue-100 border-blue-100 text-blue-700',
       bullet: '#2563eb',
     },
     red: {
-      badge: 'bg-red-50 border-red-200 text-red-700',
+      badge: 'bg-[#ed293925] border-[#ed293925] text-red-700',
       bullet: '#dc2626',
     },
     neutral: {
-      badge: 'bg-neutral-50 border-neutral-200 text-neutral-700',
+      badge: 'bg-neutral-100 border-neutral-100 text-neutral-700',
       bullet: '#6b7280',
     },
   };
@@ -208,8 +208,8 @@ function FeatureCard({
           </div>
         )}
         {title === 'Vitrines & façades commerciales' && (
-          <div className="mt-5 bg-white/60 border border-blue-200/40 rounded-xl p-3 flex items-start gap-3 text-xs text-neutral-700 shadow-[inset_0_1px_6px_rgba(255,255,255,0.8)]">
-            <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-blue-50 border border-blue-200 text-blue-600">
+          <div className="mt-5 bg-blue-50 border border-blue-200/40 rounded-xl p-3 flex items-start gap-3 text-xs text-neutral-700 shadow-[inset_0_1px_6px_rgba(255,255,255,0.8)]">
+            <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-blue-100 border border-blue-100 text-blue-600">
               <ShieldCheck className="w-3.5 h-3.5" />
             </div>
             <div className="leading-snug">

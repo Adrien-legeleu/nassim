@@ -41,7 +41,7 @@ export default function WallHero({
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'radial-gradient(1200px 600px at 50% 10%, rgba(15,23,42,0.08) 0%, rgba(255,255,255,0) 60%)',
+            'radial-gradient(1200px 600px at 50% 10%, rgba(15,23,42,0.02) 0%, rgba(255,255,255,0) 60%)',
         }}
       />
 
@@ -113,7 +113,7 @@ export default function WallHero({
           {dup.map((src, i) => (
             <div
               key={i}
-              className="relative aspect-[3/4] h-40 md:h-72 flex-shrink-0"
+              className="relative aspect-[3/4] h-64 md:h-72 flex-shrink-0"
               style={{ rotate: `${i % 2 === 0 ? -1.5 : 2.5}deg` }}
             >
               <img

@@ -38,10 +38,10 @@ export default function AutoBeforeAfter() {
                 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0) 70%,rgba(255,255,255,0.3) 85%,  rgba(255,255,255,0.7) 95%, rgba(255,255,255,1) 98%)',
             }}
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-5 gap-6 md:gap-8">
+          <div className="grid  grid-cols-1 md:grid-cols-2 md:grid-rows-5 gap-6 md:gap-8">
             {/* Bloc A (gauche, grand) */}
             <CardCompare
-              className="md:row-span-3 md:col-span-1 bg-blue-200 min-h-[320px] md:min-h-[420px]"
+              className="md:row-span-3 md:col-span-1 max-md:min-h-140 bg-blue-200 min-h-[320px] md:min-h-[420px]"
               before="/voiture-before-8.png"
               after="/voiture-after-8.png"
               delay={0}
@@ -49,7 +49,7 @@ export default function AutoBeforeAfter() {
 
             {/* Bloc B (droite, moyen) */}
             <CardCompare
-              className="md:row-span-2 md:col-span-1 bg-red-200 min-h-[200px] md:min-h-[250px]"
+              className="md:row-span-2 md:col-span-1 max-md:min-h-120 bg-red-200 min-h-[200px] md:min-h-[250px]"
               before="/voiture-before-7.png"
               after="/voiture-after-7.png"
               delay={0.1}
@@ -57,7 +57,7 @@ export default function AutoBeforeAfter() {
 
             {/* Bloc C (gauche, moyen) */}
             <CardCompare
-              className="md:row-span-3 md:col-span-1 bg-red-200 min-h-[220px] md:min-h-[280px]"
+              className="md:row-span-3 md:col-span-1 max-md:min-h-100 bg-red-200 min-h-[220px] md:min-h-[280px]"
               before="/voiture-before-6.jpg"
               after="/voiture-after-6.jpg"
               delay={0.2}
@@ -65,7 +65,7 @@ export default function AutoBeforeAfter() {
 
             {/* Bloc D (droite, grand) */}
             <CardCompare
-              className="md:row-span-3 md:col-span-1 bg-neutral-200 min-h-[320px] md:min-h-[420px]"
+              className="md:row-span-3 md:col-span-1 max-md:min-h-110 bg-neutral-200 min-h-[320px] md:min-h-[420px]"
               before="/voiture-before-9.jpg"
               after="/voiture-after-9.jpg"
               delay={0.3}
@@ -115,7 +115,7 @@ function CardCompare({
         'rounded-[3.2rem]',
         'border border-black/[0.04]',
         'overflow-hidden shadow-[0_-40px_80px_-20px_rgba(15,23,42,0.1)]',
-        'p-1.5 flex',
+        'p-0.5 flex',
         className,
       ].join(' ')}
     >

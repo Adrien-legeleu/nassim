@@ -37,10 +37,10 @@ export default function ProBeforeAfter() {
             }}
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-5 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-5 gap-6 md:gap-8">
             {/* Bloc A (gauche, grand) */}
             <CardCompare
-              className="md:row-span-3 md:col-span-1 bg-blue-200 min-h-[320px] md:min-h-[420px]"
+              className="md:row-span-3 md:col-span-1 max-md:aspect-11/14 bg-blue-200 min-h-[320px] md:min-h-[420px]"
               before="/pro-before-4.webp"
               after="/pro-after-4.webp"
               delay={0}
@@ -48,7 +48,7 @@ export default function ProBeforeAfter() {
 
             {/* Bloc B (droite, moyen) */}
             <CardCompare
-              className="md:row-span-2 md:col-span-1 bg-red-200 min-h-[200px] md:min-h-[250px]"
+              className="md:row-span-2 md:col-span-1 max-md:aspect-11/11 bg-red-200 min-h-[200px] md:min-h-[250px]"
               before="/pro-before-2.webp"
               after="/pro-after-2.webp"
               delay={0.1}
@@ -56,7 +56,7 @@ export default function ProBeforeAfter() {
 
             {/* Bloc C (gauche, moyen) */}
             <CardCompare
-              className="md:row-span-3 md:col-span-1 bg-red-200 min-h-[220px] md:min-h-[280px]"
+              className="md:row-span-3 md:col-span-1 bg-red-200 max-md:aspect-11/11 min-h-[220px] md:min-h-[280px]"
               before="/pro-before-6.avif"
               after="/pro-after-6.avif"
               delay={0.2}
@@ -64,7 +64,7 @@ export default function ProBeforeAfter() {
 
             {/* Bloc D (droite, grand) */}
             <CardCompare
-              className="md:row-span-3 md:col-span-1 bg-neutral-200 min-h-[320px] md:min-h-[420px]"
+              className="md:row-span-3 md:col-span-1 bg-neutral-200  max-md:aspect-11/11 min-h-[320px] md:min-h-[420px]"
               before="/pro-before-1.webp"
               after="/pro-after-1.webp"
               delay={0.3}
@@ -113,7 +113,7 @@ function CardCompare({
         'rounded-[3.2rem]',
         'border border-black/[0.04]',
         'overflow-hidden shadow-[0_-40px_80px_-20px_rgba(15,23,42,0.1)]',
-        'p-1.5 flex',
+        'p-0.5 flex',
         className,
       ].join(' ')}
     >
