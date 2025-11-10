@@ -30,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${manrope.variable} ${plexMono.variable}`}>
-      <body className="antialiased bg-secondary w-full overflow-hidden text-light">
+      <body className="antialiased bg-secondary w-full h-full overflow-hidden text-light">
         {/* Header 100% transparent, fixé en haut */}
         <Header />
 
