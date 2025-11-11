@@ -71,7 +71,7 @@ export default function TestimonialsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-lg"
+            className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-2xl shadow-black/8"
           >
             <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
             <span className="text-sm font-medium text-neutral-800">Avis Clients</span>
@@ -108,7 +108,7 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative bg-white rounded-4xl p-8 hover:shadow-2xl transition-shadow duration-300 shadow-lg"
+              className="relative bg-white rounded-4xl p-8 hover:shadow-2xl transition-shadow duration-300 shadow-2xl shadow-black/8"
             >
               {/* Quote icon */}
               <div className="absolute top-6 right-6 opacity-5">
@@ -152,7 +152,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex flex-col sm:flex-row items-center gap-8 bg-white rounded-4xl px-12 py-8 shadow-xl">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-8 bg-white rounded-4xl px-12 py-8 shadow-2xl shadow-black/12">
             <div>
               <div className="text-4xl font-bold text-blue-600 mb-1">4.9/5</div>
               <div className="flex gap-1 mb-2 justify-center">

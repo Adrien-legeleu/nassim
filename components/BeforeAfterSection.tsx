@@ -16,7 +16,7 @@ export default function BeforeAfterSection() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-center mb-14"
         >
-          <div className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-lg">
+          <div className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-2xl shadow-black/8">
             <span className="text-sm font-medium text-neutral-800">
               Résultats Avant/Après
             </span>
@@ -86,13 +86,13 @@ export default function BeforeAfterSection() {
         >
           <Link
             href="/photos"
-            className="inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition shadow-xl hover:shadow-2xl"
+            className="inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition shadow-2xl shadow-black/8 hover:shadow-black/12"
           >
             Voir plus de réalisations
           </Link>
           <Link
             href="/auto"
-            className="inline-flex items-center justify-center rounded-full border-2 border-neutral-200 bg-white px-8 py-4 text-sm font-medium text-neutral-900 hover:border-neutral-300 hover:bg-neutral-50 transition shadow-lg"
+            className="inline-flex items-center justify-center rounded-full border-2 border-neutral-200 bg-white px-8 py-4 text-sm font-medium text-neutral-900 hover:border-neutral-300 hover:bg-neutral-50 transition shadow-2xl shadow-black/8"
           >
             Découvrir nos services auto
           </Link>
@@ -123,7 +123,7 @@ function CardCompare({
       className={[
         'rounded-[3.2rem]',
         'border border-black/[0.04]',
-        'overflow-hidden shadow-[0_-40px_80px_-20px_rgba(15,23,42,0.1)]',
+        'overflow-hidden shadow-2xl shadow-black/8',
         'p-0.5 flex',
         className,
       ].join(' ')}

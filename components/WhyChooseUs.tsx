@@ -91,7 +91,7 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-lg"
+            className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-2xl shadow-black/8"
           >
             <Sparkles className="w-4 h-4 text-blue-600" />
             <span className="text-sm font-medium text-neutral-800">Excellence</span>
@@ -136,7 +136,7 @@ export default function WhyChooseUs() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-4xl p-6 text-center hover:shadow-xl transition-shadow shadow-lg"
+                className="bg-white rounded-4xl p-6 text-center hover:shadow-2xl shadow-black/8 hover:shadow-black/12 transition-shadow shadow-2xl shadow-black/8"
               >
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-3xl bg-blue-50 text-blue-600 mb-3">
                   <Icon className="w-6 h-6" />
@@ -161,7 +161,7 @@ export default function WhyChooseUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-4xl p-8 hover:shadow-2xl transition-all duration-300 group shadow-lg"
+                className="bg-white rounded-4xl p-8 hover:shadow-2xl shadow-black/8 transition-all duration-300 group shadow-2xl shadow-black/8"
               >
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-3xl bg-blue-50 group-hover:bg-blue-100 text-blue-600 mb-6 transition-all duration-300">
                   <Icon className="w-7 h-7" />
@@ -185,7 +185,7 @@ export default function WhyChooseUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-16 text-center bg-blue-600 rounded-4xl p-12 text-white shadow-2xl"
+          className="mt-16 text-center bg-blue-600 rounded-4xl p-12 text-white shadow-2xl shadow-black/8"
         >
           <h3 className="text-3xl md:text-4xl font-bold mb-4">
             Prêt à découvrir la différence ?
@@ -196,7 +196,7 @@ export default function WhyChooseUs() {
           </p>
           <a
             href="/#reservation"
-            className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-4xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-4xl font-semibold shadow-2xl shadow-black/8 hover:shadow-2xl shadow-black/8 hover:shadow-black/12 hover:scale-105 transition-all duration-300"
           >
             Réserver maintenant
           </a>

@@ -19,7 +19,7 @@ export default function ModernHero() {
           initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-8 shadow-lg"
+          className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-8 shadow-2xl shadow-black/8"
         >
           <Award className="w-4 h-4 text-blue-600" />
           <span className="text-sm font-medium text-neutral-800">
@@ -55,7 +55,7 @@ export default function ModernHero() {
           Techniques professionnelles, résultats exceptionnels.
         </motion.p>
 
-        {/* CTAs avec blur */}
+        {/* CTAs avec blur et shadow légères */}
         <motion.div
           initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -64,7 +64,7 @@ export default function ModernHero() {
         >
           <Link
             href="/#reservation"
-            className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold shadow-[0_18px_50px_-15px_rgba(37,99,235,0.5)] hover:shadow-[0_18px_50px_-15px_rgba(37,99,235,0.7)] transition-all duration-300 hover:scale-105"
+            className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold shadow-2xl shadow-black/8 hover:shadow-black/12 transition-all duration-300 hover:scale-105"
           >
             <Calendar className="w-5 h-5" />
             Réserver maintenant
@@ -72,13 +72,13 @@ export default function ModernHero() {
           </Link>
           <Link
             href="/#services"
-            className="inline-flex items-center gap-2 bg-white hover:bg-neutral-50 text-neutral-900 px-8 py-4 rounded-full font-semibold shadow-[0_20px_60px_-20px_rgba(15,23,42,0.3)] hover:shadow-[0_20px_60px_-20px_rgba(15,23,42,0.4)] transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-white hover:bg-neutral-50 text-neutral-900 px-8 py-4 rounded-full font-semibold shadow-2xl shadow-black/8 hover:shadow-black/12 transition-all duration-300"
           >
             Découvrir nos services
           </Link>
         </motion.div>
 
-        {/* Trust indicators - cards avec shadow, pas de border, rounded-[3rem] */}
+        {/* Trust indicators - cards avec shadow légères */}
         <motion.div
           initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -89,7 +89,7 @@ export default function ModernHero() {
             initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="bg-white rounded-[3rem] p-6 hover:shadow-[0_20px_60px_-20px_rgba(15,23,42,0.25)] transition-shadow shadow-[0_10px_40px_-15px_rgba(15,23,42,0.15)]"
+            className="bg-white rounded-[3rem] p-6 hover:shadow-2xl hover:shadow-black/12 transition-shadow shadow-2xl shadow-black/8"
           >
             <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
             <div className="text-sm text-neutral-600">Véhicules traités</div>
@@ -98,7 +98,7 @@ export default function ModernHero() {
             initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="bg-white rounded-[3rem] p-6 hover:shadow-[0_20px_60px_-20px_rgba(15,23,42,0.25)] transition-shadow shadow-[0_10px_40px_-15px_rgba(15,23,42,0.15)]"
+            className="bg-white rounded-[3rem] p-6 hover:shadow-2xl hover:shadow-black/12 transition-shadow shadow-2xl shadow-black/8"
           >
             <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
             <div className="text-sm text-neutral-600">Clients satisfaits</div>
@@ -107,7 +107,7 @@ export default function ModernHero() {
             initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="bg-white rounded-[3rem] p-6 hover:shadow-[0_20px_60px_-20px_rgba(15,23,42,0.25)] transition-shadow shadow-[0_10px_40px_-15px_rgba(15,23,42,0.15)]"
+            className="bg-white rounded-[3rem] p-6 hover:shadow-2xl hover:shadow-black/12 transition-shadow shadow-2xl shadow-black/8"
           >
             <div className="text-3xl font-bold text-blue-600 mb-2">5★</div>
             <div className="text-sm text-neutral-600">Note moyenne</div>
@@ -116,7 +116,7 @@ export default function ModernHero() {
             initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="bg-white rounded-[3rem] p-6 hover:shadow-[0_20px_60px_-20px_rgba(15,23,42,0.25)] transition-shadow shadow-[0_10px_40px_-15px_rgba(15,23,42,0.15)]"
+            className="bg-white rounded-[3rem] p-6 hover:shadow-2xl hover:shadow-black/12 transition-shadow shadow-2xl shadow-black/8"
           >
             <div className="text-3xl font-bold text-blue-600 mb-2">24-72h</div>
             <div className="text-sm text-neutral-600">Délai moyen</div>

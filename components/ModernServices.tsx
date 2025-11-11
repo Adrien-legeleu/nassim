@@ -58,7 +58,7 @@ export default function ModernServices() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-lg"
+            className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-2xl shadow-black/8"
           >
             <Sparkles className="w-4 h-4 text-blue-600" />
             <span className="text-sm font-medium text-neutral-800">Nos Services Premium</span>
@@ -97,11 +97,11 @@ export default function ModernServices() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="group relative bg-white rounded-4xl overflow-hidden transition-all duration-300 hover:shadow-2xl shadow-xl"
+                className="group relative bg-white rounded-4xl overflow-hidden transition-all duration-300 hover:shadow-2xl shadow-2xl shadow-black/12"
               >
                 <div className="p-8">
                   {/* Icon */}
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-blue-600 text-white mb-6 shadow-lg">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-blue-600 text-white mb-6 shadow-2xl shadow-black/8">
                     <Icon className="w-8 h-8" />
                   </div>
 
@@ -145,7 +145,7 @@ export default function ModernServices() {
           transition={{ duration: 0.6 }}
           className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto"
         >
-          <div className="text-center p-6 bg-white rounded-4xl shadow-lg hover:shadow-xl transition-shadow">
+          <div className="text-center p-6 bg-white rounded-4xl shadow-2xl shadow-black/8 hover:shadow-2xl shadow-black/12 transition-shadow">
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-3xl bg-green-50 text-green-600 mb-4">
               <Shield className="w-6 h-6" />
             </div>
@@ -155,7 +155,7 @@ export default function ModernServices() {
             </p>
           </div>
 
-          <div className="text-center p-6 bg-white rounded-4xl shadow-lg hover:shadow-xl transition-shadow">
+          <div className="text-center p-6 bg-white rounded-4xl shadow-2xl shadow-black/8 hover:shadow-2xl shadow-black/12 transition-shadow">
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-3xl bg-blue-50 text-blue-600 mb-4">
               <Clock className="w-6 h-6" />
             </div>
@@ -165,7 +165,7 @@ export default function ModernServices() {
             </p>
           </div>
 
-          <div className="text-center p-6 bg-white rounded-4xl shadow-lg hover:shadow-xl transition-shadow">
+          <div className="text-center p-6 bg-white rounded-4xl shadow-2xl shadow-black/8 hover:shadow-2xl shadow-black/12 transition-shadow">
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-3xl bg-purple-50 text-purple-600 mb-4">
               <Sparkles className="w-6 h-6" />
             </div>
@@ -186,7 +186,7 @@ export default function ModernServices() {
         >
           <Link
             href="/#reservation"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-4xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-4xl font-semibold shadow-2xl shadow-black/12 hover:shadow-2xl transition-all duration-300 hover:scale-105"
           >
             Réserver une prestation
             <ArrowRight className="w-5 h-5" />

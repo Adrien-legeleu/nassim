@@ -64,7 +64,7 @@ function FAQItem({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="rounded-4xl overflow-hidden bg-white hover:shadow-xl transition-shadow shadow-lg"
+      className="rounded-4xl overflow-hidden bg-white hover:shadow-2xl shadow-black/12 transition-shadow shadow-2xl shadow-black/8"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -108,7 +108,7 @@ export default function FAQSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-lg"
+            className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-2xl shadow-black/8"
           >
             <HelpCircle className="w-4 h-4 text-blue-600" />
             <span className="text-sm font-medium text-neutral-800">
@@ -156,7 +156,7 @@ export default function FAQSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 text-center p-8 bg-white rounded-4xl shadow-lg"
+          className="mt-12 text-center p-8 bg-white rounded-4xl shadow-2xl shadow-black/8"
         >
           <h3 className="text-xl font-semibold text-neutral-900 mb-2">
             Vous ne trouvez pas votre réponse ?
@@ -166,7 +166,7 @@ export default function FAQSection() {
           </p>
           <a
             href="/#reservation"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-4xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-4xl font-semibold shadow-2xl shadow-black/8 hover:shadow-2xl shadow-black/12 transition-all duration-300"
           >
             Nous contacter
           </a>
