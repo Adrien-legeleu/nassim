@@ -1,4 +1,5 @@
 import ModernHero from '@/components/ModernHero';
+import BeforeAfterSection from '@/components/BeforeAfterSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import ModernServices from '@/components/ModernServices';
 import TestimonialsSection from '@/components/TestimonialsSection';
@@ -10,6 +11,7 @@ export default function HomePage() {
   return (
     <div className="overflow-hidden w-full">
       <ModernHero />
+      <BeforeAfterSection />
       <WhyChooseUs />
       <ModernServices />
       <TestimonialsSection />
