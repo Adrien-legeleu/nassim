@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { HelpCircle, Plus, Minus } from 'lucide-react';
-import { useState } from 'react';
+import { HelpCircle } from 'lucide-react';
 
 const faqs = [
   {
@@ -47,7 +46,7 @@ const faqs = [
   },
 ];
 
-function FAQItem({
+function FAQCard({
   question,
   answer,
   index,
@@ -56,37 +55,20 @@ function FAQItem({
   answer: string;
   index: number;
 }) {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="rounded-4xl overflow-hidden bg-white hover:shadow-xl transition-shadow shadow-lg"
+      transition={{ duration: 0.5, delay: index * 0.03 }}
+      className="h-auto rounded-3xl bg-white border border-neutral-200/50 shadow-sm hover:shadow-md hover:border-blue-200/50 transition-all duration-300 p-5"
     >
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-6 text-left hover:bg-neutral-50 transition-colors"
-      >
-        <span className="font-semibold text-neutral-900 pr-8">{question}</span>
-        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
-          {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
-        </div>
-      </button>
-
-      <motion.div
-        initial={false}
-        animate={{
-          height: isOpen ? 'auto' : 0,
-          opacity: isOpen ? 1 : 0,
-        }}
-        transition={{ duration: 0.3 }}
-        className="overflow-hidden"
-      >
-        <div className="px-6 pb-6 text-neutral-600 leading-relaxed">{answer}</div>
-      </motion.div>
+      <h3 className="font-semibold text-neutral-900 mb-3 text-base leading-snug">
+        {question}
+      </h3>
+      <p className="text-neutral-600 text-sm leading-relaxed">
+        {answer}
+      </p>
     </motion.div>
   );
 }
@@ -100,15 +82,15 @@ export default function FAQSection() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/[0.02] rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-lg"
+            className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 border border-neutral-200/50 shadow-sm"
           >
             <HelpCircle className="w-4 h-4 text-blue-600" />
             <span className="text-sm font-medium text-neutral-800">
@@ -138,10 +120,10 @@ export default function FAQSection() {
           </motion.p>
         </div>
 
-        {/* FAQ items - rounded-4xl */}
-        <div className="space-y-4">
+        {/* FAQ items - Grid Pinterest style */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {faqs.map((faq, index) => (
-            <FAQItem
+            <FAQCard
               key={index}
               question={faq.question}
               answer={faq.answer}
@@ -150,13 +132,13 @@ export default function FAQSection() {
           ))}
         </div>
 
-        {/* Contact CTA - rounded-4xl */}
+        {/* Contact CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 text-center p-8 bg-white rounded-4xl shadow-lg"
+          className="mt-12 text-center p-8 bg-white rounded-3xl border border-neutral-200/50 shadow-sm"
         >
           <h3 className="text-xl font-semibold text-neutral-900 mb-2">
             Vous ne trouvez pas votre réponse ?
@@ -166,7 +148,7 @@ export default function FAQSection() {
           </p>
           <a
             href="/#reservation"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-4xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-sm hover:shadow-lg transition-all duration-300"
           >
             Nous contacter
           </a>
