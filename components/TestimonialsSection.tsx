@@ -56,11 +56,11 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative py-24 md:py-32 bg-gradient-to-b from-neutral-50 to-white overflow-hidden">
+    <section className="relative py-24 md:py-32 bg-neutral-50 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-[#ed2939]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/3 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-600/3 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -71,10 +71,10 @@ export default function TestimonialsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white border border-neutral-200 rounded-full px-4 py-2 mb-6 shadow-sm"
+            className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-lg"
           >
             <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-            <span className="text-sm font-medium text-neutral-700">Avis Clients</span>
+            <span className="text-sm font-medium text-neutral-800">Avis Clients</span>
           </motion.div>
 
           <motion.h2
@@ -99,7 +99,7 @@ export default function TestimonialsSection() {
           </motion.p>
         </div>
 
-        {/* Testimonials grid */}
+        {/* Testimonials grid - shadows, pas de borders */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
@@ -108,11 +108,11 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative bg-white rounded-2xl border border-neutral-200 p-8 hover:shadow-xl transition-shadow duration-300"
+              className="relative bg-white rounded-2xl p-8 hover:shadow-2xl transition-shadow duration-300 shadow-lg"
             >
               {/* Quote icon */}
-              <div className="absolute top-6 right-6 opacity-10">
-                <Quote className="w-12 h-12 text-[#ed2939]" />
+              <div className="absolute top-6 right-6 opacity-5">
+                <Quote className="w-12 h-12 text-blue-600" />
               </div>
 
               {/* Rating */}
@@ -144,7 +144,7 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        {/* Trust indicators */}
+        {/* Trust indicators - shadows */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -152,10 +152,10 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex flex-col sm:flex-row items-center gap-8 bg-white rounded-2xl border border-neutral-200 px-12 py-8 shadow-lg">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-8 bg-white rounded-2xl px-12 py-8 shadow-xl">
             <div>
-              <div className="text-4xl font-bold text-[#ed2939] mb-1">4.9/5</div>
-              <div className="flex gap-1 mb-2">
+              <div className="text-4xl font-bold text-blue-600 mb-1">4.9/5</div>
+              <div className="flex gap-1 mb-2 justify-center">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
@@ -169,14 +169,14 @@ export default function TestimonialsSection() {
             <div className="h-12 w-px bg-neutral-200" />
 
             <div>
-              <div className="text-4xl font-bold text-[#ed2939] mb-1">500+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-1">500+</div>
               <div className="text-sm text-neutral-600">Avis vérifiés</div>
             </div>
 
             <div className="h-12 w-px bg-neutral-200" />
 
             <div>
-              <div className="text-4xl font-bold text-[#ed2939] mb-1">98%</div>
+              <div className="text-4xl font-bold text-blue-600 mb-1">98%</div>
               <div className="text-sm text-neutral-600">Recommandent</div>
             </div>
           </div>

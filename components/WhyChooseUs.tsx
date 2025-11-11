@@ -76,11 +76,11 @@ const stats = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative py-24 md:py-32 bg-gradient-to-b from-white via-neutral-50 to-white overflow-hidden">
+    <section className="relative py-24 md:py-32 bg-neutral-50 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#ed2939]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 right-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 left-10 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-10 w-96 h-96 bg-blue-600/3 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -91,10 +91,10 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white border border-neutral-200 rounded-full px-4 py-2 mb-6 shadow-sm"
+            className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-lg"
           >
-            <Sparkles className="w-4 h-4 text-[#ed2939]" />
-            <span className="text-sm font-medium text-neutral-700">Excellence</span>
+            <Sparkles className="w-4 h-4 text-blue-600" />
+            <span className="text-sm font-medium text-neutral-800">Excellence</span>
           </motion.div>
 
           <motion.h2
@@ -119,7 +119,7 @@ export default function WhyChooseUs() {
           </motion.p>
         </div>
 
-        {/* Stats bar */}
+        {/* Stats bar - shadows, pas de borders */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -136,9 +136,9 @@ export default function WhyChooseUs() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl border border-neutral-200 p-6 text-center hover:shadow-lg transition-shadow duration-300"
+                className="bg-white rounded-2xl p-6 text-center hover:shadow-xl transition-shadow shadow-lg"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#ed2939] to-[#c41e3a] text-white mb-3">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 mb-3">
                   <Icon className="w-6 h-6" />
                 </div>
                 <div className="text-3xl font-bold text-neutral-900 mb-1">
@@ -150,7 +150,7 @@ export default function WhyChooseUs() {
           })}
         </motion.div>
 
-        {/* Reasons grid */}
+        {/* Reasons grid - shadows, pas de borders */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((reason, index) => {
             const Icon = reason.icon;
@@ -161,9 +161,9 @@ export default function WhyChooseUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl border border-neutral-200 p-8 hover:border-[#ed2939]/30 hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 group shadow-lg"
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-neutral-50 to-neutral-100 group-hover:from-[#ed2939]/10 group-hover:to-[#ed2939]/5 text-[#ed2939] mb-6 transition-all duration-300">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-50 group-hover:bg-blue-100 text-blue-600 mb-6 transition-all duration-300">
                   <Icon className="w-7 h-7" />
                 </div>
 
@@ -179,13 +179,13 @@ export default function WhyChooseUs() {
           })}
         </div>
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA - bleu, pas de gradient */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-16 text-center bg-gradient-to-br from-[#ed2939] to-[#c41e3a] rounded-3xl p-12 text-white"
+          className="mt-16 text-center bg-blue-600 rounded-2xl p-12 text-white shadow-2xl"
         >
           <h3 className="text-3xl md:text-4xl font-bold mb-4">
             Prêt à découvrir la différence ?
@@ -196,7 +196,7 @@ export default function WhyChooseUs() {
           </p>
           <a
             href="/#reservation"
-            className="inline-flex items-center gap-2 bg-white text-[#ed2939] px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
           >
             Réserver maintenant
           </a>

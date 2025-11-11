@@ -6,11 +6,11 @@ import { motion } from 'framer-motion';
 
 export default function ModernHero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-white via-neutral-50 to-white">
-      {/* Background decorative elements */}
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white">
+      {/* Background decorative elements - très subtils */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#ed2939]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-blue-600/3 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center">
@@ -19,15 +19,15 @@ export default function ModernHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 bg-white border border-neutral-200 rounded-full px-4 py-2 mb-8 shadow-sm"
+          className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-8 shadow-lg"
         >
-          <Award className="w-4 h-4 text-[#ed2939]" />
-          <span className="text-sm font-medium text-neutral-700">
+          <Award className="w-4 h-4 text-blue-600" />
+          <span className="text-sm font-medium text-neutral-800">
             N°1 du detailing premium en France
           </span>
         </motion.div>
 
-        {/* Main heading */}
+        {/* Main heading - pas de gradient */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ export default function ModernHero() {
         >
           Excellence automobile
           <br />
-          <span className="bg-gradient-to-r from-[#ed2939] to-[#0055A4] bg-clip-text text-transparent">
+          <span className="text-blue-600">
             & espaces professionnels
           </span>
         </motion.h1>
@@ -61,7 +61,7 @@ export default function ModernHero() {
         >
           <Link
             href="/#reservation"
-            className="group inline-flex items-center gap-2 bg-[#ed2939] hover:bg-[#d11f2f] text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
           >
             <Calendar className="w-5 h-5" />
             Réserver maintenant
@@ -69,33 +69,33 @@ export default function ModernHero() {
           </Link>
           <Link
             href="/#services"
-            className="inline-flex items-center gap-2 bg-white hover:bg-neutral-50 text-neutral-900 px-8 py-4 rounded-full font-semibold border-2 border-neutral-200 hover:border-neutral-300 transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-white hover:bg-neutral-50 text-neutral-900 px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Découvrir nos services
           </Link>
         </motion.div>
 
-        {/* Trust indicators */}
+        {/* Trust indicators - cards avec shadow, pas de border */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
         >
-          <div className="bg-white/60 backdrop-blur-sm border border-neutral-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
-            <div className="text-3xl font-bold text-[#ed2939] mb-2">500+</div>
+          <div className="bg-white rounded-2xl p-6 hover:shadow-xl transition-shadow shadow-lg">
+            <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
             <div className="text-sm text-neutral-600">Véhicules traités</div>
           </div>
-          <div className="bg-white/60 backdrop-blur-sm border border-neutral-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
-            <div className="text-3xl font-bold text-[#ed2939] mb-2">98%</div>
+          <div className="bg-white rounded-2xl p-6 hover:shadow-xl transition-shadow shadow-lg">
+            <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
             <div className="text-sm text-neutral-600">Clients satisfaits</div>
           </div>
-          <div className="bg-white/60 backdrop-blur-sm border border-neutral-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
-            <div className="text-3xl font-bold text-[#ed2939] mb-2">5★</div>
+          <div className="bg-white rounded-2xl p-6 hover:shadow-xl transition-shadow shadow-lg">
+            <div className="text-3xl font-bold text-blue-600 mb-2">5★</div>
             <div className="text-sm text-neutral-600">Note moyenne</div>
           </div>
-          <div className="bg-white/60 backdrop-blur-sm border border-neutral-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
-            <div className="text-3xl font-bold text-[#ed2939] mb-2">24-72h</div>
+          <div className="bg-white rounded-2xl p-6 hover:shadow-xl transition-shadow shadow-lg">
+            <div className="text-3xl font-bold text-blue-600 mb-2">24-72h</div>
             <div className="text-sm text-neutral-600">Délai moyen</div>
           </div>
         </motion.div>

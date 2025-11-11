@@ -64,14 +64,14 @@ function FAQItem({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="border border-neutral-200 rounded-2xl overflow-hidden bg-white hover:shadow-lg transition-shadow duration-300"
+      className="rounded-2xl overflow-hidden bg-white hover:shadow-xl transition-shadow shadow-lg"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between p-6 text-left hover:bg-neutral-50 transition-colors"
       >
         <span className="font-semibold text-neutral-900 pr-8">{question}</span>
-        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center text-[#ed2939]">
+        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
           {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
         </div>
       </button>
@@ -93,11 +93,11 @@ function FAQItem({
 
 export default function FAQSection() {
   return (
-    <section className="relative py-24 md:py-32 bg-white overflow-hidden">
+    <section className="relative py-24 md:py-32 bg-neutral-50 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#ed2939]/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/3 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
@@ -108,10 +108,10 @@ export default function FAQSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-neutral-100 rounded-full px-4 py-2 mb-6"
+            className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-lg"
           >
-            <HelpCircle className="w-4 h-4 text-[#ed2939]" />
-            <span className="text-sm font-medium text-neutral-700">
+            <HelpCircle className="w-4 h-4 text-blue-600" />
+            <span className="text-sm font-medium text-neutral-800">
               Questions Fréquentes
             </span>
           </motion.div>
@@ -156,7 +156,7 @@ export default function FAQSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 text-center p-8 bg-gradient-to-br from-neutral-50 to-white rounded-2xl border border-neutral-200"
+          className="mt-12 text-center p-8 bg-white rounded-2xl shadow-lg"
         >
           <h3 className="text-xl font-semibold text-neutral-900 mb-2">
             Vous ne trouvez pas votre réponse ?
@@ -166,7 +166,7 @@ export default function FAQSection() {
           </p>
           <a
             href="/#reservation"
-            className="inline-flex items-center gap-2 bg-[#ed2939] hover:bg-[#d11f2f] text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Nous contacter
           </a>
