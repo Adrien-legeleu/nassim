@@ -1,4 +1,5 @@
 import ModernHero from '@/components/ModernHero';
+import BeforeAfterSection from '@/components/BeforeAfterSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import ModernServices from '@/components/ModernServices';
 import TestimonialsSection from '@/components/TestimonialsSection';
@@ -8,8 +9,9 @@ import FinalCTA from '@/components/FinalCTA';
 
 export default function HomePage() {
   return (
-    <div className="overflow-hidden w-full">
+    <div className="overflow-hidden w-full bg-white">
       <ModernHero />
+      <BeforeAfterSection />
       <WhyChooseUs />
       <ModernServices />
       <TestimonialsSection />
