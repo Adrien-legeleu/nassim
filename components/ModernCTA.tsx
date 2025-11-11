@@ -10,9 +10,9 @@ export default function ModernCTA() {
       id="reservation"
       className="relative py-24 md:py-32 bg-white overflow-hidden"
     >
-      {/* Background decoration */}
+      {/* Background decoration - super léger */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/3 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/[0.02] rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6">
@@ -21,7 +21,7 @@ export default function ModernCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl overflow-hidden shadow-2xl"
+          className="bg-white rounded-4xl overflow-hidden shadow-2xl"
         >
           <div className="p-10 md:p-16">
             {/* Header */}
@@ -42,13 +42,13 @@ export default function ModernCTA() {
               </p>
             </div>
 
-            {/* Contact methods - shadows */}
+            {/* Contact methods - rounded-4xl */}
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               <a
                 href="tel:+33123456789"
-                className="group flex flex-col items-center justify-center p-6 bg-neutral-50 rounded-2xl hover:shadow-xl transition-all duration-300 shadow-lg"
+                className="group flex flex-col items-center justify-center p-6 bg-neutral-50 rounded-4xl hover:shadow-xl transition-all duration-300 shadow-lg"
               >
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 mb-3 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-3xl bg-blue-50 flex items-center justify-center text-blue-600 mb-3 group-hover:scale-110 transition-transform">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div className="text-sm font-medium text-neutral-700 mb-1">Téléphone</div>
@@ -59,9 +59,9 @@ export default function ModernCTA() {
 
               <a
                 href="mailto:contact@example.com"
-                className="group flex flex-col items-center justify-center p-6 bg-neutral-50 rounded-2xl hover:shadow-xl transition-all duration-300 shadow-lg"
+                className="group flex flex-col items-center justify-center p-6 bg-neutral-50 rounded-4xl hover:shadow-xl transition-all duration-300 shadow-lg"
               >
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 mb-3 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-3xl bg-blue-50 flex items-center justify-center text-blue-600 mb-3 group-hover:scale-110 transition-transform">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div className="text-sm font-medium text-neutral-700 mb-1">Email</div>
@@ -70,8 +70,8 @@ export default function ModernCTA() {
                 </div>
               </a>
 
-              <div className="group flex flex-col items-center justify-center p-6 bg-neutral-50 rounded-2xl shadow-lg">
-                <div className="w-12 h-12 rounded-2xl bg-green-50 flex items-center justify-center text-green-600 mb-3">
+              <div className="group flex flex-col items-center justify-center p-6 bg-neutral-50 rounded-4xl shadow-lg">
+                <div className="w-12 h-12 rounded-3xl bg-green-50 flex items-center justify-center text-green-600 mb-3">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div className="text-sm font-medium text-neutral-700 mb-1">Zone</div>
@@ -81,11 +81,11 @@ export default function ModernCTA() {
               </div>
             </div>
 
-            {/* Main CTA */}
+            {/* Main CTA - rounded-4xl */}
             <div className="text-center">
               <Link
                 href="/auto"
-                className="group inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                className="group inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-4xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
               >
                 <Calendar className="w-6 h-6" />
                 Prendre rendez-vous maintenant

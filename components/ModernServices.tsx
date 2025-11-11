@@ -24,7 +24,6 @@ const services = [
       'Traitement intérieur premium',
       'Décontamination complète',
     ],
-    color: 'blue',
     link: '/auto',
   },
   {
@@ -38,7 +37,6 @@ const services = [
       'Intervention rapide 24-48h',
       'Produits professionnels écologiques',
     ],
-    color: 'blue',
     link: '/pro',
   },
 ];
@@ -46,10 +44,10 @@ const services = [
 export default function ModernServices() {
   return (
     <section id="services" className="relative py-24 md:py-32 bg-white overflow-hidden">
-      {/* Background decoration */}
+      {/* Background decoration - super léger */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl -translate-y-1/2" />
-        <div className="absolute top-1/2 right-0 w-96 h-96 bg-blue-600/3 rounded-full blur-3xl -translate-y-1/2" />
+        <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-500/[0.02] rounded-full blur-3xl -translate-y-1/2" />
+        <div className="absolute top-1/2 right-0 w-96 h-96 bg-blue-600/[0.02] rounded-full blur-3xl -translate-y-1/2" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -88,7 +86,7 @@ export default function ModernServices() {
           </motion.p>
         </div>
 
-        {/* Services cards - shadows, pas de borders */}
+        {/* Services cards - rounded-4xl */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -99,11 +97,11 @@ export default function ModernServices() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="group relative bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl shadow-xl"
+                className="group relative bg-white rounded-4xl overflow-hidden transition-all duration-300 hover:shadow-2xl shadow-xl"
               >
                 <div className="p-8">
                   {/* Icon */}
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-blue-600 text-white mb-6 shadow-lg">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-blue-600 text-white mb-6 shadow-lg">
                     <Icon className="w-8 h-8" />
                   </div>
 
@@ -139,7 +137,7 @@ export default function ModernServices() {
           })}
         </div>
 
-        {/* Additional benefits - shadows */}
+        {/* Additional benefits - rounded-4xl */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -147,8 +145,8 @@ export default function ModernServices() {
           transition={{ duration: 0.6 }}
           className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto"
         >
-          <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-green-50 text-green-600 mb-4">
+          <div className="text-center p-6 bg-white rounded-4xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-3xl bg-green-50 text-green-600 mb-4">
               <Shield className="w-6 h-6" />
             </div>
             <h4 className="font-semibold text-neutral-900 mb-2">Garantie Qualité</h4>
@@ -157,8 +155,8 @@ export default function ModernServices() {
             </p>
           </div>
 
-          <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 mb-4">
+          <div className="text-center p-6 bg-white rounded-4xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-3xl bg-blue-50 text-blue-600 mb-4">
               <Clock className="w-6 h-6" />
             </div>
             <h4 className="font-semibold text-neutral-900 mb-2">Intervention Rapide</h4>
@@ -167,8 +165,8 @@ export default function ModernServices() {
             </p>
           </div>
 
-          <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 mb-4">
+          <div className="text-center p-6 bg-white rounded-4xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-3xl bg-purple-50 text-purple-600 mb-4">
               <Sparkles className="w-6 h-6" />
             </div>
             <h4 className="font-semibold text-neutral-900 mb-2">Produits Premium</h4>
@@ -178,7 +176,7 @@ export default function ModernServices() {
           </div>
         </motion.div>
 
-        {/* CTA Button */}
+        {/* CTA Button - rounded-4xl */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -188,7 +186,7 @@ export default function ModernServices() {
         >
           <Link
             href="/#reservation"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-4xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
           >
             Réserver une prestation
             <ArrowRight className="w-5 h-5" />

@@ -64,7 +64,7 @@ function FAQItem({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="rounded-2xl overflow-hidden bg-white hover:shadow-xl transition-shadow shadow-lg"
+      className="rounded-4xl overflow-hidden bg-white hover:shadow-xl transition-shadow shadow-lg"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -94,10 +94,10 @@ function FAQItem({
 export default function FAQSection() {
   return (
     <section className="relative py-24 md:py-32 bg-neutral-50 overflow-hidden">
-      {/* Background decoration */}
+      {/* Background decoration - super léger */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/3 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/[0.02] rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/[0.02] rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
@@ -138,7 +138,7 @@ export default function FAQSection() {
           </motion.p>
         </div>
 
-        {/* FAQ items */}
+        {/* FAQ items - rounded-4xl */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <FAQItem
@@ -150,13 +150,13 @@ export default function FAQSection() {
           ))}
         </div>
 
-        {/* Contact CTA */}
+        {/* Contact CTA - rounded-4xl */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 text-center p-8 bg-white rounded-2xl shadow-lg"
+          className="mt-12 text-center p-8 bg-white rounded-4xl shadow-lg"
         >
           <h3 className="text-xl font-semibold text-neutral-900 mb-2">
             Vous ne trouvez pas votre réponse ?
@@ -166,7 +166,7 @@ export default function FAQSection() {
           </p>
           <a
             href="/#reservation"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-4xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Nous contacter
           </a>

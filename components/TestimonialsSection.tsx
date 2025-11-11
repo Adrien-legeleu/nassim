@@ -57,10 +57,10 @@ const testimonials = [
 export default function TestimonialsSection() {
   return (
     <section className="relative py-24 md:py-32 bg-neutral-50 overflow-hidden">
-      {/* Background decoration */}
+      {/* Background decoration - super léger */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/3 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-600/3 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/[0.02] rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-600/[0.02] rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -99,7 +99,7 @@ export default function TestimonialsSection() {
           </motion.p>
         </div>
 
-        {/* Testimonials grid - shadows, pas de borders */}
+        {/* Testimonials grid - rounded-4xl */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
@@ -108,7 +108,7 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative bg-white rounded-2xl p-8 hover:shadow-2xl transition-shadow duration-300 shadow-lg"
+              className="relative bg-white rounded-4xl p-8 hover:shadow-2xl transition-shadow duration-300 shadow-lg"
             >
               {/* Quote icon */}
               <div className="absolute top-6 right-6 opacity-5">
@@ -144,7 +144,7 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        {/* Trust indicators - shadows */}
+        {/* Trust indicators - rounded-4xl */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -152,7 +152,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex flex-col sm:flex-row items-center gap-8 bg-white rounded-2xl px-12 py-8 shadow-xl">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-8 bg-white rounded-4xl px-12 py-8 shadow-xl">
             <div>
               <div className="text-4xl font-bold text-blue-600 mb-1">4.9/5</div>
               <div className="flex gap-1 mb-2 justify-center">

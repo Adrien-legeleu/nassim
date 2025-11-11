@@ -1,16 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Calendar, Sparkles, Shield, Award } from 'lucide-react';
+import { ArrowRight, Calendar, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function ModernHero() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white">
-      {/* Background decorative elements - très subtils */}
+      {/* Background decorative elements - super légers */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-blue-600/3 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/[0.02] rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-blue-600/[0.02] rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center">
@@ -61,7 +61,7 @@ export default function ModernHero() {
         >
           <Link
             href="/#reservation"
-            className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-4xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
           >
             <Calendar className="w-5 h-5" />
             Réserver maintenant
@@ -69,32 +69,32 @@ export default function ModernHero() {
           </Link>
           <Link
             href="/#services"
-            className="inline-flex items-center gap-2 bg-white hover:bg-neutral-50 text-neutral-900 px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-white hover:bg-neutral-50 text-neutral-900 px-8 py-4 rounded-4xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Découvrir nos services
           </Link>
         </motion.div>
 
-        {/* Trust indicators - cards avec shadow, pas de border */}
+        {/* Trust indicators - cards avec shadow, pas de border, rounded-4xl */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
         >
-          <div className="bg-white rounded-2xl p-6 hover:shadow-xl transition-shadow shadow-lg">
+          <div className="bg-white rounded-4xl p-6 hover:shadow-xl transition-shadow shadow-lg">
             <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
             <div className="text-sm text-neutral-600">Véhicules traités</div>
           </div>
-          <div className="bg-white rounded-2xl p-6 hover:shadow-xl transition-shadow shadow-lg">
+          <div className="bg-white rounded-4xl p-6 hover:shadow-xl transition-shadow shadow-lg">
             <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
             <div className="text-sm text-neutral-600">Clients satisfaits</div>
           </div>
-          <div className="bg-white rounded-2xl p-6 hover:shadow-xl transition-shadow shadow-lg">
+          <div className="bg-white rounded-4xl p-6 hover:shadow-xl transition-shadow shadow-lg">
             <div className="text-3xl font-bold text-blue-600 mb-2">5★</div>
             <div className="text-sm text-neutral-600">Note moyenne</div>
           </div>
-          <div className="bg-white rounded-2xl p-6 hover:shadow-xl transition-shadow shadow-lg">
+          <div className="bg-white rounded-4xl p-6 hover:shadow-xl transition-shadow shadow-lg">
             <div className="text-3xl font-bold text-blue-600 mb-2">24-72h</div>
             <div className="text-sm text-neutral-600">Délai moyen</div>
           </div>
