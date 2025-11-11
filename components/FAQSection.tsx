@@ -5,34 +5,35 @@ import { HelpCircle } from 'lucide-react';
 
 const faqs = [
   {
-    question: 'Quels sont vos délais d\'intervention ?',
+    question: "Quels sont vos délais d'intervention ?",
     answer:
-      'Nous proposons généralement un rendez-vous sous 24-48h pour une estimation. L\'intervention elle-même a lieu sous 2-5 jours selon la prestation choisie et notre planning. Pour les urgences, nous pouvons nous adapter.',
+      "Nous proposons généralement un rendez-vous sous 24-48h pour une estimation. L'intervention elle-même a lieu sous 2-5 jours selon la prestation choisie et notre planning. Pour les urgences, nous pouvons nous adapter.",
   },
   {
     question: 'Combien coûte un detailing complet automobile ?',
     answer:
-      'Le tarif varie selon l\'état du véhicule et les prestations choisies. Comptez entre 300€ et 1500€ pour un detailing complet incluant correction de peinture et protection céramique. Nous établissons un devis gratuit après inspection.',
+      "Le tarif varie selon l'état du véhicule et les prestations choisies. Comptez entre 300€ et 1500€ pour un detailing complet incluant correction de peinture et protection céramique. Nous établissons un devis gratuit après inspection.",
   },
   {
-    question: 'Quelle est la durée de vie d\'une protection céramique ?',
+    question: "Quelle est la durée de vie d'une protection céramique ?",
     answer:
-      'Une protection céramique de qualité dure entre 2 et 5 ans selon les conditions d\'utilisation et l\'entretien. Nous utilisons exclusivement des produits premium offrant une garantie constructeur.',
+      "Une protection céramique de qualité dure entre 2 et 5 ans selon les conditions d'utilisation et l'entretien. Nous utilisons exclusivement des produits premium offrant une garantie constructeur.",
   },
   {
     question: 'Intervenez-vous sur tous types de véhicules ?',
     answer:
-      'Oui, nous traitons tous types de véhicules : voitures de luxe, sportives, SUV, véhicules anciens, motos, camping-cars. Chaque véhicule bénéficie d\'un traitement adapté à ses spécificités.',
+      "Oui, nous traitons tous types de véhicules : voitures de luxe, sportives, SUV, véhicules anciens, motos, camping-cars. Chaque véhicule bénéficie d'un traitement adapté à ses spécificités.",
   },
   {
-    question: 'Proposez-vous des contrats d\'entretien régulier pour les professionnels ?',
+    question:
+      "Proposez-vous des contrats d'entretien régulier pour les professionnels ?",
     answer:
-      'Absolument. Nous proposons des contrats d\'entretien mensuel ou trimestriel pour les espaces professionnels : boutiques, hôtels, restaurants, bureaux. Tarifs dégressifs selon la fréquence.',
+      "Absolument. Nous proposons des contrats d'entretien mensuel ou trimestriel pour les espaces professionnels : boutiques, hôtels, restaurants, bureaux. Tarifs dégressifs selon la fréquence.",
   },
   {
     question: 'Utilisez-vous des produits écologiques ?',
     answer:
-      'Nous privilégions des produits professionnels respectueux de l\'environnement tout en garantissant une efficacité maximale. Nos méthodes de nettoyage limitent la consommation d\'eau et les rejets polluants.',
+      "Nous privilégions des produits professionnels respectueux de l'environnement tout en garantissant une efficacité maximale. Nos méthodes de nettoyage limitent la consommation d'eau et les rejets polluants.",
   },
   {
     question: 'Offrez-vous une garantie sur vos prestations ?',
@@ -61,12 +62,12 @@ function FAQCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.03 }}
-      className="h-auto rounded-3xl bg-white border border-neutral-200/50 shadow-sm hover:shadow-md hover:border-blue-200/50 transition-all duration-300 p-5"
+      className="mb-4 break-inside-avoid rounded-[2rem] bg-white border border-neutral-200/50 shadow-2xl shadow-black/8 hover:border-blue-200/50 transition-all duration-300 p-5"
     >
-      <h3 className="font-semibold text-neutral-900 mb-3 text-base leading-snug">
+      <h3 className="font-semibold text-neutral-900 mb-3 text-xs sm:text-base leading-snug">
         {question}
       </h3>
-      <p className="text-neutral-600 text-sm leading-relaxed">
+      <p className="text-neutral-600 text-[9px] sm:text-sm leading-relaxed">
         {answer}
       </p>
     </motion.div>
@@ -75,7 +76,7 @@ function FAQCard({
 
 export default function FAQSection() {
   return (
-    <section className="relative py-24 md:py-32 bg-neutral-50 overflow-hidden">
+    <section className="relative py-24 md:py-32 bg-neutral-50 ">
       {/* Background decoration - super léger */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/[0.02] rounded-full blur-3xl" />
@@ -115,13 +116,13 @@ export default function FAQSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-neutral-600"
           >
-            Tout ce que vous devez savoir sur nos prestations.
-            Une question ? Contactez-nous !
+            Tout ce que vous devez savoir sur nos prestations. Une question ?
+            Contactez-nous !
           </motion.p>
         </div>
 
-        {/* FAQ items - Grid Pinterest style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        {/* FAQ items - Masonry / Pinterest style */}
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-6">
           {faqs.map((faq, index) => (
             <FAQCard
               key={index}
@@ -138,7 +139,7 @@ export default function FAQSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 text-center p-8 bg-white rounded-3xl border border-neutral-200/50 shadow-sm"
+          className="mt-10 text-center p-10 bg-gradient-to-br from-blue-50/50 to-neutral-50/50 rounded-[2rem] border border-neutral-100/60"
         >
           <h3 className="text-xl font-semibold text-neutral-900 mb-2">
             Vous ne trouvez pas votre réponse ?

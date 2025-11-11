@@ -3,8 +3,6 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import {
-  Car,
-  Building2,
   Sparkles,
   Shield,
   Clock,
@@ -14,7 +12,7 @@ import {
 
 const services = [
   {
-    icon: Car,
+    icon: '/voiture-landing_2.jpg',
     title: 'Detailing Automobile',
     description:
       'Sublimez votre véhicule avec nos prestations haut de gamme. Polissage, protection céramique et rénovation complète.',
@@ -27,7 +25,7 @@ const services = [
     link: '/auto',
   },
   {
-    icon: Building2,
+    icon: '/city-square.jpg',
     title: 'Nettoyage Professionnel',
     description:
       'Espaces professionnels impeccables. Vitrines, bureaux, commerces : une image premium pour votre entreprise.',
@@ -43,7 +41,10 @@ const services = [
 
 export default function ModernServices() {
   return (
-    <section id="services" className="relative py-24 md:py-32 bg-white overflow-hidden">
+    <section
+      id="services"
+      className="relative py-24 md:py-32 bg-white overflow-hidden"
+    >
       {/* Background decoration - super léger */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-500/[0.02] rounded-full blur-3xl -translate-y-1/2" />
@@ -61,7 +62,9 @@ export default function ModernServices() {
             className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-lg"
           >
             <Sparkles className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-medium text-neutral-800">Nos Services Premium</span>
+            <span className="text-sm font-medium text-neutral-800">
+              Nos Services
+            </span>
           </motion.div>
 
           <motion.h2
@@ -81,8 +84,8 @@ export default function ModernServices() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-neutral-600 max-w-2xl mx-auto"
           >
-            Deux domaines d&apos;expertise, une même exigence de qualité.
-            Des prestations sur-mesure pour des résultats exceptionnels.
+            Deux domaines d&apos;expertise, une même exigence de qualité. Des
+            prestations sur-mesure pour des résultats exceptionnels.
           </motion.p>
         </div>
 
@@ -118,7 +121,9 @@ export default function ModernServices() {
                     {service.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-neutral-700 text-sm">{feature}</span>
+                        <span className="text-neutral-700 text-sm">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -149,7 +154,9 @@ export default function ModernServices() {
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-3xl bg-green-50 text-green-600 mb-4">
               <Shield className="w-6 h-6" />
             </div>
-            <h4 className="font-semibold text-neutral-900 mb-2">Garantie Qualité</h4>
+            <h4 className="font-semibold text-neutral-900 mb-2">
+              Garantie Qualité
+            </h4>
             <p className="text-sm text-neutral-600">
               Satisfait ou refait. Notre engagement qualité.
             </p>
@@ -159,7 +166,9 @@ export default function ModernServices() {
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-3xl bg-blue-50 text-blue-600 mb-4">
               <Clock className="w-6 h-6" />
             </div>
-            <h4 className="font-semibold text-neutral-900 mb-2">Intervention Rapide</h4>
+            <h4 className="font-semibold text-neutral-900 mb-2">
+              Intervention Rapide
+            </h4>
             <p className="text-sm text-neutral-600">
               Prise de rendez-vous en 24h, intervention sous 72h.
             </p>
@@ -169,7 +178,9 @@ export default function ModernServices() {
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-3xl bg-purple-50 text-purple-600 mb-4">
               <Sparkles className="w-6 h-6" />
             </div>
-            <h4 className="font-semibold text-neutral-900 mb-2">Produits Premium</h4>
+            <h4 className="font-semibold text-neutral-900 mb-2">
+              Produits Premium
+            </h4>
             <p className="text-sm text-neutral-600">
               Les meilleures marques professionnelles du marché.
             </p>

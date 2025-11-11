@@ -18,7 +18,7 @@ const infos = [
   },
   {
     icon: <MapPin className="w-5 h-5" />,
-    label: 'Zone d\'intervention',
+    label: "Zone d'intervention",
     value: 'Île-de-France & région parisienne',
     href: null,
   },
@@ -31,7 +31,7 @@ const infos = [
   {
     icon: <Award className="w-5 h-5" />,
     label: 'Expertise',
-    value: '5+ ans d\'expérience professionnelle',
+    value: "5+ ans d'expérience professionnelle",
     href: null,
   },
   {
@@ -101,7 +101,7 @@ export default function InfoSection() {
               {info.href ? (
                 <a
                   href={info.href}
-                  className="block h-full p-5 bg-white rounded-3xl border border-neutral-200/60 shadow-sm hover:shadow-md hover:border-blue-200/60 transition-all duration-300 group"
+                  className="block h-full p-5 bg-white rounded-[2rem] border border-neutral-100/60 shadow-2xl shadow-black/8 hover:shadow-md hover:border-blue-200/60 transition-all duration-300 group"
                 >
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-10 h-10 rounded-2xl bg-blue-50/80 flex items-center justify-center text-blue-600 group-hover:bg-blue-100/80 transition-colors">
@@ -118,7 +118,7 @@ export default function InfoSection() {
                   </div>
                 </a>
               ) : (
-                <div className="h-full p-5 bg-white rounded-3xl border border-neutral-200/60 shadow-sm">
+                <div className="h-full p-5 bg-white rounded-[2rem] border border-neutral-100/60 shadow-2xl shadow-black/8 hover:shadow-md">
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-10 h-10 rounded-2xl bg-neutral-50 flex items-center justify-center text-neutral-600">
                       {info.icon}
@@ -144,14 +144,17 @@ export default function InfoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-10 text-center p-6 bg-gradient-to-br from-blue-50/50 to-neutral-50/50 rounded-3xl border border-neutral-200/60"
+          className="mt-10 text-center p-10 bg-gradient-to-br from-blue-50/50 to-neutral-50/50 rounded-[2rem] border border-neutral-100/60"
         >
           <p className="text-sm text-neutral-600 mb-4">
-            <span className="font-semibold text-neutral-900">Intervention rapide</span> • Devis gratuit sous 24h • Produits premium
+            <span className="font-semibold text-neutral-900">
+              Intervention rapide
+            </span>{' '}
+            • Devis gratuit sous 24h • Produits premium
           </p>
           <a
             href="/#reservation"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-sm hover:shadow-lg transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-80 text-white px-6 py-3 rounded-full font-semibold shadow-sm hover:shadow-lg transition-all duration-300"
           >
             <Phone className="w-4 h-4" />
             Prendre rendez-vous

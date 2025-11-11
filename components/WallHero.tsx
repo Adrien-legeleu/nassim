@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 type Props = {
   tagline: string;
@@ -116,7 +117,7 @@ export default function WallHero({
               className="relative aspect-[3/4] h-48 md:h-72 flex-shrink-0"
               style={{ rotate: `${i % 2 === 0 ? -1.5 : 2.5}deg` }}
             >
-              <img
+              <Image
                 src={src}
                 alt={`showcase-${i}`}
                 loading="lazy"
