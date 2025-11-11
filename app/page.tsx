@@ -1,5 +1,6 @@
 import HeroSplit from '@/components/HeroSplit';
 import ExpertiseSection from '@/components/ExpertiseSection';
+import ServicesComparisonTable from '@/components/ServicesComparisonTable';
 import InfoSection from '@/components/InfoSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import FAQSection from '@/components/FAQSection';
@@ -10,6 +11,7 @@ export default function HomePage() {
     <div className="overflow-hidden w-full h-full">
       <HeroSplit />
       <ExpertiseSection />
+      <ServicesComparisonTable />
       <InfoSection />
       <ProjectsSection />
       <FAQSection />
