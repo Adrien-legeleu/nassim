@@ -64,12 +64,10 @@ function FAQCard({
       transition={{ duration: 0.5, delay: index * 0.03 }}
       className="mb-4 break-inside-avoid rounded-[2rem] bg-white border border-neutral-200/50 shadow-2xl shadow-black/8 hover:border-blue-200/50 transition-all duration-300 p-5"
     >
-      <h3 className="font-semibold text-neutral-900 mb-3 text-xs sm:text-base leading-snug">
+      <h3 className="font-semibold text-neutral-900 mb-3 text-base leading-snug">
         {question}
       </h3>
-      <p className="text-neutral-600 text-[9px] sm:text-sm leading-relaxed">
-        {answer}
-      </p>
+      <p className="text-neutral-600 text-sm leading-relaxed">{answer}</p>
     </motion.div>
   );
 }
@@ -122,7 +120,7 @@ export default function FAQSection() {
         </div>
 
         {/* FAQ items - Masonry / Pinterest style */}
-        <div className="columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-6">
+        <div className=" columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-6">
           {faqs.map((faq, index) => (
             <FAQCard
               key={index}

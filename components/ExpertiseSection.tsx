@@ -109,7 +109,7 @@ export default function ExpertiseSection() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true }}
           className="relative rounded-[2.5rem] md:rounded-[3rem] border border-neutral-100 bg-white/60 shadow-[0_40px_120px_-30px_rgba(15,23,42,0.15)] p-4 md:p-6 overflow-hidden backdrop-blur-[2px]"
         >
           {/* Décor interne : icônes + cadre */}
@@ -135,7 +135,7 @@ export default function ExpertiseSection() {
             variants={cardsParentVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.35 }}
+            viewport={{ once: true }}
           >
             <BentoGridShowcase
               className="relative z-10 mx-auto max-w-[1200px]"

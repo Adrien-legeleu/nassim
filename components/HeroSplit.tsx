@@ -161,12 +161,12 @@ export function HeroSplitMobile() {
 
       <div className="relative mx-auto max-w-6xl h-screen justify-center items-center px-4 grid grid-rows-[auto,1fr,auto] gap-8 z-20">
         {/* Titre + description */}
-        <div className="flex flex-col  items-center justify-center pt-24 text-center space-y-4">
+        <div className="flex flex-col  items-center justify-center pt-24 text-center space-y-8">
           <motion.h1
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl sm:text-4xl font-semibold text-primary tracking-tight"
+            className="text-4xl sm:text-5xl font-semibold text-primary tracking-tight"
           >
             Redonnez éclat & prestige à vos surfaces
           </motion.h1>

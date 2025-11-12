@@ -126,7 +126,7 @@ export default function Header() {
           {/* Burger Mobile */}
           <button
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden inline-flex items-center gap-2 rounded-full px-3 py-2 text-neutral-900 bg-white/80 backdrop-blur border border-black/5 shadow-sm active:scale-95 transition"
+            className="md:hidden inline-flex items-center gap-2 rounded-[1.3rem] px-3 py-3 text-neutral-900 bg-white/80 backdrop-blur border border-black/5 shadow-sm active:scale-95 transition"
             aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
           >
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
