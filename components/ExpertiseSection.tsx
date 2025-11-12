@@ -29,14 +29,13 @@ const cardsParentVariants = {
   visible: {
     transition: {
       staggerChildren: 0.08,
-      delayChildren: 0.1,
+      delayChildren: 0.05,
     },
   },
 };
 
 const cardVariants = {
   hidden: {
-    opacity: 0,
     y: 18,
     filter: 'blur(10px)',
   },
@@ -44,7 +43,7 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     filter: 'blur(0px)',
-    transition: { duration: 0.45, ease: EASE_OUT },
+    transition: { duration: 0.45 },
   },
 };
 

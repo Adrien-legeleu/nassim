@@ -57,13 +57,7 @@ function FAQCard({
   index: number;
 }) {
   return (
-    <motion.div
-      initial={{ y: 20 }}
-      whileInView={{ y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.03 }}
-      className="mb-4 break-inside-avoid rounded-[2rem] bg-white border border-neutral-200/50 shadow-2xl shadow-black/8 hover:border-blue-200/50 transition-all duration-300 p-5"
-    >
+    <motion.div className="mb-4 break-inside-avoid rounded-[2rem] bg-white border border-neutral-200/50 shadow-2xl shadow-black/8 hover:border-blue-200/50 transition-all duration-300 p-5">
       <h3 className="font-semibold text-neutral-900 mb-3 text-base leading-snug">
         {question}
       </h3>
