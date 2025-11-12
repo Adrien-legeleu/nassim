@@ -7,14 +7,14 @@ const infos = [
   {
     icon: <Phone className="w-5 h-5" />,
     label: 'Téléphone',
-    value: '06 XX XX XX XX',
-    href: 'tel:+33XXXXXXXXX',
+    value: '06 15 94 49 34',
+    href: 'tel:+330615944934',
   },
   {
     icon: <Mail className="w-5 h-5" />,
     label: 'Email',
-    value: 'contact@nassim-detailing.fr',
-    href: 'mailto:contact@nassim-detailing.fr',
+    value: 'contact@nettoyageriviera.com',
+    href: 'mailto:contact@nettoyageriviera.com',
   },
   {
     icon: <MapPin className="w-5 h-5" />,

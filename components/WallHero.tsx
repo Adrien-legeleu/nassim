@@ -119,6 +119,8 @@ export default function WallHero({
             >
               <Image
                 src={src}
+                width={300}
+                height={300}
                 alt={`showcase-${i}`}
                 loading="lazy"
                 className="w-full h-full object-cover rounded-4xl border border-neutral-200/70 shadow-[0_18px_60px_-25px_rgba(15,23,42,0.3)] bg-neutral-100"

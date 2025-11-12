@@ -42,10 +42,10 @@ export default function Header() {
             scrolled ? 'h-16 md:h-[64px]' : 'h-14 md:h-[60px]',
             'rounded-3xl lg:w-4/5 w-[90%] mx-auto max-w-7xl pl-2 pr-3',
             'flex justify-between items-center',
-            'transition-[background,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
+            'transition-[background,box-shadow] max-md:bg-none duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
             scrolled
-              ? 'bg-white/70 backdrop-blur shadow-[0_10px_40px_-15px_rgba(0,0,0,0.25)]'
-              : 'bg-white/70 backdrop-blur',
+              ? 'md:bg-white/70 md:backdrop-blur md:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.25)]'
+              : 'md:bg-white/70 md:backdrop-blur',
           ].join(' ')}
         >
           {/* Logos */}

@@ -10,6 +10,35 @@ type BAItem = {
   after: string;
   height: number;
 };
+function GlowMobile() {
+  return (
+    <div className="absolute inset-x-0 -top-10 pointer-events-none z-10 flex justify-center">
+      <motion.div
+        initial={{ opacity: 0, y: -12, scale: 0.96 }}
+        animate={{ opacity: 0.9, y: 0, scale: [0.98, 1.02, 0.98] }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        className="w-[120vw] h-[50vh]"
+        style={{
+          background:
+            'radial-gradient(ellipse at center top, rgba(0,85,164,0.55) 0%, rgba(0,85,164,0.45) 35%, rgba(0,85,164,0.25) 55%, transparent 75%)',
+          filter: 'blur(48px)',
+          transform: 'translateY(-10px)',
+        }}
+      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.6 }}
+        transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
+        className="absolute inset-x-0 top-0 h-28"
+        style={{
+          background:
+            'linear-gradient(to bottom, rgba(0,85,164,0.35), rgba(0,85,164,0.18) 35%, rgba(0,85,164,0.2) 65%, transparent)',
+          filter: 'blur(16px)',
+        }}
+      />
+    </div>
+  );
+}
 
 const ITEMS: BAItem[] = [
   {
@@ -94,6 +123,7 @@ export default function PhotosWallPage() {
       <div className="ribbon-fr">
         <span />
       </div>
+      <GlowMobile />
       <WallHero
         tagline="Avant / Après"
         title="Le soin du détail, visible en un regard."
@@ -102,7 +132,7 @@ export default function PhotosWallPage() {
         images={[
           '/pro-2.webp',
           '/voiture-2.jpg',
-          'voiture-3.jpg',
+          '/voiture-3.jpg',
           '/pro.webp',
           '/voiture.jpg',
           '/voiture-4.png',
