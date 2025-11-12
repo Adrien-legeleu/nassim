@@ -103,8 +103,8 @@ function PanelMobile({
       <div className={edge} aria-hidden />
 
       {/* logo centré */}
-      <div className="absolute inset-0 grid place-items-center p-3">
-        <div className="relative w-16 sm:w-24 aspect-square rounded-2xl overflow-hidden">
+      <div className="absolute inset-0 grid place-items-center !rounded-2xl p-3">
+        <div className="relative w-16 sm:w-24 !aspect-square !rounded-2xl overflow-hidden">
           <Image
             src={logoSrc}
             alt={logoAlt}
