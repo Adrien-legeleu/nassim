@@ -115,7 +115,7 @@ export default function Header() {
           {/* CTA Desktop */}
           <div className="hidden md:flex items-center">
             <Link
-              href="/#reservation"
+              href="/#contact"
               className="inline-flex items-center gap-2 btn-primary px-4 py-2 text-sm font-medium"
             >
               <Calendar size={16} />
@@ -218,7 +218,7 @@ export default function Header() {
               className="p-5 border-t border-neutral-100"
             >
               <Link
-                href="/#reservation"
+                href="/#contact"
                 onClick={() => setOpen(false)}
                 className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary text-sm font-semibold text-white py-4 shadow-[0_20px_45px_rgba(0,0,0,0.15)] active:scale-[0.98] transition"
               >

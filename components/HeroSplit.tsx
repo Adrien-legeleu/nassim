@@ -206,7 +206,7 @@ export function HeroSplitMobile() {
         {/* CTA */}
         <div className="flex items-center justify-center w-full pb-6">
           <Link
-            href="/#reservation"
+            href="/#contact"
             className="inline-flex items-center rounded-full border border-primary bg-primary px-6 py-4 text-sm font-medium text-neutral-100 shadow-sm hover:shadow-md transition focus:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
           >
             <Calendar className="mr-2 h-4 w-4" /> Réserver un créneau
@@ -252,7 +252,7 @@ export function HeroSplitDesktop() {
       {/* CTA global */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center justify-center w-full">
         <Link
-          href="/#reservation"
+          href="/#contact"
           className="inline-flex items-center rounded-full border border-primary bg-primary px-6 py-4 text-sm font-medium text-neutral-100 shadow-sm hover:shadow-md transition focus:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
         >
           <Calendar className="mr-2 h-4 w-4" /> Réserver un créneau

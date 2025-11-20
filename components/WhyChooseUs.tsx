@@ -17,7 +17,7 @@ const reasons = [
     icon: Award,
     title: 'Expertise Reconnue',
     description:
-      'Plus de 10 ans d\'expérience dans le detailing automobile et le nettoyage professionnel. Formés aux dernières techniques.',
+      "Plus de 10 ans d'expérience dans le detailing automobile et le nettoyage professionnel. Formés aux dernières techniques.",
   },
   {
     icon: Shield,
@@ -35,7 +35,7 @@ const reasons = [
     icon: TrendingUp,
     title: 'Résultats Durables',
     description:
-      'Des protections qui durent vraiment. Protection céramique garantie jusqu\'à 5 ans avec un entretien adapté.',
+      "Des protections qui durent vraiment. Protection céramique garantie jusqu'à 5 ans avec un entretien adapté.",
   },
   {
     icon: Clock,
@@ -60,7 +60,7 @@ const stats = [
   {
     icon: Award,
     value: '10 ans',
-    label: 'D\'expérience',
+    label: "D'expérience",
   },
   {
     icon: Users,
@@ -94,7 +94,9 @@ export default function WhyChooseUs() {
             className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-lg"
           >
             <Sparkles className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-medium text-neutral-800">Excellence</span>
+            <span className="text-sm font-medium text-neutral-800">
+              Excellence
+            </span>
           </motion.div>
 
           <motion.h2
@@ -114,8 +116,8 @@ export default function WhyChooseUs() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-neutral-600 max-w-2xl mx-auto"
           >
-            L&apos;excellence n&apos;est pas un hasard. Découvrez ce qui fait notre différence
-            et pourquoi nos clients nous recommandent.
+            L&apos;excellence n&apos;est pas un hasard. Découvrez ce qui fait
+            notre différence et pourquoi nos clients nous recommandent.
           </motion.p>
         </div>
 
@@ -191,11 +193,11 @@ export default function WhyChooseUs() {
             Prêt à découvrir la différence ?
           </h3>
           <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-            Rejoignez nos 500+ clients satisfaits et offrez à votre véhicule ou vos espaces
-            le traitement qu&apos;ils méritent.
+            Rejoignez nos 500+ clients satisfaits et offrez à votre véhicule ou
+            vos espaces le traitement qu&apos;ils méritent.
           </p>
           <a
-            href="/#reservation"
+            href="/#contact"
             className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-4xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
           >
             Réserver maintenant

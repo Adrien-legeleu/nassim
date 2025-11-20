@@ -28,6 +28,7 @@ body {
   background: var(--color-fr-white);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   font-family: var(--font-manrope), ui-sans-serif, system-ui, -apple-system,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial;

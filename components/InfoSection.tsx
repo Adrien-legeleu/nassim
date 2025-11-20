@@ -153,7 +153,7 @@ export default function InfoSection() {
             • Devis gratuit sous 24h • Produits premium
           </p>
           <a
-            href="/#reservation"
+            href="/#contact"
             className="inline-flex items-center gap-2 bg-primary hover:bg-primary-80 text-white px-6 py-3 rounded-full font-semibold shadow-sm hover:shadow-lg transition-all duration-300"
           >
             <Phone className="w-4 h-4" />

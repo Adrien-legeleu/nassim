@@ -48,7 +48,7 @@ export default function ProHero() {
 
         <div className="flex flex-wrap gap-4">
           <Link
-            href="/#reservation"
+            href="/#contact"
             className="inline-flex items-center justify-center rounded-full px-8 py-3 text-sm md:text-base font-medium text-white bg-primary shadow-[0_18px_50px_-15px_rgba(38,102,174,0.6)] hover:opacity-90 transition"
           >
             Réserver un créneau

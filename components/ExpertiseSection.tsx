@@ -376,10 +376,7 @@ function BottomWide() {
           seule équipe, un niveau d’exigence constant.
         </p>
       </div>
-      <a
-        href="/#reservation"
-        className="btn-primary px-6 py-3 text-sm font-medium"
-      >
+      <a href="/#contact" className="btn-primary px-6 py-3 text-sm font-medium">
         Réserver un créneau
       </a>
     </div>

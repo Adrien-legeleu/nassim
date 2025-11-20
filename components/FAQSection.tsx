@@ -140,7 +140,7 @@ export default function FAQSection() {
             Notre équipe est là pour répondre à toutes vos questions
           </p>
           <a
-            href="/#reservation"
+            href="/#contact"
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-sm hover:shadow-lg transition-all duration-300"
           >
             Nous contacter

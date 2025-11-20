@@ -36,9 +36,7 @@ export default function ModernHero() {
         >
           Excellence automobile
           <br />
-          <span className="text-blue-600">
-            & espaces professionnels
-          </span>
+          <span className="text-blue-600">& espaces professionnels</span>
         </motion.h1>
 
         {/* Subheading */}
@@ -48,8 +46,9 @@ export default function ModernHero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl md:text-2xl text-neutral-600 mb-12 max-w-3xl mx-auto leading-relaxed"
         >
-          Des prestations haut de gamme pour sublimer votre véhicule et vos espaces professionnels.
-          Techniques professionnelles, résultats exceptionnels.
+          Des prestations haut de gamme pour sublimer votre véhicule et vos
+          espaces professionnels. Techniques professionnelles, résultats
+          exceptionnels.
         </motion.p>
 
         {/* CTAs */}
@@ -60,7 +59,7 @@ export default function ModernHero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
           <Link
-            href="/#reservation"
+            href="/#contact"
             className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-4xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
           >
             <Calendar className="w-5 h-5" />
@@ -109,7 +108,9 @@ export default function ModernHero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-xs text-neutral-500 font-medium">Découvrir</span>
+          <span className="text-xs text-neutral-500 font-medium">
+            Découvrir
+          </span>
           <div className="w-6 h-10 border-2 border-neutral-300 rounded-full flex items-start justify-center p-2">
             <motion.div
               animate={{ y: [0, 12, 0] }}

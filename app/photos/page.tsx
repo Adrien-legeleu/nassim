@@ -238,7 +238,7 @@ export default function PhotosWallPage() {
           {/* CTA bas de page */}
           <div className="mt-20 lg:mt-10 flex justify-center">
             <a
-              href="/#reservation"
+              href="/#contact"
               className="inline-flex items-center justify-center rounded-full bg-primary text-white text-sm font-medium h-11 px-6 hover:opacity-90 transition shadow-[0_18px_50px_-15px_rgba(37,99,235,0.55)]"
             >
               Réserver
