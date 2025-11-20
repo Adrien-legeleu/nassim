@@ -54,15 +54,10 @@ export default function Footer() {
             <a href="/photos" className="hover:text-neutral-900 transition">
               Avant / Après
             </a>
-            <a href="/contact" className="hover:text-neutral-900 transition">
+            <a href="/#contact" className="hover:text-neutral-900 transition">
               Contact
             </a>
-            <a
-              href="/reservation"
-              className="hover:text-neutral-900 transition"
-            >
-              Réserver
-            </a>
+
             <a href="/#expertise" className="hover:text-neutral-900 transition">
               Expertise
             </a>
@@ -71,11 +66,8 @@ export default function Footer() {
           {/* Infos pratiques */}
           <div className="text-sm text-neutral-600 leading-relaxed">
             <p>Île-de-France & départements limitrophes</p>
-            <p className="mt-1">contact@french-detailing.fr</p>
+            <p className="mt-1">contact@nettoyageriviera.com</p>
             <p className="mt-1">Lun–Sam · 8h–20h</p>
-            <p className="mt-4 text-neutral-500/70">
-              RC Pro n°FR-254 98 35 — SIREN 921 654 883
-            </p>
           </div>
         </div>
 
@@ -84,14 +76,6 @@ export default function Footer() {
           <span>
             © {new Date().getFullYear()} French Detailing — Tous droits réservés
           </span>
-          <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-neutral-800 transition">
-              Mentions légales
-            </a>
-            <a href="#" className="hover:text-neutral-800 transition">
-              Politique de confidentialité
-            </a>
-          </div>
         </div>
       </div>
     </footer>

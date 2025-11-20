@@ -8,7 +8,7 @@ const infos = [
     icon: <Phone className="w-5 h-5" />,
     label: 'Téléphone',
     value: '06 15 94 49 34',
-    href: 'tel:+330615944934',
+    href: 'tel:+0615944934',
   },
   {
     icon: <Mail className="w-5 h-5" />,
