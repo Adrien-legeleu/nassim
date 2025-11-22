@@ -162,7 +162,7 @@ const autoPackages = [
 
 export default function AutoPricingSection() {
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-b from-neutral-950 via-black to-neutral-950">
+    <section className="relative py-16 md:py-24 bg-gradient-to-b from-black via-black to-black">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-0 left-10 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
         <div className="absolute bottom-0 right-10 h-72 w-72 rounded-full bg-red-500/10 blur-3xl" />
