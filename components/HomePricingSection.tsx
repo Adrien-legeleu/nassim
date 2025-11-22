@@ -352,23 +352,23 @@ export default function HomePricingSection() {
         <div className="mx-auto mb-8 flex max-w-md items-center rounded-full border border-neutral-800 bg-black/70 p-1">
           <button
             onClick={() => setTab('auto')}
-            className={`flex-1 rounded-full px-4 py-2 text-xs md:text-sm font-medium transition ${
+            className={`flex-1 rounded-full px-4 py-4 text-xs md:text-sm font-medium transition ${
               tab === 'auto'
                 ? 'bg-neutral-100 text-neutral-900 shadow'
                 : 'text-neutral-300 hover:text-white'
             }`}
           >
-            Detailing Auto – French Riviera
+            Detailing Auto
           </button>
           <button
             onClick={() => setTab('pro')}
-            className={`flex-1 rounded-full px-4 py-2 text-xs md:text-sm font-medium transition ${
+            className={`flex-1 rounded-full h-full px-4 py-4 text-xs md:text-sm font-medium transition ${
               tab === 'pro'
                 ? 'bg-neutral-100 text-neutral-900 shadow'
                 : 'text-neutral-300 hover:text-white'
             }`}
           >
-            Espaces Pro – ABC
+            Espaces Pro
           </button>
         </div>
 
