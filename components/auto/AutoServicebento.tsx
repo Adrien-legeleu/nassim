@@ -12,14 +12,14 @@ import { BentoGridShowcaseProAuto } from '../ui/bento-service-features-auto-pro'
 
 export default function AutoServicesBento() {
   return (
-    <section className="relative bg-white text-neutral-900 w-full overflow-hidden py-32 px-5 ">
+    <section className="relative bg-black text-neutral-100 w-full overflow-hidden py-32 px-5 ">
       {/* ==== Halo global et décor tricolore subtil ==== */}
       <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
         <div
           className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full blur-[140px] opacity-[0.18]"
           style={{
             background:
-              'radial-gradient(circle at 50% 50%, rgba(30,41,59,0.2) 0%, rgba(255,255,255,0) 70%)',
+              'radial-gradient(circle at 50% 50%, rgba(30,41,59,0.2) 0%, rgba(0,0,0,0) 70%)',
           }}
         />
         {/* léger effet “ruban tricolore” en diagonale */}
@@ -27,15 +27,15 @@ export default function AutoServicesBento() {
           className="absolute rotate-[12deg] left-[10%] top-[35%] w-[1200px] h-[60px] opacity-[0.25] blur-[40px]"
           style={{
             background:
-              'linear-gradient(90deg, #0052b4 0%, #ffffff 50%, #d80027 100%)',
+              'linear-gradient(90deg, #0052b4 20%, #ffffff 50%, #d80027 80%)',
           }}
         />
 
         <div className="hidden md:block absolute top-10 right-1/3 translate-x-1/2 opacity-[0.04]">
-          <ShieldCheck className="w-64 h-64 text-slate-900/40" />
+          <ShieldCheck className="w-64 h-64 text-slate-500/40" />
         </div>
         {/* cadre intérieur */}
-        <div className="absolute inset-[10%] rounded-[2.1rem] md:rounded-[2.6rem] border border-dashed border-neutral-200/70" />
+        <div className="absolute inset-[10%] rounded-[2.1rem] md:rounded-[2.6rem] border border-dashed border-neutral-700/50" />
       </div>
 
       {/* ====== Contenu ====== */}
@@ -47,7 +47,7 @@ export default function AutoServicesBento() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-medium tracking-wide bg-neutral-100 text-neutral-600"
+            className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-medium tracking-wide bg-neutral-900 text-neutral-200"
           >
             Sans survente · Méthode complète
           </motion.div>
@@ -57,7 +57,7 @@ export default function AutoServicesBento() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="mt-4 text-2xl md:text-4xl font-semibold tracking-tight tricolor-underline pb-2"
+            className="mt-4 text-2xl text-neutral-100 md:text-4xl font-semibold tracking-tight tricolor-underline pb-2"
           >
             Ce qui est inclus — clairement
           </motion.h2>
@@ -67,7 +67,7 @@ export default function AutoServicesBento() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.05 }}
-            className="text-sm md:text-base text-neutral-600 leading-relaxed mt-4"
+            className="text-sm md:text-base text-neutral-200 leading-relaxed mt-4"
           >
             L’essentiel du detailing auto haut de gamme : carrosserie,
             intérieur, moteur et finitions. Pas de discours, juste du résultat
@@ -76,13 +76,13 @@ export default function AutoServicesBento() {
         </div>
 
         {/* ==== GRID BENTO ==== */}
-        <div className="relative rounded-[2.5rem] md:rounded-[3rem] border border-neutral-100 bg-white/70 shadow-[0_40px_120px_-30px_rgba(15,23,42,0.1)] p-5 md:p-7 backdrop-blur-[2px] ">
+        <div className="relative rounded-[2.5rem] md:rounded-[3rem] border border-neutral-950 bg-black/70 shadow-[0_40px_120px_-30px_rgba(15,23,42,0.1)] p-5 md:p-7 backdrop-blur-[2px] ">
           <BentoGridShowcaseProAuto
             className="relative z-10 mx-auto max-w-[1200px]"
             cardClassName="
               rounded-[2rem] h-full p-6 md:p-7
               border border-neutral-200/60
-              shadow-[0_25px_80px_-30px_rgba(15,23,42,0.3)]
+              shadow-[0_25px_80px_-30px_rgba(2,3,4,0.3)]
               bg-white/85
               backdrop-blur-[3px]
               transition-transform duration-300 hover:scale-[1.015]
@@ -103,7 +103,7 @@ export default function AutoServicesBento() {
             }
             trackers={
               <FeatureCard
-                icon={<Sparkles className="h-5 w-5 text-neutral-700" />}
+                icon={<Sparkles className="h-5 w-5 text-neutral-300" />}
                 title="Intérieur complet"
                 items={[
                   'Vapeur sièges / moquettes',
@@ -116,7 +116,7 @@ export default function AutoServicesBento() {
             }
             statistic={
               <FeatureCard
-                icon={<SprayCan className="h-5 w-5 text-neutral-700" />}
+                icon={<SprayCan className="h-5 w-5 text-neutral-300" />}
                 title="Moteur maîtrisé"
                 items={[
                   'Vapeur à froid',
@@ -128,7 +128,7 @@ export default function AutoServicesBento() {
             }
             shortcuts={
               <FeatureCard
-                icon={<Droplets className="h-5 w-5 text-red-700" />}
+                icon={<Droplets className="h-5 w-5 text-red-300" />}
                 title="Détails qui font la différence"
                 items={[
                   'Jantes et étriers',
@@ -139,10 +139,10 @@ export default function AutoServicesBento() {
                 color="red"
               />
             }
-            integrationClassName="bg-blue-50/40 border-blue-100/50"
-            trackersClassName="bg-neutral-50/40 border-neutral-100/50"
-            statisticClassName="bg-neutral-50/40 border-neutral-100/50"
-            shortcutsClassName="bg-red-50/40 border-red-100/50"
+            integrationClassName="bg-blue-950/20 border-blue-950/40"
+            trackersClassName="bg-neutral-950/40 border-neutral-900/50"
+            statisticClassName="bg-neutral-950/40 border-neutral-900/50"
+            shortcutsClassName="bg-red-950/20 border-red-950/50"
           />
         </div>
       </div>
@@ -166,16 +166,16 @@ function FeatureCard({
 }) {
   const colorMap = {
     blue: {
-      badge: 'bg-blue-100 border-blue-100 text-blue-700',
-      bullet: '#2563eb',
+      badge: 'bg-blue-950/80 border-blue-950 text-blue-600/80',
+      bullet: '#2563eb80',
     },
     red: {
-      badge: 'bg-[#ed293925] border-[#ed293925] text-red-700',
-      bullet: '#dc2626',
+      badge: 'bg-[#ed293915] border-[#ed293925] text-red-600/80',
+      bullet: '#dc262680',
     },
     neutral: {
-      badge: 'bg-neutral-100 border-neutral-100 text-neutral-700',
-      bullet: '#6b7280',
+      badge: 'bg-neutral-950/80 border-neutral-900 text-neutral-600',
+      bullet: '#6b728080',
     },
   };
 
@@ -187,17 +187,17 @@ function FeatureCard({
         {/* Header */}
         <div className="flex items-start gap-3">
           <div
-            className={`flex h-10 w-10 items-center justify-center rounded-2xl border font-medium ${tone.badge}`}
+            className={`flex h-10 w-10 items-center justify-center  rounded-2xl border font-medium ${tone.badge}`}
           >
             {icon}
           </div>
-          <div className="font-medium leading-tight text-base md:text-lg">
+          <div className="font-medium leading-tight text-neutral-100 text-base md:text-lg">
             {title}
           </div>
         </div>
 
         {/* Liste */}
-        <ul className="mt-5 flex flex-col gap-2 text-neutral-700 text-sm leading-relaxed">
+        <ul className="mt-5 flex flex-col gap-2 text-neutral-200 text-sm leading-relaxed">
           {items.map((l, i) => (
             <li key={i} className="flex gap-2">
               <div
@@ -210,21 +210,21 @@ function FeatureCard({
         </ul>
 
         {footer && (
-          <div className="mt-5 text-neutral-500 text-xs leading-relaxed">
+          <div className="mt-5 text-neutral-400 text-xs leading-relaxed">
             {footer}
           </div>
         )}
       </div>
       {title == 'Rénovation carrosserie & vernis' && (
-        <div className="mt-5 bg-blue-50 border border-blue-50 rounded-xl p-3 flex items-start gap-3 text-xs text-neutral-700 shadow-[inset_0_1px_6px_rgba(255,255,255,0.8)]">
-          <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-blue-100 border border-blue-100 text-blue-600">
+        <div className="mt-5 bg-neutral-950 border border-neutral-950 rounded-xl p-3 flex items-start gap-3 text-xs text-neutral-100/80 shadow-[inset_0_1px_6px_rgba(0,0,0,0.8)]">
+          <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-blue-950/80 border border-blue-950 text-blue-600/80">
             <ShieldCheck className="w-3.5 h-3.5" />
           </div>
           <div className="leading-snug">
-            <strong className="font-medium">Durée moyenne :</strong> 4–6 h par
+            <strong className="font-medium ">Durée moyenne :</strong> 4–6 h par
             véhicule selon niveau de correction.
             <br />
-            <span className="text-[11px] text-neutral-500">
+            <span className="text-[11px] text-neutral-400">
               Application en local contrôlé, produits premium (Koch Chemie /
               Gyeon).
             </span>

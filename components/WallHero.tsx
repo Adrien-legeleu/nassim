@@ -32,7 +32,7 @@ export default function WallHero({
   return (
     <section
       className={cn(
-        'relative w-full h-[80svh] md:h-[86svh] overflow-hidden bg-white flex flex-col items-center justify-center text-center px-4',
+        'relative w-full h-[80svh] md:h-[86svh] overflow-hidden bg-black flex flex-col items-center justify-center text-center px-4',
         className
       )}
     >
@@ -42,7 +42,7 @@ export default function WallHero({
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'radial-gradient(1200px 600px at 50% 10%, rgba(15,23,42,0.02) 0%, rgba(255,255,255,0) 60%)',
+            'radial-gradient(1200px 600px at 50% 10%, rgba(15,23,42,0.02) 0%, rgba(0,0,0,0) 60%)',
         }}
       />
 
@@ -52,7 +52,7 @@ export default function WallHero({
           initial="hidden"
           animate="show"
           variants={fade}
-          className="mb-4 inline-block rounded-full border border-neutral-200 bg-neutral-50 px-4 py-1.5 text-xs md:text-sm text-neutral-700 backdrop-blur"
+          className="mb-4 inline-block rounded-full border border-neutral-900 bg-neutral-900/80 px-4 py-1.5 text-xs md:text-sm text-neutral-200 backdrop-blur"
         >
           {tagline}
         </motion.div>
@@ -67,7 +67,7 @@ export default function WallHero({
               transition: { staggerChildren: 0.05 },
             },
           }}
-          className="text-[2rem] md:text-[3rem] font-semibold tracking-tight text-neutral-900"
+          className="text-[2rem] md:text-[3rem] font-semibold tracking-tight text-neutral-100"
         >
           {title.split(' ').map((w, i) => (
             <motion.span key={i} variants={fade} className="inline-block">
@@ -82,7 +82,7 @@ export default function WallHero({
           animate="show"
           variants={fade}
           transition={{ delay: 0.1 }}
-          className="mt-4 max-w-xl text-sm md:text-base text-neutral-800 leading-relaxed"
+          className="mt-4 max-w-xl text-sm md:text-base text-neutral-200 leading-relaxed"
         >
           {description}
         </motion.p>
@@ -123,7 +123,7 @@ export default function WallHero({
                 height={300}
                 alt={`showcase-${i}`}
                 loading="lazy"
-                className="w-full h-full object-cover rounded-4xl border border-neutral-200/70 shadow-[0_18px_60px_-25px_rgba(15,23,42,0.3)] bg-neutral-100"
+                className="w-full h-full object-cover rounded-4xl border border-neutral-950/70 shadow-[0_18px_60px_-25px_rgba(15,23,42,0.3)] bg-neutral-900"
               />
             </div>
           ))}

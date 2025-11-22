@@ -119,7 +119,7 @@ export default function PhotosWallPage() {
   });
 
   return (
-    <main className="bg-white text-neutral-900 min-h-[100dvh]    overflow-hidden w-full h-full">
+    <main className="bg-neutral-950 text-neutral-100 min-h-[100dvh]    overflow-hidden w-full h-full">
       <div className="ribbon-fr">
         <span />
       </div>
@@ -147,7 +147,7 @@ export default function PhotosWallPage() {
       {/* WALL PARALLAX AVANT / APRÈS */}
       <section
         ref={sectionRef}
-        className="relative py-16 md:py-24 px-4 bg-gradient-to-b from-white via-white to-neutral-50"
+        className="relative py-16 md:py-24 px-4 bg-gradient-to-b from-black via-black to-neutral-950"
       >
         {/* Halo très léger derrière le wall */}
         <div aria-hidden className="pointer-events-none absolute inset-0">
@@ -163,10 +163,10 @@ export default function PhotosWallPage() {
         <div className="relative mx-auto">
           {/* Heading */}
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">
+            <h2 className="text-2xl md:text-4xl font-semibold text-neutral-100 tracking-tight">
               Mur d’avant / après
             </h2>
-            <p className="mt-3 text-sm md:text-base text-neutral-600">
+            <p className="mt-3 text-sm md:text-base text-neutral-200">
               Auto & pro, mélangés&nbsp;: chaque bloc se compare en un seul
               geste.
             </p>
@@ -259,20 +259,17 @@ function BAParallaxCard({ item, index }: { item: BAItem; index: number }) {
   const toneClasses =
     tone === 0
       ? {
-          wrapper:
-            'bg-blue-100/90 border-blue-200/70 shadow-[0_30px_80px_-30px_rgba(37,99,235,0.15)]',
-          label: 'text-blue-800/80',
+          wrapper: 'bg-blue-950/50 border-blue-900/30 ',
+          label: 'text-blue-900/80',
         }
       : tone === 1
       ? {
-          wrapper:
-            'bg-red-100/90 border-red-200/70 shadow-[0_30px_80px_-30px_rgba(239,68,68,0.15)]',
+          wrapper: 'bg-red-950/20 border-red-900/40 ',
           label: 'text-red-800/80',
         }
       : {
-          wrapper:
-            'bg-neutral-100/90 border-neutral-200/80 shadow-[0_30px_80px_-30px_rgba(15,23,42,0.15)]',
-          label: 'text-neutral-700/80',
+          wrapper: 'bg-neutral-950/90 border-neutral-900/80 ',
+          label: 'text-neutral-900/80',
         };
 
   return (
@@ -282,13 +279,13 @@ function BAParallaxCard({ item, index }: { item: BAItem; index: number }) {
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className={[
-        'rounded-[3.2rem] border overflow-hidden p-0.5',
+        'rounded-[3.2rem] border overflow-hidden p-[1px]',
         'backdrop-blur-[2px]',
         toneClasses.wrapper,
       ].join(' ')}
     >
       <div
-        className="relative rounded-[3rem] overflow-hidden bg-white"
+        className="relative rounded-[3rem] overflow-hidden bg-black"
         style={{ height: item.height }}
       >
         <Compare

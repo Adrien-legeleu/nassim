@@ -21,7 +21,7 @@ const services = {
       'Vitres & optiques',
     ],
     href: '/auto',
-    tone: 'from-blue-50/40 to-white',
+    tone: 'from-blue-950/40 to-black',
   },
   pro: {
     title: 'Espaces Pro',
@@ -38,7 +38,7 @@ const services = {
       'Entretien régulier',
     ],
     href: '/pro',
-    tone: 'from-red-50/40 to-white',
+    tone: 'from-red-950/40 to-black',
   },
 };
 
@@ -59,10 +59,10 @@ function ServiceCardMobile({
   tone: string;
 }) {
   return (
-    <div className="rounded-3xl border border-neutral-100 shadow-xl shadow-black/5 overflow-hidden bg-white">
+    <div className="rounded-3xl border border-neutral-950 shadow-xl shadow-black/5 overflow-hidden bg-neutral-900">
       {/* header */}
       <div
-        className={`p-6 bg-gradient-to-br ${tone} border-b border-neutral-100`}
+        className={`p-6 bg-gradient-to-br ${tone} border-b border-neutral-900`}
       >
         <div className="flex items-start gap-4">
           <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg flex-shrink-0">
@@ -75,14 +75,14 @@ function ServiceCardMobile({
             />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-neutral-900">{title}</h3>
-            <p className="text-sm text-neutral-600">{subtitle}</p>
+            <h3 className="text-xl font-bold text-neutral-100">{title}</h3>
+            <p className="text-sm text-neutral-200">{subtitle}</p>
           </div>
         </div>
       </div>
 
       {/* body */}
-      <div className="p-6">
+      <div className="p-6 bg-neutral-950">
         <ul className="space-y-3">
           {items.map((item, i) => (
             <motion.li
@@ -96,7 +96,7 @@ function ServiceCardMobile({
               <span className="flex-shrink-0 w-6 h-6 rounded-[0.7rem] bg-gradient-to-br from-primary/90 to-primary/70 flex items-center justify-center mt-0.5 group-hover:scale-110 transition-transform">
                 <Check className="w-3 h-3 text-white" strokeWidth={3} />
               </span>
-              <span className="text-sm text-neutral-800">{item}</span>
+              <span className="text-sm text-neutral-100">{item}</span>
             </motion.li>
           ))}
         </ul>
@@ -104,7 +104,7 @@ function ServiceCardMobile({
         <div className="mt-5 flex items-center justify-between">
           <Link
             href={href}
-            className="text-sm text-neutral-500 underline underline-offset-4"
+            className="text-sm text-neutral-400 underline underline-offset-4"
           >
             En savoir plus
           </Link>
@@ -125,15 +125,15 @@ function ServiceCardMobile({
 /* ---------- Desktop: tableau 2 colonnes (hidden sm:block) ---------- */
 function ComparisonTableDesktop() {
   return (
-    <div className="rounded-[2rem] shadow-2xl shadow-black/5 border border-neutral-100 overflow-hidden bg-white hidden sm:block">
+    <div className="rounded-[2rem] shadow-2xl shadow-black/5 border border-neutral-950 overflow-hidden bg-black hidden sm:block">
       {/* header global */}
-      <div className="px-8 py-6 border-b border-neutral-100 bg-gradient-to-r from-neutral-50 to-white">
+      <div className="px-8 py-6 border-b border-neutral-950 bg-gradient-to-r from-neutral-950 to-black">
         <div className="flex items-center justify-between gap-4">
           <div>
-            <h2 className="text-2xl font-bold text-neutral-900">
+            <h2 className="text-2xl font-bold text-neutral-100">
               Solutions Auto & Pro
             </h2>
-            <p className="text-sm text-neutral-600">
+            <p className="text-sm text-neutral-300">
               Découvrez notre gamme complète pour véhicules et espaces
               professionnels
             </p>
@@ -150,13 +150,13 @@ function ComparisonTableDesktop() {
       </div>
 
       {/* entêtes colonnes */}
-      <div className="grid grid-cols-2 border-b border-neutral-100">
+      <div className="grid grid-cols-2 border-b border-neutral-800/80">
         {[services.auto, services.pro].map((s, idx) => (
           <div
             key={s.title}
             className={`p-8 ${
-              idx === 0 ? 'border-r border-neutral-100' : ''
-            } bg-gradient-to-br ${s.tone}`}
+              idx === 0 ? 'border-r border-neutral-950' : ''
+            } bg-gradient-to-br to-neutral-950 from-neutral-950  ${s.tone}`}
           >
             <div className="flex items-start gap-4">
               <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg flex-shrink-0">
@@ -169,10 +169,10 @@ function ComparisonTableDesktop() {
                 />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-neutral-900">
+                <h3 className="text-2xl font-bold text-neutral-100">
                   {s.title}
                 </h3>
-                <p className="text-sm text-neutral-600">{s.subtitle}</p>
+                <p className="text-sm text-neutral-300">{s.subtitle}</p>
               </div>
             </div>
           </div>
@@ -182,7 +182,7 @@ function ComparisonTableDesktop() {
       {/* corps du tableau */}
       <div className="grid grid-cols-2">
         {/* Auto */}
-        <div className="p-8 bg-gradient-to-br from-blue-50/20 to-white border-r border-neutral-100">
+        <div className="p-8 bg-gradient-to-br from-blue-950/20 to-black border-r border-neutral-900">
           <ul className="space-y-3">
             {services.auto.items.map((item, i) => (
               <motion.li
@@ -196,7 +196,7 @@ function ComparisonTableDesktop() {
                 <span className="flex-shrink-0 w-6 h-6 rounded-[0.7rem] bg-gradient-to-br from-primary/90 to-primary/70 flex items-center justify-center mt-0.5 group-hover:scale-110 transition-transform">
                   <Check className="w-3 h-3 text-white" strokeWidth={3} />
                 </span>
-                <span className="text-sm md:text-base text-neutral-800">
+                <span className="text-sm md:text-base text-neutral-200">
                   {item}
                 </span>
               </motion.li>
@@ -204,14 +204,14 @@ function ComparisonTableDesktop() {
           </ul>
           <Link
             href={services.auto.href}
-            className="mt-5 inline-block text-sm text-neutral-500 underline underline-offset-4"
+            className="mt-5 inline-block text-sm text-neutral-400 underline underline-offset-4"
           >
             En savoir plus
           </Link>
         </div>
 
         {/* Pro */}
-        <div className="p-8 bg-gradient-to-br from-red-50/20 to-white">
+        <div className="p-8 bg-gradient-to-br from-red-950/20 to-black">
           <ul className="space-y-3">
             {services.pro.items.map((item, i) => (
               <motion.li
@@ -225,7 +225,7 @@ function ComparisonTableDesktop() {
                 <span className="flex-shrink-0 w-6 h-6 rounded-[0.7rem] bg-gradient-to-br from-primary/90 to-primary/70 flex items-center justify-center mt-0.5 group-hover:scale-110 transition-transform">
                   <Check className="w-3 h-3 text-white" strokeWidth={3} />
                 </span>
-                <span className="text-sm md:text-base text-neutral-800">
+                <span className="text-sm md:text-base text-neutral-200">
                   {item}
                 </span>
               </motion.li>
@@ -233,7 +233,7 @@ function ComparisonTableDesktop() {
           </ul>
           <Link
             href={services.pro.href}
-            className="mt-5 inline-block text-sm text-neutral-500 underline underline-offset-4"
+            className="mt-5 inline-block text-sm text-neutral-400 underline underline-offset-4"
           >
             En savoir plus
           </Link>
@@ -241,8 +241,8 @@ function ComparisonTableDesktop() {
       </div>
 
       {/* footer global */}
-      <div className="px-8 py-6 border-t border-neutral-100 bg-gradient-to-r from-neutral-50 via-white to-neutral-50">
-        <p className="text-xs text-neutral-600">
+      <div className="px-8 py-6 border-t border-neutral-950 bg-gradient-to-r from-neutral-950 via-black to-neutral-950">
+        <p className="text-xs text-neutral-200">
           Devis gratuit sous 24h • Intervention rapide • RC Pro • Produits
           premium
         </p>
@@ -253,7 +253,7 @@ function ComparisonTableDesktop() {
 
 export default function ServicesComparisonTable() {
   return (
-    <section className="relative py-16 md:py-20 bg-gradient-to-b from-white to-neutral-50 overflow-hidden">
+    <section className="relative py-16 md:py-20 bg-gradient-to-b from-neutral-950 to-neutral-950 overflow-hidden">
       {/* décor */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#ed2939]/[0.02] rounded-full blur-3xl" />
@@ -268,17 +268,17 @@ export default function ServicesComparisonTable() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 mb-3 border border-neutral-200 shadow-sm"
+            className="inline-flex items-center gap-2 bg-neutral-800/80 rounded-full px-4 py-2 mb-3 border border-neutral-900 shadow-sm"
           >
-            <Sparkles className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-medium text-neutral-800">
+            <Sparkles className="w-4 h-4 text-blue-300" />
+            <span className="text-sm font-medium text-neutral-200">
               Nos Services
             </span>
           </motion.div>
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900">
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-100">
             Solutions Auto & Pro
           </h2>
-          <p className="text-base text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-base text-neutral-200 max-w-2xl mx-auto">
             Une offre claire, premium et adaptée à chaque besoin.
           </p>
         </div>

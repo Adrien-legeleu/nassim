@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
 
 interface Feature {
   step: string;
@@ -27,8 +28,28 @@ export function FeatureSteps({
   autoPlayInterval = 3000,
   imageHeight = 'h-[400px]',
 }: FeatureStepsProps) {
+  const pathname = usePathname();
   const [currentFeature, setCurrentFeature] = useState(0);
   const [progress, setProgress] = useState(0);
+
+  // ⭐ Détection PAGE → STYLE AUTO / PRO
+  const isAuto = pathname?.startsWith('/auto');
+  const isPro = pathname?.startsWith('/pro');
+
+  // Fond dynamique selon la page
+  const backgroundClass = isAuto
+    ? 'bg-black text-neutral-100'
+    : isPro
+    ? 'bg-white text-neutral-900'
+    : 'bg-black text-neutral-100'; // fallback
+
+  // Couleurs du texte selon mode
+  const titleColor = isPro ? 'text-neutral-900' : 'text-neutral-100';
+  const textColor = isPro ? 'text-neutral-700' : 'text-neutral-200';
+  const stepBgActive = isPro
+    ? 'bg-primary text-white'
+    : 'bg-primary text-white';
+  const stepBgInactive = isPro ? 'bg-neutral-200 text-neutral-800' : 'bg-muted';
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -44,13 +65,20 @@ export function FeatureSteps({
   }, [progress, features.length, autoPlayInterval]);
 
   return (
-    <div className={cn('p-8 md:p-12', className)}>
+    <div className={cn('p-8 md:p-12', backgroundClass, className)}>
       <div className="max-w-7xl mx-auto w-full">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10 text-center">
+        {/* Titre */}
+        <h2
+          className={cn(
+            'text-3xl md:text-4xl lg:text-5xl font-bold mb-10 text-center',
+            titleColor
+          )}
+        >
           {title}
         </h2>
 
         <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-10">
+          {/* Steps */}
           <div className="order-2 md:order-1 space-y-8">
             {features.map((feature, index) => (
               <motion.div
@@ -60,26 +88,33 @@ export function FeatureSteps({
                 animate={{ opacity: index === currentFeature ? 1 : 0.3 }}
                 transition={{ duration: 0.5 }}
               >
+                {/* Step bubble */}
                 <motion.div
                   className={cn(
-                    'w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center ',
+                    'w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-all',
                     index === currentFeature
-                      ? 'bg-primary b text-primary-foreground scale-110'
-                      : 'bg-muted '
+                      ? stepBgActive + ' scale-110'
+                      : stepBgInactive
                   )}
                 >
                   {index <= currentFeature ? (
-                    <span className="text-lg text-white font-bold">✓</span>
+                    <span className="text-lg font-bold">✓</span>
                   ) : (
                     <span className="text-lg font-semibold">{index + 1}</span>
                   )}
                 </motion.div>
 
+                {/* Text */}
                 <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-semibold">
+                  <h3
+                    className={cn(
+                      'text-xl md:text-2xl font-semibold',
+                      titleColor
+                    )}
+                  >
                     {feature.title || feature.step}
                   </h3>
-                  <p className="text-sm md:text-lg text-muted-foreground">
+                  <p className={cn('text-sm md:text-lg', textColor)}>
                     {feature.content}
                   </p>
                 </div>
@@ -87,18 +122,15 @@ export function FeatureSteps({
             ))}
           </div>
 
-          <div
-            className={cn(
-              'order-1 md:order-2 relative h-[200px] md:h-full overflow-hidden rounded-4xl'
-            )}
-          >
+          {/* Image */}
+          <div className="order-1 md:order-2 relative h-[200px] md:h-full overflow-hidden rounded-4xl">
             <AnimatePresence mode="wait">
               {features.map(
                 (feature, index) =>
                   index === currentFeature && (
                     <motion.div
                       key={index}
-                      className="absolute inset-0 rounded-4xl  overflow-hidden"
+                      className="absolute inset-0 rounded-4xl overflow-hidden"
                       initial={{ y: 100, opacity: 0, rotateX: -20 }}
                       animate={{ y: 0, opacity: 1, rotateX: 0 }}
                       exit={{ y: -100, opacity: 0, rotateX: 20 }}
@@ -107,11 +139,20 @@ export function FeatureSteps({
                       <Image
                         src={feature.image}
                         alt={feature.step}
-                        className="w-full h-full object-cover transition-transform transform"
-                        width={1000}
-                        height={500}
+                        className="w-full h-full object-cover"
+                        width={1200}
+                        height={600}
                       />
-                      <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-background via-background/50 to-transparent" />
+
+                      {/* Gradient adaptatif */}
+                      <div
+                        className={cn(
+                          'absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t to-transparent',
+                          isPro
+                            ? 'from-white via-white/50'
+                            : 'from-black via-black/40'
+                        )}
+                      />
                     </motion.div>
                   )
               )}

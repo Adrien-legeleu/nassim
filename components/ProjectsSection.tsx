@@ -6,13 +6,13 @@ import { Compare } from '@/components/ui/compare';
 
 export default function ProjectsSection() {
   return (
-    <section className="relative text-light py-24 md:py-32 px-5">
+    <section className="relative text-light bg-neutral-950 py-24 md:py-32 px-5">
       {/* ===== Glow + vignette globale derrière la grille ===== */}
       <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
         {/* halo radial doux au centre */}
 
         {/* vignette sombre qui rentre vers le centre */}
-        <div className="absolute inset-0 shadow-[inset_0_0_200px_200px_rgba(255,255,255,0.4)]" />
+        <div className="absolute inset-0 shadow-[inset_0_0_200px_200px_rgba(0,0,0,0.4)]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-[1200px]">
@@ -38,7 +38,7 @@ export default function ProjectsSection() {
             className="pointer-events-none absolute inset-0 z-30 rounded-[3rem]"
             style={{
               background:
-                'radial-gradient(circle at 50% 50%, rgba(255,255,255,0) 75%, rgba(255,255,255,0.9) 95%, rgba(255,255,255,0.9) 100%)',
+                'radial-gradient(circle at 50% 50%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.9) 95%, rgba(0,0,0,0.9) 100%)',
             }}
           />
           {/* ==== Bento Grid asymétrique corrigée ==== */}
@@ -51,10 +51,10 @@ export default function ProjectsSection() {
               transition={{ duration: 0.6, ease: 'easeOut' }}
               className="
               md:row-span-3 md:col-span-1
-              rounded-[3.2rem] bg-blue-200
+              rounded-[3.2rem] bg-blue-950
               border border-black/[0.04]
               overflow-hidden
-              shadow-[0_40px_120px_-20px_rgba(248,250,255,0.9)]
+              shadow-[0_40px_120px_-20px_rgba(5,2,0,0.9)]
               p-0.5
               flex
               min-h-[320px] max-md:aspect-11/10 md:min-h-[420px]
@@ -78,10 +78,10 @@ export default function ProjectsSection() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
               className="
               md:row-span-2 md:col-span-1
-              rounded-[3.2rem] bg-[#ed293940]
+              rounded-[3.2rem] bg-[#c51e2c40]
               border border-black/[0.04]
               overflow-hidden
-           shadow-[0_40px_120px_-20px_rgba(248,250,255,0.9)]
+           shadow-[0_40px_120px_-20px_rgba(5,2,0,0.9)]
               p-0.5
               flex
               min-h-[200px]  max-md:aspect-11/7 md:min-h-[250px]
@@ -108,7 +108,7 @@ export default function ProjectsSection() {
               rounded-[3.2rem] bg-[#ed293930]
               border border-black/[0.04]
               overflow-hidden
-           shadow-[0_40px_120px_-20px_rgba(248,250,255,0.9)]
+           shadow-[0_40px_120px_-20px_rgba(5,2,0,0.9)]
               p-0.5
               flex
               min-h-[220px] max-md:aspect-11/12 md:min-h-[280px]
@@ -132,10 +132,10 @@ export default function ProjectsSection() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
               className="
               md:row-span-3 md:col-span-1
-              rounded-[3.2rem] bg-neutral-200
+              rounded-[3.2rem] bg-neutral-800
               border border-black/[0.04]
               overflow-hidden
-           shadow-[0_40px_120px_-20px_rgba(248,250,255,0.9)]
+           shadow-[0_40px_120px_-20px_rgba(5,2,0,0.9)]
               p-0.5
               flex
               min-h-[320px] max-md:aspect-11/10 md:min-h-[420px]

@@ -6,6 +6,7 @@ import ProProcess from '@/components/pro/ProProcess';
 import ProCTA from '@/components/pro/ProCTA';
 import ProServicesBento from '@/components/pro/ProServicesbento';
 import ProBeforeAfter from '@/components/pro/proBeforeAfter';
+import ProPricingSection from '@/components/pro/ProPricingSection';
 
 export default function ProPage() {
   return (
@@ -17,6 +18,7 @@ export default function ProPage() {
           <ProServicesBento />
         </div>
       </section>
+      <ProPricingSection />
       <ProProcess />
       <ProCTA />
     </main>

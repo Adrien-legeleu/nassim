@@ -19,12 +19,35 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const isPro = pathname === '/pro';
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 2);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  const containerClasses = [
+    scrolled ? 'h-16 md:h-[64px]' : 'h-14 md:h-[60px]',
+    'rounded-3xl lg:w-4/5 w-[90%] mx-auto max-w-7xl pl-2 pr-3',
+    'flex justify-between items-center',
+    'transition-[background,box-shadow,border,color] max-md:bg-none duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
+    isPro
+      ? scrolled
+        ? 'md:bg-white/70 md:backdrop-blur md:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.25)] text-neutral-900'
+        : 'md:bg-white/70 md:backdrop-blur text-neutral-900'
+      : scrolled
+      ? 'md:bg-black/85  md:backdrop-blur md:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.8)] text-white'
+      : 'md:bg-black/70  md:backdrop-blur text-white',
+  ].join(' ');
+
+  const mobileBurgerClasses = [
+    'md:hidden inline-flex items-center gap-2 rounded-[1.3rem] px-3 py-3 active:scale-95 transition border shadow-sm',
+    isPro
+      ? 'text-neutral-900 bg-white/80 backdrop-blur border-black/5'
+      : 'text-white bg-black/80 backdrop-blur border-white/15',
+  ].join(' ');
 
   return (
     <>
@@ -36,18 +59,7 @@ export default function Header() {
         initial={false}
         transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
       >
-        <motion.div
-          layout
-          className={[
-            scrolled ? 'h-16 md:h-[64px]' : 'h-14 md:h-[60px]',
-            'rounded-3xl lg:w-4/5 w-[90%] mx-auto max-w-7xl pl-2 pr-3',
-            'flex justify-between items-center',
-            'transition-[background,box-shadow] max-md:bg-none duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
-            scrolled
-              ? 'md:bg-white/70 md:backdrop-blur md:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.25)]'
-              : 'md:bg-white/70 md:backdrop-blur',
-          ].join(' ')}
-        >
+        <motion.div layout className={containerClasses}>
           {/* Logos */}
           <div className="flex items-center gap-3">
             <Link
@@ -85,17 +97,20 @@ export default function Header() {
             <ul className="flex items-center gap-8">
               {NAV.map((item) => {
                 const active = pathname === item.href;
+                const linkClasses = [
+                  'relative text-sm transition-colors',
+                  isPro
+                    ? active
+                      ? 'text-neutral-900'
+                      : 'text-neutral-700 hover:text-neutral-900'
+                    : active
+                    ? 'text-white'
+                    : 'text-neutral-300 hover:text-white',
+                ].join(' ');
+
                 return (
                   <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className={[
-                        'relative text-sm transition-colors',
-                        active
-                          ? 'text-neutral-900'
-                          : 'text-neutral-700 hover:text-neutral-900',
-                      ].join(' ')}
-                    >
+                    <Link href={item.href} className={linkClasses}>
                       {item.label}
                       <span
                         className={[
@@ -126,7 +141,7 @@ export default function Header() {
           {/* Burger Mobile */}
           <button
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden inline-flex items-center gap-2 rounded-[1.3rem] px-3 py-3 text-neutral-900 bg-white/80 backdrop-blur border border-black/5 shadow-sm active:scale-95 transition"
+            className={mobileBurgerClasses}
             aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
           >
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -142,7 +157,10 @@ export default function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-white flex flex-col pt-5 justify-between md:hidden"
+            className={[
+              'fixed inset-0 z-40 flex flex-col pt-5 justify-between md:hidden',
+              isPro ? 'bg-white text-neutral-900' : 'bg-black text-white',
+            ].join(' ')}
           >
             <motion.div
               initial={{ y: 20, opacity: 0 }}
@@ -155,7 +173,7 @@ export default function Header() {
               <Link
                 href="/"
                 onClick={() => setOpen(false)}
-                className="text-2xl pb-2 font-bold text-neutral-900"
+                className="text-2xl pb-2 font-bold"
               >
                 Accueil
               </Link>
@@ -165,7 +183,7 @@ export default function Header() {
                 <Link
                   href="/auto"
                   onClick={() => setOpen(false)}
-                  className=" flex flex-col items-center w-full h-full gap-2"
+                  className="flex flex-col items-center w-full h-full gap-2"
                 >
                   <div className="relative aspect-square w-full h-full rounded-3xl overflow-hidden">
                     <Image
@@ -175,7 +193,7 @@ export default function Header() {
                       className="object-cover rounded-2xl"
                     />
                   </div>
-                  <p className="text-xs font-bold text-neutral-900 text-center">
+                  <p className="text-xs font-bold text-center">
                     Detailing Auto
                   </p>
                 </Link>
@@ -193,9 +211,7 @@ export default function Header() {
                       className="object-cover rounded-2xl"
                     />
                   </div>
-                  <p className="text-xs font-bold text-neutral-900 text-center">
-                    Nettoyage Pro
-                  </p>
+                  <p className="text-xs font-bold text-center">Nettoyage Pro</p>
                 </Link>
               </div>
 
@@ -203,7 +219,7 @@ export default function Header() {
               <Link
                 href="/photos"
                 onClick={() => setOpen(false)}
-                className="text-2xl pt-2 font-bold text-neutral-900"
+                className="text-2xl pt-2 font-bold"
               >
                 Avant / Après
               </Link>
@@ -215,7 +231,10 @@ export default function Header() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 15, opacity: 0 }}
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="p-5 border-t border-neutral-100"
+              className={[
+                'p-5 border-t',
+                isPro ? 'border-neutral-100' : 'border-white/10',
+              ].join(' ')}
             >
               <Link
                 href="/#contact"

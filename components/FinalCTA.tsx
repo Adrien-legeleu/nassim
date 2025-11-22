@@ -6,7 +6,7 @@ import { CalendlyInlineWidget } from '@/components/shared/CalendlyInlineWidget';
 export default function FinalCTA() {
   return (
     <section
-      className="relative bg-white text-neutral-900 py-24 md:py-32 px-5"
+      className="relative bg-neutral-950 text-neutral-100 py-24 md:py-32 px-5"
       id="contact"
     >
       <div className="mx-auto max-w-[1200px] relative space-y-10">

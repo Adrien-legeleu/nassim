@@ -151,7 +151,7 @@ function GlowMobile() {
 
 export function HeroSplitMobile() {
   return (
-    <section className="relative w-full bg-white overflow-hidden lg:hidden min-h-[100svh]">
+    <section className="relative w-full bg-neutral-950 overflow-hidden lg:hidden min-h-[100svh]">
       {/* ruban si existant */}
       <div className="ribbon-fr">
         <span />
@@ -166,7 +166,7 @@ export function HeroSplitMobile() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-5xl font-semibold text-primary tracking-tight"
+            className="text-4xl sm:text-5xl font-semibold text-white tracking-tight"
           >
             Redonnez éclat & prestige à vos surfaces
           </motion.h1>
@@ -174,7 +174,7 @@ export function HeroSplitMobile() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-md text-sm sm:text-base text-zinc-600 leading-relaxed"
+            className="max-w-md text-sm sm:text-base text-neutral-200 leading-relaxed"
           >
             Que ce soit pour votre voiture ou votre entreprise, notre équipe de
             spécialistes du detailing offre des prestations haut de gamme,
@@ -220,13 +220,13 @@ export function HeroSplitMobile() {
 /* ---------------- DESKTOP (>= lg) — inchangé ---------------- */
 export function HeroSplitDesktop() {
   return (
-    <section className="relative hidden lg:block w-full bg-white">
+    <section className="relative hidden lg:block w-full bg-neutral-950">
       <div className="ribbon-fr">
         <span />
       </div>
 
       <div className="h-[100svh] p-4">
-        <div className="relative h-full overflow-hidden rounded-[3rem] bg-white">
+        <div className="relative h-full overflow-hidden rounded-[3rem] bg-neutral-950">
           <div className="grid h-full grid-rows-1 grid-cols-2 gap-5">
             <Panel
               href="/auto"

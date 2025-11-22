@@ -8,7 +8,7 @@ const testimonials = [
     name: 'Sophie Martin',
     role: 'Propriétaire Porsche 911',
     content:
-      'Service exceptionnel ! Ma Porsche n\'a jamais été aussi belle. Le polissage et la protection céramique ont transformé la voiture. L\'équipe est professionnelle et passionnée.',
+      "Service exceptionnel ! Ma Porsche n'a jamais été aussi belle. Le polissage et la protection céramique ont transformé la voiture. L'équipe est professionnelle et passionnée.",
     rating: 5,
     location: 'Paris',
   },
@@ -32,7 +32,7 @@ const testimonials = [
     name: 'Thomas Bernard',
     role: 'Directeur Hôtel 5 étoiles',
     content:
-      'Professionnalisme exemplaire. Ils entretiennent nos espaces depuis 2 ans et nous n\'avons jamais été déçus. Leurs équipes sont discrètes et le résultat est toujours impeccable.',
+      "Professionnalisme exemplaire. Ils entretiennent nos espaces depuis 2 ans et nous n'avons jamais été déçus. Leurs équipes sont discrètes et le résultat est toujours impeccable.",
     rating: 5,
     location: 'Nice',
   },
@@ -40,7 +40,7 @@ const testimonials = [
     name: 'Isabelle Petit',
     role: 'Collectionneuse Automobile',
     content:
-      'J\'ai confié ma collection de véhicules anciens et le résultat dépasse mes attentes. Ils comprennent les besoins spécifiques de chaque véhicule. Une vraie expertise.',
+      "J'ai confié ma collection de véhicules anciens et le résultat dépasse mes attentes. Ils comprennent les besoins spécifiques de chaque véhicule. Une vraie expertise.",
     rating: 5,
     location: 'Bordeaux',
   },
@@ -48,7 +48,7 @@ const testimonials = [
     name: 'Alexandre Roux',
     role: 'Propriétaire Audi RS6',
     content:
-      'Le meilleur detailing que j\'ai eu ! Attention aux détails, produits premium, et un résultat qui tient dans le temps. La protection céramique est toujours nickel après 18 mois.',
+      "Le meilleur detailing que j'ai eu ! Attention aux détails, produits premium, et un résultat qui tient dans le temps. La protection céramique est toujours nickel après 18 mois.",
     rating: 5,
     location: 'Toulouse',
   },
@@ -74,7 +74,9 @@ export default function TestimonialsSection() {
             className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 shadow-lg"
           >
             <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-            <span className="text-sm font-medium text-neutral-800">Avis Clients</span>
+            <span className="text-sm font-medium text-neutral-800">
+              Avis Clients
+            </span>
           </motion.div>
 
           <motion.h2
@@ -94,8 +96,8 @@ export default function TestimonialsSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-neutral-600 max-w-2xl mx-auto"
           >
-            Plus de 500 clients satisfaits nous recommandent.
-            Découvrez leurs témoignages authentiques.
+            Plus de 500 clients satisfaits nous recommandent. Découvrez leurs
+            témoignages authentiques.
           </motion.p>
         </div>
 
@@ -135,7 +137,9 @@ export default function TestimonialsSection() {
                 <div className="font-semibold text-neutral-900">
                   {testimonial.name}
                 </div>
-                <div className="text-sm text-neutral-600">{testimonial.role}</div>
+                <div className="text-sm text-neutral-600">
+                  {testimonial.role}
+                </div>
                 <div className="text-xs text-neutral-500 mt-1">
                   {testimonial.location}
                 </div>

@@ -57,18 +57,18 @@ function FAQCard({
   index: number;
 }) {
   return (
-    <motion.div className="mb-4 break-inside-avoid rounded-[2rem] bg-white border border-neutral-200/50 shadow-2xl shadow-black/8 hover:border-blue-200/50 transition-all duration-300 p-5">
-      <h3 className="font-semibold text-neutral-900 mb-3 text-base leading-snug">
+    <motion.div className="mb-4 break-inside-avoid rounded-[2rem] bg-neutral-900/80 border border-neutral-950/50 shadow-2xl shadow-black/8 hover:border-blue-200/50 transition-all duration-300 p-5">
+      <h3 className="font-semibold text-neutral-100 mb-3 text-base leading-snug">
         {question}
       </h3>
-      <p className="text-neutral-600 text-sm leading-relaxed">{answer}</p>
+      <p className="text-neutral-300 text-sm leading-relaxed">{answer}</p>
     </motion.div>
   );
 }
 
 export default function FAQSection() {
   return (
-    <section className="relative py-24 md:py-32 bg-neutral-50 ">
+    <section className="relative py-24 md:py-32 bg-black ">
       {/* Background decoration - super léger */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/[0.02] rounded-full blur-3xl" />
@@ -83,10 +83,10 @@ export default function FAQSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 mb-6 border border-neutral-200/50 shadow-sm"
+            className="inline-flex items-center gap-2 bg-neutral-800/80 rounded-full px-5 py-2.5 mb-6 border border-neutral-900/50 shadow-sm"
           >
-            <HelpCircle className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-medium text-neutral-800">
+            <HelpCircle className="w-4 h-4 text-blue-500/80" />
+            <span className="text-sm font-medium text-neutral-200">
               Questions Fréquentes
             </span>
           </motion.div>
@@ -96,7 +96,7 @@ export default function FAQSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6"
+            className="text-4xl md:text-5xl font-bold text-neutral-100 mb-6"
           >
             Vos questions, nos réponses
           </motion.h2>
@@ -106,7 +106,7 @@ export default function FAQSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-neutral-600"
+            className="text-lg text-neutral-200"
           >
             Tout ce que vous devez savoir sur nos prestations. Une question ?
             Contactez-nous !
@@ -131,12 +131,12 @@ export default function FAQSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-10 text-center p-10 bg-gradient-to-br from-blue-50/50 to-neutral-50/50 rounded-[2rem] border border-neutral-100/60"
+          className="mt-10 text-center p-10 bg-gradient-to-br from-blue-950/50 to-neutral-950/50 rounded-[2rem] border border-neutral-950/60"
         >
-          <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+          <h3 className="text-xl font-semibold text-neutral-100 mb-2">
             Vous ne trouvez pas votre réponse ?
           </h3>
-          <p className="text-neutral-600 mb-6">
+          <p className="text-neutral-300 mb-6">
             Notre équipe est là pour répondre à toutes vos questions
           </p>
           <a
