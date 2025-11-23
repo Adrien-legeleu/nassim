@@ -46,6 +46,12 @@ const ITEMS: BAItem[] = [
     after: '/voiture-after-1.jpg',
     height: 520,
   },
+  { before: '/pro-before-11.png', after: '/pro-after-11.png', height: 480 },
+  {
+    before: '/voiture-before-10.png',
+    after: '/voiture-after-10.png',
+    height: 260,
+  },
   { before: '/pro-before-1.webp', after: '/pro-after-1.webp', height: 420 },
   {
     before: '/voiture-before-2.jpg',
@@ -57,6 +63,13 @@ const ITEMS: BAItem[] = [
     before: '/voiture-before-3.jpg',
     after: '/voiture-after-3.jpg',
     height: 380,
+  },
+  { before: '/pro-before-10.png', after: '/pro-after-10.png', height: 480 },
+
+  {
+    before: '/voiture-before-11.png',
+    after: '/voiture-after-11.png',
+    height: 600,
   },
   { before: '/pro-before-3.webp', after: '/pro-after-3.webp', height: 480 },
   {
@@ -77,11 +90,15 @@ const ITEMS: BAItem[] = [
     height: 420,
   },
   { before: '/pro-before-6.avif', after: '/pro-after-6.avif', height: 460 },
+  { before: '/pro-before-9.png', after: '/pro-after-9.png', height: 480 },
+
   {
     before: '/voiture-before-7.png',
     after: '/voiture-after-7.png',
     height: 380,
   },
+  { before: '/pro-before-8.png', after: '/pro-after-8.png', height: 480 },
+
   {
     before: '/voiture-before-8.png',
     after: '/voiture-after-8.png',

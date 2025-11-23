@@ -56,6 +56,12 @@ export default function ProBeforeAfter() {
 
             {/* Bloc C (gauche, moyen) */}
             <CardCompare
+              className="md:row-span-3 md:col-span-1 bg-neutral-200  max-md:aspect-11/11 min-h-[320px] md:min-h-[420px]"
+              before="/pro-before-8.png"
+              after="/pro-after-8.png"
+              delay={0.3}
+            />
+            <CardCompare
               className="md:row-span-3 md:col-span-1 bg-red-200 max-md:aspect-11/11 min-h-[220px] md:min-h-[280px]"
               before="/pro-before-6.avif"
               after="/pro-after-6.avif"
@@ -64,9 +70,15 @@ export default function ProBeforeAfter() {
 
             {/* Bloc D (droite, grand) */}
             <CardCompare
-              className="md:row-span-3 md:col-span-1 bg-neutral-200  max-md:aspect-11/11 min-h-[320px] md:min-h-[420px]"
+              className="md:row-span-4 md:col-span-1 bg-neutral-200  max-md:aspect-11/11 min-h-[320px] md:min-h-[420px]"
               before="/pro-before-1.webp"
               after="/pro-after-1.webp"
+              delay={0.3}
+            />
+            <CardCompare
+              className="md:row-span-4 md:col-span-1 bg-neutral-200  max-md:aspect-11/11 min-h-[320px] md:min-h-[420px]"
+              before="/pro-before-10.png"
+              after="/pro-after-10.png"
               delay={0.3}
             />
           </div>
