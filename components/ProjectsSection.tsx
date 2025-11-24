@@ -142,8 +142,8 @@ export default function ProjectsSection() {
             "
             >
               <Compare
-                firstImage="/pro-before-1.webp"
-                secondImage="/pro-after-1.webp"
+                firstImage="/pro-before-11.png"
+                secondImage="/pro-after-11.png"
                 firstImageClassName="object-cover w-full h-full"
                 secondImageClassname="object-cover w-full h-full"
                 className="rounded-[3rem] w-full h-full"

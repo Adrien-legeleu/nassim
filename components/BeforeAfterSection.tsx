@@ -77,8 +77,8 @@ export default function BeforeAfterSection() {
             {/* Bloc B (droite, moyen) - Pro */}
             <CardCompare
               className="md:row-span-2 md:col-span-1 max-md:min-h-120 bg-red-200 min-h-[200px] md:min-h-[250px]"
-              before="/pro-before-2.webp"
-              after="/pro-after-2.webp"
+              before="/pro-before-8.png"
+              after="/pro-after-9.png"
               delay={0.1}
             />
 
