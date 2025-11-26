@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <div className="overflow-hidden w-full bg-neutral-950 h-full">
       <HeroSplit />
-      <ExpertiseSection />
+
       <ServicesComparisonTable />
       <InfoSection />
       <HomePricingSection />

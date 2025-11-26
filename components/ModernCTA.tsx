@@ -37,8 +37,8 @@ export default function ModernCTA() {
                 Prêt à sublimer votre véhicule ?
               </h2>
               <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-                Contactez-nous dès maintenant pour un devis gratuit et personnalisé.
-                Réponse sous 24h garantie.
+                Contactez-nous dès maintenant pour un devis gratuit et
+                personnalisé. Réponse sous 24h garantie.
               </p>
             </div>
 
@@ -51,7 +51,9 @@ export default function ModernCTA() {
                 <div className="w-12 h-12 rounded-3xl bg-blue-50 flex items-center justify-center text-blue-600 mb-3 group-hover:scale-110 transition-transform">
                   <Phone className="w-6 h-6" />
                 </div>
-                <div className="text-sm font-medium text-neutral-700 mb-1">Téléphone</div>
+                <div className="text-sm font-medium text-neutral-700 mb-1">
+                  Téléphone
+                </div>
                 <div className="text-lg font-semibold text-neutral-900">
                   01 23 45 67 89
                 </div>
@@ -64,7 +66,9 @@ export default function ModernCTA() {
                 <div className="w-12 h-12 rounded-3xl bg-blue-50 flex items-center justify-center text-blue-600 mb-3 group-hover:scale-110 transition-transform">
                   <Mail className="w-6 h-6" />
                 </div>
-                <div className="text-sm font-medium text-neutral-700 mb-1">Email</div>
+                <div className="text-sm font-medium text-neutral-700 mb-1">
+                  Email
+                </div>
                 <div className="text-lg font-semibold text-neutral-900">
                   contact@nassim.fr
                 </div>
@@ -74,9 +78,11 @@ export default function ModernCTA() {
                 <div className="w-12 h-12 rounded-3xl bg-green-50 flex items-center justify-center text-green-600 mb-3">
                   <MapPin className="w-6 h-6" />
                 </div>
-                <div className="text-sm font-medium text-neutral-700 mb-1">Zone</div>
+                <div className="text-sm font-medium text-neutral-700 mb-1">
+                  Zone
+                </div>
                 <div className="text-lg font-semibold text-neutral-900">
-                  Île-de-France
+                  Alpes-Maritimes
                 </div>
               </div>
             </div>

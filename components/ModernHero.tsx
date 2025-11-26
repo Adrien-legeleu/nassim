@@ -23,7 +23,7 @@ export default function ModernHero() {
         >
           <Award className="w-4 h-4 text-blue-600" />
           <span className="text-sm font-medium text-neutral-800">
-            N°1 du detailing premium en France
+            N°1 du detailing premium en Alpes-Maritimes
           </span>
         </motion.div>
 

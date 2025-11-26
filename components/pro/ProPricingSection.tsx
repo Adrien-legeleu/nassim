@@ -17,7 +17,7 @@ const proPackages = [
   },
   {
     id: 'canape',
-    title: 'Nettoyage Canapé',
+    title: 'Canapé',
     src: '/protariff2.png',
     price: '60,00–80,00 €',
     description:

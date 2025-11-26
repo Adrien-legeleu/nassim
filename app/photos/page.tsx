@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState, useMemo } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Compare } from '@/components/ui/compare';
 import WallHero from '@/components/WallHero';
@@ -9,7 +9,11 @@ type BAItem = {
   before: string;
   after: string;
   height: number;
+  category: 'voiture' | 'pro';
 };
+
+type TabFilter = 'all' | 'voiture' | 'pro';
+
 function GlowMobile() {
   return (
     <div className="absolute inset-x-0 -top-10 pointer-events-none z-10 flex justify-center">
@@ -45,75 +49,148 @@ const ITEMS: BAItem[] = [
     before: '/voiture-before-1.jpg',
     after: '/voiture-after-1.jpg',
     height: 520,
+    category: 'voiture',
   },
-  { before: '/pro-before-11.png', after: '/pro-after-11.png', height: 480 },
+  {
+    before: '/pro-before-11.png',
+    after: '/pro-after-11.png',
+    height: 480,
+    category: 'pro',
+  },
   {
     before: '/voiture-before-10.png',
     after: '/voiture-after-10.png',
     height: 260,
+    category: 'voiture',
   },
-  { before: '/pro-before-1.webp', after: '/pro-after-1.webp', height: 420 },
+  {
+    before: '/pro-before-1.webp',
+    after: '/pro-after-1.webp',
+    height: 420,
+    category: 'pro',
+  },
   {
     before: '/voiture-before-2.jpg',
     after: '/voiture-after-2.jpg',
     height: 460,
+    category: 'voiture',
   },
-  { before: '/pro-before-2.webp', after: '/pro-after-2.webp', height: 560 },
+  {
+    before: '/pro-before-2.webp',
+    after: '/pro-after-2.webp',
+    height: 560,
+    category: 'pro',
+  },
   {
     before: '/voiture-before-3.jpg',
     after: '/voiture-after-3.jpg',
     height: 380,
+    category: 'voiture',
   },
-  { before: '/pro-before-10.png', after: '/pro-after-10.png', height: 480 },
+  {
+    before: '/pro-before-10.png',
+    after: '/pro-after-10.png',
+    height: 480,
+    category: 'pro',
+  },
 
   {
     before: '/voiture-before-11.png',
     after: '/voiture-after-11.png',
     height: 600,
+    category: 'voiture',
   },
-  { before: '/pro-before-3.webp', after: '/pro-after-3.webp', height: 480 },
+  {
+    before: '/pro-before-3.webp',
+    after: '/pro-after-3.webp',
+    height: 480,
+    category: 'pro',
+  },
   {
     before: '/voiture-before-4.jpg',
     after: '/voiture-after-4.jpg',
     height: 600,
+    category: 'voiture',
   },
-  { before: '/pro-before-4.webp', after: '/pro-after-4.webp', height: 400 },
   {
-    before: '/voiture-before-4.jpg',
-    after: '/voiture-after-4.jpg',
-    height: 500,
+    before: '/pro-before-4.webp',
+    after: '/pro-after-4.webp',
+    height: 400,
+    category: 'pro',
   },
-  { before: '/pro-before-5.webp', after: '/pro-after-5.webp', height: 540 },
+  {
+    before: '/voiture-before-5.jpg',
+    after: '/voiture-after-5.jpg',
+    height: 500,
+    category: 'voiture',
+  },
+  {
+    before: '/pro-before-5.webp',
+    after: '/pro-after-5.webp',
+    height: 540,
+    category: 'pro',
+  },
   {
     before: '/voiture-before-6.jpg',
     after: '/voiture-after-6.jpg',
     height: 420,
+    category: 'voiture',
   },
-  { before: '/pro-before-6.avif', after: '/pro-after-6.avif', height: 460 },
-  { before: '/pro-before-9.png', after: '/pro-after-9.png', height: 480 },
+  {
+    before: '/pro-before-6.avif',
+    after: '/pro-after-6.avif',
+    height: 460,
+    category: 'pro',
+  },
+  {
+    before: '/pro-before-9.png',
+    after: '/pro-after-9.png',
+    height: 480,
+    category: 'pro',
+  },
 
   {
     before: '/voiture-before-7.png',
     after: '/voiture-after-7.png',
     height: 380,
+    category: 'voiture',
   },
-  { before: '/pro-before-8.png', after: '/pro-after-8.png', height: 480 },
+  {
+    before: '/pro-before-8.png',
+    after: '/pro-after-8.png',
+    height: 480,
+    category: 'pro',
+  },
 
   {
     before: '/voiture-before-8.png',
     after: '/voiture-after-8.png',
     height: 560,
+    category: 'voiture',
   },
   {
     before: '/voiture-before-9.jpg',
     after: '/voiture-after-9.jpg',
     height: 440,
+    category: 'voiture',
   },
-  { before: '/pro-before-7.avif', after: '/pro-after-7.avif', height: 480 },
+  {
+    before: '/pro-before-7.avif',
+    after: '/pro-after-7.avif',
+    height: 480,
+    category: 'pro',
+  },
+];
+
+const TABS: { value: TabFilter; label: string; icon: string }[] = [
+  { value: 'all', label: 'Tous', icon: '✦' },
+  { value: 'voiture', label: 'Voitures', icon: '' },
+  { value: 'pro', label: 'Pro / Locaux', icon: '' },
 ];
 
 export default function PhotosWallPage() {
   const sectionRef = useRef<HTMLElement | null>(null);
+  const [activeTab, setActiveTab] = useState<TabFilter>('all');
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -125,18 +202,32 @@ export default function PhotosWallPage() {
   const col2Y = useTransform(scrollYProgress, [0, 1], [0, 20]);
   const col3Y = useTransform(scrollYProgress, [0, 1], [0, -20]);
 
-  // Répartition 2 colonnes
-  const columns2: BAItem[][] = [[], []];
-  // Répartition 3 colonnes
-  const columns3: BAItem[][] = [[], [], []];
+  // Filtrer les items selon le tab actif
+  const filteredItems = useMemo(() => {
+    if (activeTab === 'all') return ITEMS;
+    return ITEMS.filter((item) => item.category === activeTab);
+  }, [activeTab]);
 
-  ITEMS.forEach((item, i) => {
-    columns2[i % 2].push(item);
-    columns3[i % 3].push(item);
-  });
+  // Répartition 2 colonnes
+  const columns2: BAItem[][] = useMemo(() => {
+    const cols: BAItem[][] = [[], []];
+    filteredItems.forEach((item, i) => {
+      cols[i % 2].push(item);
+    });
+    return cols;
+  }, [filteredItems]);
+
+  // Répartition 3 colonnes
+  const columns3: BAItem[][] = useMemo(() => {
+    const cols: BAItem[][] = [[], [], []];
+    filteredItems.forEach((item, i) => {
+      cols[i % 3].push(item);
+    });
+    return cols;
+  }, [filteredItems]);
 
   return (
-    <main className="bg-neutral-950 text-neutral-100 min-h-[100dvh]    overflow-hidden w-full h-full">
+    <main className="bg-neutral-950 text-neutral-100 min-h-[100dvh] overflow-hidden w-full h-full">
       <div className="ribbon-fr">
         <span />
       </div>
@@ -144,7 +235,7 @@ export default function PhotosWallPage() {
       <WallHero
         tagline="Avant / Après"
         title="Le soin du détail, visible en un regard."
-        description="Un mur d’exemples concrets : le résultat avant / après, sans artifices. Défilez et comparez."
+        description="Un mur d'exemples concrets : le résultat avant / après, sans artifices. Défilez et comparez."
         ctaText="Réserver un créneau"
         images={[
           '/pro-2.webp',
@@ -179,9 +270,9 @@ export default function PhotosWallPage() {
 
         <div className="relative mx-auto">
           {/* Heading */}
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="text-center max-w-2xl mx-auto mb-8">
             <h2 className="text-2xl md:text-4xl font-semibold text-neutral-100 tracking-tight">
-              Mur d’avant / après
+              Mur d'avant / après
             </h2>
             <p className="mt-3 text-sm md:text-base text-neutral-200">
               Auto & pro, mélangés&nbsp;: chaque bloc se compare en un seul
@@ -189,22 +280,88 @@ export default function PhotosWallPage() {
             </p>
           </div>
 
-          {/* MOBILE : 1 colonne (xs uniquement) */}
-          <div className="grid gap-6 sm:hidden">
-            {ITEMS.map((item, idx) => (
-              <BAParallaxCard key={`m-${idx}`} item={item} index={idx} />
-            ))}
+          {/* TABS */}
+          <div className="flex justify-center mb-10">
+            <div className="inline-flex items-center gap-1 p-1.5 rounded-full bg-neutral-900/80 border border-neutral-800/60 backdrop-blur-sm">
+              {TABS.map((tab) => (
+                <button
+                  key={tab.value}
+                  onClick={() => setActiveTab(tab.value)}
+                  className={[
+                    'relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300',
+                    'flex items-center gap-2',
+                    activeTab === tab.value
+                      ? 'text-white'
+                      : 'text-neutral-400 hover:text-neutral-200',
+                  ].join(' ')}
+                >
+                  {activeTab === tab.value && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute inset-0 bg-primary rounded-full"
+                      transition={{
+                        type: 'spring',
+                        bounce: 0.2,
+                        duration: 0.5,
+                      }}
+                    />
+                  )}
+                  <span className="relative z-10">{tab.icon}</span>
+                  <span className="relative z-10">{tab.label}</span>
+                </button>
+              ))}
+            </div>
           </div>
 
+          {/* Compteur */}
+          <div className="text-center mb-8">
+            <motion.p
+              key={filteredItems.length}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-sm text-neutral-500"
+            >
+              {filteredItems.length} résultat
+              {filteredItems.length > 1 ? 's' : ''}
+            </motion.p>
+          </div>
+
+          {/* MOBILE : 1 colonne (xs uniquement) */}
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.25 }}
+            className="grid gap-6 sm:hidden"
+          >
+            {filteredItems.map((item, idx) => (
+              <BAParallaxCard
+                key={`m-${item.before}`}
+                item={item}
+                index={idx}
+              />
+            ))}
+          </motion.div>
+
           {/* SM → LG : 2 colonnes avec parallax (columns2) */}
-          <div className="hidden sm:grid lg:hidden gap-6 md:gap-8 grid-cols-2">
+          <motion.div
+            key={`2col-${activeTab}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.25 }}
+            className="hidden sm:grid lg:hidden gap-6 md:gap-8 grid-cols-2"
+          >
             {/* Colonne 1 */}
             <motion.div
               style={{ y: col1Y }}
               className="flex flex-col gap-6 md:gap-8"
             >
               {columns2[0].map((item, idx) => (
-                <BAParallaxCard key={`2c1-${idx}`} item={item} index={idx} />
+                <BAParallaxCard
+                  key={`2c1-${item.before}`}
+                  item={item}
+                  index={idx}
+                />
               ))}
             </motion.div>
 
@@ -214,20 +371,34 @@ export default function PhotosWallPage() {
               className="flex flex-col gap-6 md:gap-8"
             >
               {columns2[1].map((item, idx) => (
-                <BAParallaxCard key={`2c2-${idx}`} item={item} index={idx} />
+                <BAParallaxCard
+                  key={`2c2-${item.before}`}
+                  item={item}
+                  index={idx}
+                />
               ))}
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* LG+ : 3 colonnes comme avant (columns3) */}
-          <div className="hidden lg:grid gap-6 md:gap-8 lg:grid-cols-3">
+          <motion.div
+            key={`3col-${activeTab}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.25 }}
+            className="hidden lg:grid gap-6 md:gap-8 lg:grid-cols-3"
+          >
             {/* Colonne 1 */}
             <motion.div
               style={{ y: col1Y }}
               className="flex flex-col gap-6 md:gap-8"
             >
               {columns3[0].map((item, idx) => (
-                <BAParallaxCard key={`3c1-${idx}`} item={item} index={idx} />
+                <BAParallaxCard
+                  key={`3c1-${item.before}`}
+                  item={item}
+                  index={idx}
+                />
               ))}
             </motion.div>
 
@@ -237,7 +408,11 @@ export default function PhotosWallPage() {
               className="flex flex-col gap-6 md:gap-8 pb-96 relative"
             >
               {columns3[1].map((item, idx) => (
-                <BAParallaxCard key={`3c2-${idx}`} item={item} index={idx} />
+                <BAParallaxCard
+                  key={`3c2-${item.before}`}
+                  item={item}
+                  index={idx}
+                />
               ))}
             </motion.div>
 
@@ -247,10 +422,14 @@ export default function PhotosWallPage() {
               className="flex flex-col gap-6 md:gap-8"
             >
               {columns3[2].map((item, idx) => (
-                <BAParallaxCard key={`3c3-${idx}`} item={item} index={idx} />
+                <BAParallaxCard
+                  key={`3c3-${item.before}`}
+                  item={item}
+                  index={idx}
+                />
               ))}
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* CTA bas de page */}
           <div className="mt-20 lg:mt-10 flex justify-center">

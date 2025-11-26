@@ -129,7 +129,7 @@ export default function Footer() {
               isPro ? 'text-neutral-700' : 'text-neutral-200'
             )}
           >
-            <p>Cannes</p>
+            <p>Alpes-Maritimes</p>
             <p className="mt-1">contact@nettoyageriviera.com</p>
             <p className="mt-1">Lun–Sam · 8h–20h</p>
           </div>

@@ -19,7 +19,7 @@ const infos = [
   {
     icon: <MapPin className="w-5 h-5" />,
     label: "Zone d'intervention",
-    value: 'Île-de-France & région parisienne',
+    value: 'Alpes-Maritimes',
     href: null,
   },
   {
