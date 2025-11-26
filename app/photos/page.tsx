@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useMemo } from 'react';
+import { useRef, useState, useMemo, useCallback, memo } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Compare } from '@/components/ui/compare';
 import WallHero from '@/components/WallHero';
@@ -93,7 +93,6 @@ const ITEMS: BAItem[] = [
     height: 480,
     category: 'pro',
   },
-
   {
     before: '/voiture-before-11.png',
     after: '/voiture-after-11.png',
@@ -148,7 +147,6 @@ const ITEMS: BAItem[] = [
     height: 480,
     category: 'pro',
   },
-
   {
     before: '/voiture-before-7.png',
     after: '/voiture-after-7.png',
@@ -161,7 +159,6 @@ const ITEMS: BAItem[] = [
     height: 480,
     category: 'pro',
   },
-
   {
     before: '/voiture-before-8.png',
     after: '/voiture-after-8.png',
@@ -184,23 +181,53 @@ const ITEMS: BAItem[] = [
 
 const TABS: { value: TabFilter; label: string; icon: string }[] = [
   { value: 'all', label: 'Tous', icon: '✦' },
-  { value: 'voiture', label: 'Voitures', icon: '' },
-  { value: 'pro', label: 'Pro / Locaux', icon: '' },
+  { value: 'voiture', label: 'Voitures', icon: '🚗' },
+  { value: 'pro', label: 'Pro / Locaux', icon: '🏢' },
 ];
 
 export default function PhotosWallPage() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [activeTab, setActiveTab] = useState<TabFilter>('all');
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start end', 'end start'],
   });
 
-  // Parallax par colonne
-  const col1Y = useTransform(scrollYProgress, [0, 1], [0, -20]);
-  const col2Y = useTransform(scrollYProgress, [0, 1], [0, 20]);
-  const col3Y = useTransform(scrollYProgress, [0, 1], [0, -20]);
+  // Désactive parallax sur mobile pour performance
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+
+  const col1Y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? [0, 0] : [0, -20]
+  );
+  const col2Y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? [0, 0] : [0, 20]
+  );
+  const col3Y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? [0, 0] : [0, -20]
+  );
+
+  // Handler optimisé pour changement de tab
+  const handleTabChange = useCallback(
+    (newTab: TabFilter) => {
+      if (isTransitioning || newTab === activeTab) return;
+
+      setIsTransitioning(true);
+      setActiveTab(newTab);
+
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 300);
+    },
+    [isTransitioning, activeTab]
+  );
 
   // Filtrer les items selon le tab actif
   const filteredItems = useMemo(() => {
@@ -209,7 +236,7 @@ export default function PhotosWallPage() {
   }, [activeTab]);
 
   // Répartition 2 colonnes
-  const columns2: BAItem[][] = useMemo(() => {
+  const columns2 = useMemo(() => {
     const cols: BAItem[][] = [[], []];
     filteredItems.forEach((item, i) => {
       cols[i % 2].push(item);
@@ -218,7 +245,7 @@ export default function PhotosWallPage() {
   }, [filteredItems]);
 
   // Répartition 3 colonnes
-  const columns3: BAItem[][] = useMemo(() => {
+  const columns3 = useMemo(() => {
     const cols: BAItem[][] = [[], [], []];
     filteredItems.forEach((item, i) => {
       cols[i % 3].push(item);
@@ -286,13 +313,15 @@ export default function PhotosWallPage() {
               {TABS.map((tab) => (
                 <button
                   key={tab.value}
-                  onClick={() => setActiveTab(tab.value)}
+                  onClick={() => handleTabChange(tab.value)}
+                  disabled={isTransitioning}
                   className={[
                     'relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300',
                     'flex items-center gap-2',
                     activeTab === tab.value
                       ? 'text-white'
                       : 'text-neutral-400 hover:text-neutral-200',
+                    isTransitioning ? 'cursor-not-allowed opacity-70' : '',
                   ].join(' ')}
                 >
                   {activeTab === tab.value && (
@@ -446,54 +475,66 @@ export default function PhotosWallPage() {
   );
 }
 
-/* ====== Carte Avant / Après ====== */
+/* ====== Carte Avant / Après OPTIMISÉE ====== */
 
-function BAParallaxCard({ item, index }: { item: BAItem; index: number }) {
-  // cycle: 0 → blue, 1 → red, 2 → neutral
-  const tone = index % 3;
+const BAParallaxCard = memo(
+  ({ item, index }: { item: BAItem; index: number }) => {
+    // cycle: 0 → blue, 1 → red, 2 → neutral
+    const tone = index % 3;
 
-  const toneClasses =
-    tone === 0
-      ? {
-          wrapper: 'bg-blue-950/50 border-blue-900/30 ',
-          label: 'text-blue-900/80',
-        }
-      : tone === 1
-      ? {
-          wrapper: 'bg-red-950/20 border-red-900/40 ',
-          label: 'text-red-800/80',
-        }
-      : {
-          wrapper: 'bg-neutral-950/90 border-neutral-900/80 ',
-          label: 'text-neutral-900/80',
-        };
+    const toneClasses =
+      tone === 0
+        ? {
+            wrapper: 'bg-blue-950/50 border-blue-900/30 ',
+            label: 'text-blue-900/80',
+          }
+        : tone === 1
+        ? {
+            wrapper: 'bg-red-950/20 border-red-900/40 ',
+            label: 'text-red-800/80',
+          }
+        : {
+            wrapper: 'bg-neutral-950/90 border-neutral-900/80 ',
+            label: 'text-neutral-900/80',
+          };
 
-  return (
-    <motion.article
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className={[
-        'rounded-[3.2rem] border overflow-hidden p-[1px]',
-        'backdrop-blur-[2px]',
-        toneClasses.wrapper,
-      ].join(' ')}
-    >
-      <div
-        className="relative rounded-[3rem] overflow-hidden bg-black"
-        style={{ height: item.height }}
+    return (
+      <motion.article
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '100px' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        className={[
+          'rounded-[3.2rem] border overflow-hidden p-[1px]',
+          'backdrop-blur-[2px]',
+          toneClasses.wrapper,
+        ].join(' ')}
       >
-        <Compare
-          firstImage={item.before}
-          secondImage={item.after}
-          className="w-full h-full rounded-[2rem]"
-          firstImageClassName="object-cover w-full h-full"
-          secondImageClassname="object-cover w-full h-full"
-          slideMode="hover"
-          autoplay={false}
-        />
-      </div>
-    </motion.article>
-  );
-}
+        <div
+          className="relative rounded-[3rem] overflow-hidden bg-black"
+          style={{ height: item.height }}
+        >
+          <Compare
+            firstImage={item.before}
+            secondImage={item.after}
+            className="w-full h-full rounded-[2rem]"
+            firstImageClassName="object-cover w-full h-full"
+            secondImageClassname="object-cover w-full h-full"
+            slideMode="hover"
+            autoplay={false}
+          />
+        </div>
+      </motion.article>
+    );
+  },
+  (prevProps, nextProps) => {
+    // Ne re-rend que si les props changent vraiment
+    return (
+      prevProps.item.before === nextProps.item.before &&
+      prevProps.item.after === nextProps.item.after &&
+      prevProps.index === nextProps.index
+    );
+  }
+);
+
+BAParallaxCard.displayName = 'BAParallaxCard';
