@@ -181,8 +181,8 @@ const ITEMS: BAItem[] = [
 
 const TABS: { value: TabFilter; label: string; icon: string }[] = [
   { value: 'all', label: 'Tous', icon: '✦' },
-  { value: 'voiture', label: 'Voitures', icon: '🚗' },
-  { value: 'pro', label: 'Pro / Locaux', icon: '🏢' },
+  { value: 'voiture', label: 'Voitures', icon: '' },
+  { value: 'pro', label: 'Pro / Locaux', icon: '' },
 ];
 
 export default function PhotosWallPage() {
