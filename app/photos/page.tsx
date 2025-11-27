@@ -255,9 +255,6 @@ export default function PhotosWallPage() {
 
   return (
     <main className="bg-neutral-950 text-neutral-100 min-h-[100dvh] overflow-hidden w-full h-full">
-      <div className="ribbon-fr">
-        <span />
-      </div>
       <GlowMobile />
       <WallHero
         tagline="Avant / Après"

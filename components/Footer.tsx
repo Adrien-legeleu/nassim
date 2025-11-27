@@ -19,11 +19,6 @@ export default function Footer() {
           : 'bg-neutral-950 border-neutral-900'
       )}
     >
-      {/* Bande tricolore */}
-      <div className="ribbon-fr">
-        <span />
-      </div>
-
       {/* Légère texture */}
       <div
         aria-hidden

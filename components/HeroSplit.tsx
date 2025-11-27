@@ -216,10 +216,6 @@ export function HeroSplitMobile() {
 export function HeroSplitDesktop() {
   return (
     <section className="relative hidden lg:block w-full bg-neutral-950">
-      <div className="ribbon-fr">
-        <span />
-      </div>
-
       <div className="h-[100svh] p-4">
         <div className="relative h-full overflow-hidden rounded-[3rem] bg-neutral-950">
           <div className="grid h-full grid-rows-1 grid-cols-2 gap-5">
