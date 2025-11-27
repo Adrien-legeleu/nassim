@@ -152,11 +152,6 @@ function GlowMobile() {
 export function HeroSplitMobile() {
   return (
     <section className="relative w-full bg-neutral-950 overflow-hidden lg:hidden min-h-[100svh]">
-      {/* ruban si existant */}
-      <div className="ribbon-fr">
-        <span />
-      </div>
-
       <GlowMobile />
 
       <div className="relative mx-auto max-w-6xl h-screen justify-center items-center px-4 grid grid-rows-[auto,1fr,auto] gap-8 z-20">

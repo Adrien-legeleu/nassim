@@ -45,7 +45,7 @@ export default function ModernCTA() {
             {/* Contact methods - rounded-4xl */}
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               <a
-                href="tel:+33123456789"
+                href="tel:+330615944934"
                 className="group flex flex-col items-center justify-center p-6 bg-neutral-50 rounded-4xl hover:shadow-xl transition-all duration-300 shadow-lg"
               >
                 <div className="w-12 h-12 rounded-3xl bg-blue-50 flex items-center justify-center text-blue-600 mb-3 group-hover:scale-110 transition-transform">
@@ -55,7 +55,7 @@ export default function ModernCTA() {
                   Téléphone
                 </div>
                 <div className="text-lg font-semibold text-neutral-900">
-                  01 23 45 67 89
+                  06 15 94 49 34
                 </div>
               </a>
 
