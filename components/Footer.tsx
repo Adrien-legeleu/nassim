@@ -57,8 +57,7 @@ export default function Footer() {
                 isPro ? 'text-neutral-700' : 'text-neutral-300'
               )}
             >
-              Detailing automobile & nettoyage professionnel. Une exigence
-              française, du véhicule aux espaces.
+              Detailing automobile & nettoyage professionnel. Un savoir-faire maîtrisé, du véhicule aux espaces.
             </p>
           </div>
 
