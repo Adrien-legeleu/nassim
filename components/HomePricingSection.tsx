@@ -37,7 +37,6 @@ const autoPackages: AutoPackage[] = [
       'Nettoyage et soin des plastiques intérieurs',
       'Nettoyage vitres intérieures',
       'Dépoussiérage et désodorisation',
-     
     ],
     categories: [
       {
@@ -62,7 +61,6 @@ const autoPackages: AutoPackage[] = [
       'Sièges en tissu : Shampouinage et extraction',
       'Cuir : Nettoyage doux et soin nourrissant',
       'Alcantara : Nettoyage délicat et préservation',
-      
     ],
     categories: [
       {
@@ -90,7 +88,6 @@ const autoPackages: AutoPackage[] = [
       'Nettoyage des vitres intérieures',
       'Lavage extérieur de la carrosserie',
       'Nettoyage des jantes et des pneus',
-     
     ],
     categories: [
       {
@@ -118,7 +115,6 @@ const autoPackages: AutoPackage[] = [
       'Aspiration profonde de l’habitacle et du coffre',
       'Vitres intérieures et extérieures impeccables',
       'Dépoussiérage et désodorisation complète',
-     
     ],
     categories: [
       {
@@ -144,7 +140,6 @@ const autoPackages: AutoPackage[] = [
       'Application d’un soin spécifique pour les pneus',
       'Nettoyage méticuleux des vitres extérieures',
       'Finition lustrée avec effet hydrophobe',
-     
     ],
     categories: [
       {
@@ -168,7 +163,6 @@ const autoPackages: AutoPackage[] = [
       'Traitement spécifique pour l’élimination des poils d’animaux',
       'Nettoyage en profondeur des fibres textiles',
       'Application d’un désodorisant professionnel',
-     
     ],
     categories: [
       {
@@ -345,6 +339,11 @@ export default function HomePricingSection() {
           <p className="mt-2 text-sm md:text-base text-neutral-300">
             Choisissez vos prestations de detailing auto ou de nettoyage
             professionnel, toujours avec la même exigence de qualité.
+          </p>
+          <p className="mt-2 text-xs md:text-sm text-neutral-400">
+            Pour nos prestations auto, nous utilisons la gamme professionnelle{' '}
+            <span className="font-semibold">Koch-Chemie</span> (dégraissants,
+            shampoings, protections, etc.).
           </p>
         </div>
 
