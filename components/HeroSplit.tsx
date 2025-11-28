@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
+import WhatsAppButton from './WhatsappButton';
 
 type PanelProps = {
   href: string;
@@ -151,7 +152,7 @@ function GlowMobile() {
 
 export function HeroSplitMobile() {
   return (
-    <section className="relative w-full bg-neutral-950 overflow-hidden lg:hidden min-h-[100svh]">
+    <section className="relative w-full bg-neutral-950 lg:overflow-hidden lg:hidden min-h-[100svh]">
       <GlowMobile />
 
       <div className="relative mx-auto max-w-6xl h-screen justify-center items-center px-4 grid grid-rows-[auto,1fr,auto] gap-8 z-20">
@@ -199,13 +200,15 @@ export function HeroSplitMobile() {
         </div>
 
         {/* CTA */}
-        <div className="flex items-center justify-center w-full pb-6">
+        <div className="flex items-center justify-center w-full gap-5 pb-6">
           <Link
             href="/#contact"
-            className="inline-flex items-center rounded-full border border-primary bg-primary px-6 py-4 text-sm font-medium text-neutral-100 shadow-sm hover:shadow-md transition focus:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
+            className="inline-flex items-center rounded-full border border-primary bg-primary px-6 py-4 h-14  text-sm font-medium text-neutral-100 shadow-sm hover:shadow-md transition focus:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
           >
             <Calendar className="mr-2 h-4 w-4" /> Réserver un créneau
           </Link>
+                  <WhatsAppButton />
+
         </div>
       </div>
     </section>
@@ -241,13 +244,14 @@ export function HeroSplitDesktop() {
       </div>
 
       {/* CTA global */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center justify-center w-full">
+      <div className="absolute bottom-8 left-1/2 flex gap-5  -translate-x-1/2 flex items-center justify-center w-full">
         <Link
           href="/#contact"
-          className="inline-flex items-center rounded-full border border-primary bg-primary px-6 py-4 text-sm font-medium text-neutral-100 shadow-sm hover:shadow-md transition focus:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
+          className="inline-flex items-center rounded-full h-14 border border-primary bg-primary px-6 py-4 text-sm font-medium text-neutral-100 shadow-sm hover:shadow-md transition focus:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
         >
           <Calendar className="mr-2 h-4 w-4" /> Réserver un créneau
         </Link>
+        <WhatsAppButton />
       </div>
     </section>
   );

@@ -15,9 +15,7 @@ const autoPackages = [
       'Aspiration complète habitacle et coffre',
       'Nettoyage et soin des plastiques intérieurs',
       'Nettoyage vitres intérieures',
-
       'Dépoussiérage et désodorisation',
-      'eau incluse',
     ],
     categories: [
       {
@@ -41,8 +39,7 @@ const autoPackages = [
       'Sièges en tissu : Shampouinage et extraction',
       'Cuir : Nettoyage doux et soin nourrissant',
       'Alcantara : Nettoyage délicat et préservation',
-      'eau incluse',
-    ],
+              ],
     categories: [
       {
         label: 'Catégorie 1 (Petits & Moyens Véhicules)',
@@ -66,10 +63,9 @@ const autoPackages = [
       'Aspiration complète de l’habitacle et du coffre',
       'Nettoyage et soin des plastiques intérieurs',
       'Nettoyage des vitres intérieures',
-      'Lavage extérieur sans eau de la carrosserie',
+      'Lavage extérieur de la carrosserie',
       'Nettoyage des jantes et des pneus',
-      'eau incluse',
-    ],
+      ],
     categories: [
       {
         label: 'Catégorie 1 (Petits & Moyens Véhicules)',
@@ -90,12 +86,11 @@ const autoPackages = [
     bullets: [
       'Tout le forfait Complet Premium',
       'Soin des plastiques intérieurs',
-      'Lavage carrosserie sans eau, jantes, pneus',
+      'Lavage carrosserie jantes, pneus',
       'Nettoyage, désinfection et traitement des sièges',
       'Aspiration profonde de l’habitacle et du coffre',
       'Vitres intérieures et extérieures impeccables',
       'Dépoussiérage et désodorisation complète',
-      'eau incluse',
     ],
     categories: [
       {
@@ -115,12 +110,11 @@ const autoPackages = [
     basePrice: '35€',
     src: '/tariff5.png',
     bullets: [
-      'Lavage complet de la carrosserie sans eau',
+      'Lavage complet de la carrosserie',
       'Nettoyage en profondeur des jantes',
       'Application d’un soin spécifique pour les pneus',
       'Nettoyage méticuleux des vitres extérieures',
       'Finition lustrée avec effet hydrophobe',
-      'eau incluse',
     ],
     categories: [
       {
@@ -144,7 +138,6 @@ const autoPackages = [
       'Traitement spécifique pour l’élimination des poils d’animaux',
       'Nettoyage en profondeur des fibres textiles',
       'Application d’un désodorisant professionnel',
-      'eau incluse',
     ],
     categories: [
       {
