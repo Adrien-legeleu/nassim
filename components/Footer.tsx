@@ -36,7 +36,7 @@ export default function Footer() {
           <div className="flex flex-col items-start">
             <div className="flex items-center gap-4">
               <Image
-                src="/logo-auto.png"
+                src="/Logo Nassim Rouge.jpeg"
                 alt="Logo Detailing Auto"
                 width={110}
                 height={110}
@@ -57,7 +57,8 @@ export default function Footer() {
                 isPro ? 'text-neutral-700' : 'text-neutral-300'
               )}
             >
-              Detailing automobile & nettoyage professionnel. Un savoir-faire maîtrisé, du véhicule aux espaces.
+              Detailing automobile & nettoyage professionnel. Un savoir-faire
+              maîtrisé, du véhicule aux espaces.
             </p>
           </div>
 

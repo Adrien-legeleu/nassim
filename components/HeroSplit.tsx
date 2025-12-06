@@ -185,7 +185,7 @@ export function HeroSplitMobile() {
             src="/voiture-landing_2.jpg"
             alt="Detailing automobile"
             align="left"
-            logoSrc="/logo-auto.png"
+            logoSrc="/Logo Nassim Rouge.jpeg"
             logoAlt="Logo Auto"
             priority
           />
@@ -207,8 +207,7 @@ export function HeroSplitMobile() {
           >
             <Calendar className="mr-2 h-4 w-4" /> Réserver un créneau
           </Link>
-                  <WhatsAppButton />
-
+          <WhatsAppButton />
         </div>
       </div>
     </section>
@@ -227,7 +226,7 @@ export function HeroSplitDesktop() {
               src="/voiture-landing_2.jpg"
               alt="Detailing automobile"
               align="left"
-              logoSrc="/logo-auto.png"
+              logoSrc="/Logo Nassim Rouge.jpeg"
               logoAlt="Logo Auto"
               priority
             />

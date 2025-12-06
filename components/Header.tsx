@@ -68,7 +68,7 @@ export default function Header() {
               aria-label="French Detailing Auto"
             >
               <Image
-                src="/logo-auto.png"
+                src="/Logo Nassim Rouge.jpeg"
                 alt="Logo Auto"
                 fill
                 className="object-cover rounded-2xl"
@@ -187,7 +187,7 @@ export default function Header() {
                 >
                   <div className="relative aspect-square w-full h-full rounded-3xl overflow-hidden">
                     <Image
-                      src="/logo-auto.png"
+                      src="/Logo Nassim Rouge.jpeg"
                       alt="Logo Auto"
                       fill
                       className="object-cover rounded-2xl"
